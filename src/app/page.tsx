@@ -2,17 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { client } from '../sanity/lib/client';
 import { POSTS_QUERY } from '../sanity/lib/queries';
 import { POSTS_QUERYResult } from '../sanity/types';
-import imageUrlBuilder from '@sanity/image-url';
-
-// Configure the URL builder to create image URLs for Sanity images
-const builder = imageUrlBuilder(client);
-
-function urlFor(source: any) {
-  return builder.image(source);
-}
+import { urlFor } from '../sanity/lib/image';
 
 const Home: React.FC = () => {
   const [posts, setPosts] = useState<POSTS_QUERYResult[]>([]);
@@ -45,9 +39,11 @@ const Home: React.FC = () => {
             <h2>{post.title ?? 'Untitled Post'}</h2>
             <p>{post.excerpt ?? 'No excerpt available.'}</p>
             {post.mainImage?.asset && (
-              <img
+              <Image
                 src={urlFor(post.mainImage).url()}
                 alt={post.mainImage.alt ?? 'Post Image'}
+                width={500} // Specify the width
+                height={300} // Specify the height
               />
             )}
           </div>
