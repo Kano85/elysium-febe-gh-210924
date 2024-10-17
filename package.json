@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "SANITY_STUDIO_PROJECT_ID=xmq812e9 SANITY_STUDIO_DATASET=production next build",
+    "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint",
-    "dev:studio": "SANITY_STUDIO_PROJECT_ID=xmq812e9 SANITY_STUDIO_DATASET=production sanity dev --port 3333",
-    "sanity:build": "SANITY_STUDIO_PROJECT_ID=xmq812e9 SANITY_STUDIO_DATASET=production sanity build",
-    "sanity:deploy": "SANITY_STUDIO_PROJECT_ID=xmq812e9 SANITY_STUDIO_DATASET=production sanity deploy"
+    "dev:studio": "sanity dev --port 3333",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
     "@sanity/client": "^6.22.2",
