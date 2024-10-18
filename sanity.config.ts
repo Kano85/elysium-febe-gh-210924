@@ -7,8 +7,8 @@ import {
   dataset,
   projectId,
 } from '../elysium-febe-210924/src/sanity/env';
-import { schema } from '../elysium-febe-210924/src/sanity/schemaTypes';
-import { structure } from '../elysium-febe-210924/src/sanity/structure';
+import { schema } from './src/sanity/schemaTypes';
+import { structure } from './src/sanity/structure';
 
 export default defineConfig({
   basePath: '/studio',
