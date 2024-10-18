@@ -2,11 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { client } from '../sanity/lib/client';
 import { POSTS_QUERY } from '../sanity/lib/queries';
 import { POSTS_QUERYResult } from '../sanity/types';
-import { urlFor } from '../sanity/lib/image';
+// import { urlFor } from '../sanity/lib/image';
+import IntroSection from '../components/IntroSection';
+import ListOfPosts from '../components/ListOfPOsts';
 
 const Home: React.FC = () => {
   const [posts, setPosts] = useState<POSTS_QUERYResult[]>([]);
@@ -30,25 +31,8 @@ const Home: React.FC = () => {
         />
       </Head>
 
-      <h1>Blog Posts</h1>
-      {posts.length === 0 ? (
-        <p>No posts available at the moment. Please check back later!</p>
-      ) : (
-        posts.map((post) => (
-          <div key={post._id}>
-            <h2>{post.title ?? 'Untitled Post'}</h2>
-            <p>{post.excerpt ?? 'No excerpt available.'}</p>
-            {post.mainImage?.asset && (
-              <Image
-                src={urlFor(post.mainImage).url()}
-                alt={post.mainImage.alt ?? 'Post Image'}
-                width={500} // Specify the width
-                height={300} // Specify the height
-              />
-            )}
-          </div>
-        ))
-      )}
+      <IntroSection />
+      <ListOfPosts posts={posts} />
     </div>
   );
 };

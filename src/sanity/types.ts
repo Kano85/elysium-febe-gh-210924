@@ -135,6 +135,7 @@ export type Post = {
         _key: string;
       }
   >;
+  excerpt?: string;
 };
 
 export type Author = {
@@ -301,10 +302,13 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
 // Query: *[_type == "post" && defined(slug.current)]{  _id,  title,  slug,  mainImage,  publishedAt,  excerpt,  body}
 // types.ts
+import { PortableTextBlock } from '@portabletext/types';
+
 export type POSTS_QUERYResult = {
   _id: string;
   title: string | null;
@@ -315,6 +319,7 @@ export type POSTS_QUERYResult = {
       _type: 'reference';
       _weak?: boolean;
       [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      url: string;
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
@@ -323,24 +328,7 @@ export type POSTS_QUERYResult = {
   } | null;
   publishedAt: string | null;
   excerpt: string | null;
-  body: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: 'span';
-      _key: string;
-    }>;
-    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
-    listItem?: 'bullet';
-    markDefs?: Array<{
-      href?: string;
-      _type: 'link';
-      _key: string;
-    }>;
-    level?: number;
-    _type: 'block';
-    _key: string;
-  }> | null;
+  body: PortableTextBlock[];
 };
 
 // Query TypeMap
