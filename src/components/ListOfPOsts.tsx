@@ -16,7 +16,7 @@ export default function ListOfPosts({ posts }: ListOfPostsProps) {
   return (
     <section className="px-6 lg:px-10">
       <h2 className="mb-12 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
-        Aktuelle Beiträge
+        Últimas publicaciones
       </h2>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
         {posts.map((post) => (
