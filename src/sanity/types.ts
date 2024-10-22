@@ -306,29 +306,36 @@ export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
 // Query: *[_type == "post" && defined(slug.current)]{  _id,  title,  slug,  mainImage,  publishedAt,  excerpt,  body}
-// types.ts
+// types.ts// types.ts
 import { PortableTextBlock } from '@portabletext/types';
 
 export type POSTS_QUERYResult = {
   _id: string;
   title: string | null;
-  slug: Slug | null;
+  slug: { current: string } | null;
   mainImage: {
     asset?: {
       _ref: string;
       _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       url: string;
     };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
+    hotspot?: any; // Use appropriate types if available
+    crop?: any;
     alt?: string;
-    _type: 'image';
   } | null;
   publishedAt: string | null;
   excerpt: string | null;
   body: PortableTextBlock[];
+  author?: {
+    name: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        url: string;
+      };
+    };
+  };
 };
 
 // Query TypeMap

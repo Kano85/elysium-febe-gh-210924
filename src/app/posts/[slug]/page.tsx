@@ -27,17 +27,12 @@ interface Post extends POSTS_QUERYResult {
 }
 
 export default async function PostPage({ params }: Params) {
-  console.log('PostPage component loaded with params:', params);
-
   const { slug } = params;
-  console.log('Fetching post with slug:', slug);
 
   const post = await sanityFetch<Post>({
     query: POST_QUERY,
     params: { slug },
   });
-
-  console.log('Fetched post:', post);
 
   if (!post) {
     return notFound();
@@ -47,8 +42,6 @@ export default async function PostPage({ params }: Params) {
     query: ALL_POSTS_QUERY,
     params: {},
   });
-
-  console.log('Fetched more posts:', morePosts);
 
   const otherPosts = morePosts.filter(
     (otherPost) => otherPost.slug?.current !== slug
