@@ -1,13 +1,14 @@
-// app/blog/[slug]/page.tsx
-
-import { client } from '../../../sanity/lib/client';
-import { urlFor } from '../../../sanity/lib/image';
+// src/app/blog/[slug]/page.tsx
 import SharePost from '@/components/Blog/SharePost';
 import TagButton from '@/components/Blog/TagButton';
 import Image from 'next/image';
+
+import { client } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
+
 import { PortableText } from '@portabletext/react';
 
-interface BlogPost {
+interface ListOfPostPost {
   _id: string;
   title: string;
   mainImage: any;
@@ -32,7 +33,11 @@ export async function generateStaticParams() {
   }));
 }
 
-const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
+const ListOfPostDetailsPage = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
   const { slug } = params;
 
   const query = `*[_type == "post" && slug.current == $slug][0]{
@@ -52,16 +57,19 @@ const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
     }
   }`;
 
-  const post: BlogPost = await client.fetch(query, { slug });
+  const post: ListOfPostPost = await client.fetch(query, { slug });
 
   if (!post) {
-    // You can return a custom 404 page or redirect
+    // In Next.js App Router, you can use the notFound function
+    // from 'next/navigation' to render the 404 page
+    // import { notFound } from 'next/navigation';
+    // notFound();
     return <div>Post not found</div>;
   }
 
   return (
     <>
-      {/* Use your existing BlogDetailsPage code, replacing static content with dynamic data */}
+      {/* Use your existing ListOfPostDetailsPage code, replacing static content with dynamic data */}
       <section className="pb-[120px] pt-[150px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
@@ -80,6 +88,7 @@ const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
                               src={urlFor(post.author.image).url()}
                               alt={post.author.name}
                               fill
+                              className="object-cover"
                             />
                           )}
                         </div>
@@ -151,8 +160,8 @@ const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
                         <SharePost />
                       </div>
                     </div>
+                    {/* Include other components or sections as needed */}
                   </div>
-                  {/* Include other components or sections as needed */}
                 </div>
               </div>
             </div>
@@ -163,4 +172,4 @@ const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default BlogDetailsPage;
+export default ListOfPostDetailsPage;

@@ -1,3 +1,4 @@
+//src/sanity/lib/queries.ts
 import groq from 'groq';
 
 export const ALL_POSTS_QUERY = groq`

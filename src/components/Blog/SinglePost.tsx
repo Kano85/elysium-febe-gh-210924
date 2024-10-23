@@ -1,14 +1,16 @@
-import { POSTS_QUERYResult } from '@/types/types';
+//src/components/Blog/SinglePost.tsx
+
+import { POSTS_QUERYResult } from '@/sanity/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '@/sanity/lib/image'; // Correct import path for urlFor
 
-interface SingleBlogProps {
-  blog: POSTS_QUERYResult;
+interface SinglePostProps {
+  listofposts: POSTS_QUERYResult;
 }
 
-const SingleBlog = ({ blog }: SingleBlogProps) => {
-  const { title, mainImage, excerpt, author, publishedAt, slug } = blog;
+const SinglePost = ({ listofposts }: SinglePostProps) => {
+  const { title, mainImage, excerpt, author, publishedAt, slug } = listofposts;
 
   return (
     <div className="group relative overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark">
@@ -19,7 +21,7 @@ const SingleBlog = ({ blog }: SingleBlogProps) => {
         {mainImage && mainImage.asset && (
           <Image
             src={urlFor(mainImage).url()}
-            alt={mainImage.alt ?? 'Blog Image'}
+            alt={mainImage.alt ?? 'ListOfPost Image'}
             fill
           />
         )}
@@ -71,4 +73,4 @@ const SingleBlog = ({ blog }: SingleBlogProps) => {
   );
 };
 
-export default SingleBlog;
+export default SinglePost;

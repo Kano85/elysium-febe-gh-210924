@@ -1,48 +1,57 @@
+//src/app/blog/page.tsx
+
 'use client';
 
 import React, { useEffect, useState } from 'react';
 import Breadcrumb from '@/components/Common/Breadcrumb';
-import { client } from '../../sanity/lib/client';
-import { ALL_POSTS_QUERY } from '../../sanity/lib/queries';
-import { Blog } from '@/types/blog';
-import SingleBlog from '@/components/Blog/SingleBlog'; // Direct import
+import ListOfPost from '@/components/Blog/ListOfPost'; // Component Import
+
+import { client } from '@/sanity/lib/client';
+import { ALL_POSTS_QUERY } from '@/sanity/lib/queries';
+import { POSTS_QUERYResult } from '@/sanity/types'; // Correct Type Import
 
 const BlogPage: React.FC = () => {
-  const [blogData, setBlogData] = useState<Blog[]>([]);
+  const [listofpostsData, setListOfPostData] = useState<POSTS_QUERYResult[]>(
+    []
+  );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      const blogs = await client.fetch<Blog[]>(ALL_POSTS_QUERY);
-      if (blogs && Array.isArray(blogs)) {
-        setBlogData(blogs);
+    const fetchListOfPosts = async () => {
+      try {
+        const posts = await client.fetch<POSTS_QUERYResult[]>(ALL_POSTS_QUERY);
+        if (posts && Array.isArray(posts)) {
+          setListOfPostData(posts);
+        } else {
+          setError('Failed to fetch posts.');
+        }
+      } catch (err) {
+        setError('An error occurred while fetching posts.');
+        console.error(err);
+      } finally {
+        setIsLoading(false);
       }
     };
-    fetchBlogs();
+    fetchListOfPosts();
   }, []);
 
-  if (blogData.length === 0) {
+  if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (
     <>
       <Breadcrumb
-        pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="Blog"
+        description="Explore our latest blog posts and updates."
       />
 
-      <section className="pb-[120px] pt-[120px]">
-        <div className="container">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:grid-cols-8 xl:grid-cols-3">
-            {blogData.map((blog) => (
-              <div key={blog._id} className="w-full">
-                <SingleBlog blog={blog} /> {/* Use SingleBlog component */}
-              </div>
-            ))}
-          </div>
-          {/* Pagination code (if any) */}
-        </div>
-      </section>
+      <ListOfPost posts={listofpostsData} />
     </>
   );
 };

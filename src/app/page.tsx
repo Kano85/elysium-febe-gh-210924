@@ -1,18 +1,17 @@
+//src/app/page.tsx
 'use client';
 
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { client } from '../sanity/lib/client';
-import { POSTS_QUERY } from '../sanity/lib/queries';
-import { POSTS_QUERYResult } from '../sanity/types';
-// import { urlFor } from '../sanity/lib/image';
 
-// import IntroSection from '../components/IntroSection';
-// import ListOfPosts from '../components/ListOfPOsts';
+import { client } from '@/sanity/lib/client';
+import { POSTS_QUERY } from '@/sanity/lib/queries';
+import { POSTS_QUERYResult } from '@/sanity/types';
+// import { urlFor } from '../sanity/lib/image';
 
 import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
-import Blog from '@/components/Blog';
+import ListOfPost from '@/components/Blog/ListOfPost';
 import Brands from '@/components/Brands';
 import ScrollUp from '@/components/Common/ScrollUp';
 import Contact from '@/components/Contact';
@@ -36,16 +35,13 @@ const Home: React.FC = () => {
   return (
     <div>
       <Head>
-        <title>My Blog & Startup Template</title>
+        <title>My ListOfPost & Startup Template</title>
         <meta
           name="description"
-          content="A collection of interesting blog posts and a great template for startups"
+          content="A collection of interesting listofposts posts and a great template for startups"
         />
       </Head>
-
-      {/* ScrollUp for smooth scrolling */}
       <ScrollUp />
-      {/* Hero and Features from the startup template */}
       <Hero />
       <Features />
       <Video />
@@ -53,7 +49,7 @@ const Home: React.FC = () => {
       <AboutSectionOne />
       <AboutSectionTwo />
       <Testimonials />
-      <Blog />
+      <ListOfPost />
       <Contact />
     </div>
   );

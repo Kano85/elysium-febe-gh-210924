@@ -157,6 +157,7 @@ export type Author = {
     crop?: SanityImageCrop;
     _type: 'image';
   };
+
   bio?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -303,10 +304,6 @@ export type AllSanitySchemaTypes =
   | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
-// Source: ./src/sanity/lib/queries.ts
-// Variable: POSTS_QUERY
-// Query: *[_type == "post" && defined(slug.current)]{  _id,  title,  slug,  mainImage,  publishedAt,  excerpt,  body}
-// types.ts// types.ts
 import { PortableTextBlock } from '@portabletext/types';
 
 export type POSTS_QUERYResult = {
