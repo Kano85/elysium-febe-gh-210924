@@ -1,8 +1,7 @@
-// components/Blog/SingleBlog.tsx
 import { POSTS_QUERYResult } from '@/types/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '@/sanity/lib/image';
+import { urlFor } from '@/sanity/lib/image'; // Correct import path for urlFor
 
 interface SingleBlogProps {
   blog: POSTS_QUERYResult;

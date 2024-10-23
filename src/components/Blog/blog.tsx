@@ -1,38 +1,25 @@
 'use client';
-// src/components/Blog/index.tsx
 import { useEffect, useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
 import { sanityFetch } from '@/sanity/lib/client';
 import { ALL_POSTS_QUERY } from '@/sanity/lib/queries';
+import SingleBlog from './SingleBlog'; // Direct import
 import { POSTS_QUERYResult } from '@/sanity/types';
 
 const Blog = () => {
   const [blogData, setBlogData] = useState<POSTS_QUERYResult[]>([]);
-  const [SingleBlog, setSingleBlog] = useState<any>(null);
 
   useEffect(() => {
-    // Fetch blog data from Sanity
     const fetchData = async () => {
       const posts = await sanityFetch<POSTS_QUERYResult[]>({
         query: ALL_POSTS_QUERY,
       });
-      console.log('Fetched posts:', posts); // Add this line
       setBlogData(posts);
     };
-
     fetchData();
-
-    // Dynamically import SingleBlog component
-    import('./SingleBlog').then((module) => {
-      setSingleBlog(() => module.default);
-    });
   }, []);
 
-  if (!SingleBlog) {
-    return <div>Loading...</div>;
-  }
-
-  if (!blogData || blogData.length === 0) {
+  if (blogData.length === 0) {
     return <p>No posts available at the moment. Please check back later!</p>;
   }
 
@@ -47,7 +34,6 @@ const Blog = () => {
           paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
           center
         />
-
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
           {blogData.map((blog) => (
             <div key={blog._id} className="w-full">
