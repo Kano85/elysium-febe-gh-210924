@@ -1,4 +1,5 @@
-//src/sanity/lib/queries.ts
+// src/sanity/lib/queries.ts
+
 import groq from 'groq';
 
 export const ALL_POSTS_QUERY = groq`
@@ -10,7 +11,7 @@ export const ALL_POSTS_QUERY = groq`
       asset->{
         _ref,
         _type,
-        url // Add the url property
+        url
       },
       hotspot,
       crop,
@@ -32,7 +33,7 @@ export const POST_QUERY = groq`
       asset->{
         _ref,
         _type,
-        url // Add the url property
+        url
       },
       hotspot,
       crop,
@@ -45,9 +46,12 @@ export const POST_QUERY = groq`
     author->{
       name,
       image
+    },
+    categories[]->{
+      title
     }
   }
 `;
 
-// Ensure that POSTS_QUERY is correctly exported
+// Alias if necessary
 export const POSTS_QUERY = ALL_POSTS_QUERY;

@@ -1,13 +1,8 @@
-//src/app/page.tsx
+// src/app/page.tsx
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-
-import { client } from '@/sanity/lib/client';
-import { POSTS_QUERY } from '@/sanity/lib/queries';
-import { POSTS_QUERYResult } from '@/sanity/types';
-// import { urlFor } from '../sanity/lib/image';
 
 import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
@@ -20,17 +15,10 @@ import Hero from '@/components/Hero';
 import Testimonials from '@/components/Testimonials';
 import Video from '@/components/Video';
 
+import useFetchPosts from '@/hooks/useFetchPosts'; // Import the custom hook
+
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState<POSTS_QUERYResult[]>([]);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const posts: POSTS_QUERYResult[] = await client.fetch(POSTS_QUERY);
-      setPosts(posts);
-    };
-
-    fetchPosts();
-  }, []);
+  const { posts, isLoading, error } = useFetchPosts(); // Use the custom hook
 
   return (
     <div>
@@ -49,7 +37,14 @@ const Home: React.FC = () => {
       <AboutSectionOne />
       <AboutSectionTwo />
       <Testimonials />
-      <ListOfPost />
+      {/* Conditionally render the ListOfPost component based on loading and error states */}
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <div>{error}</div>
+      ) : (
+        <ListOfPost posts={posts} />
+      )}
       <Contact />
     </div>
   );

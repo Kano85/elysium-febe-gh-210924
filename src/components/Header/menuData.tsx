@@ -1,6 +1,8 @@
-import { Menu } from '@/types/menu';
+// src/components/Header/menuData.tsx
 
-const menuData: Menu[] = [
+import { MenuItem } from '@/sanity/menu';
+
+const menuData: MenuItem[] = [
   {
     id: 1,
     title: 'Home',
@@ -81,4 +83,5 @@ const menuData: Menu[] = [
     ],
   },
 ];
+
 export default menuData;

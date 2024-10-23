@@ -1,29 +1,17 @@
 // src/app/blog/[slug]/page.tsx
+// In this case you can not use the same UseEffect hook like in the other pages. In Dynamic pages is not possible to use client.
+// 'use client';
+
 import SharePost from '@/components/Blog/SharePost';
 import TagButton from '@/components/Blog/TagButton';
 import Image from 'next/image';
 
-import { client } from '@/sanity/lib/client';
-import { urlFor } from '@/sanity/lib/image';
-
 import { PortableText } from '@portabletext/react';
+import { notFound } from 'next/navigation'; // For proper 404 handling
 
-interface ListOfPostPost {
-  _id: string;
-  title: string;
-  mainImage: any;
-  excerpt: string;
-  author: {
-    name: string;
-    image: any;
-  };
-  publishedAt: string;
-  slug: {
-    current: string;
-  };
-  body: any;
-  categories: { title: string }[];
-}
+import { client } from '@/sanity/lib/client';
+import { POST_QUERY } from '@/sanity/lib/queries'; // Import the single post query
+import { POSTS_QUERYResult } from '@/sanity/types'; // Import the type
 
 export async function generateStaticParams() {
   const query = `*[_type == "post"]{ slug }`;
@@ -40,36 +28,15 @@ const ListOfPostDetailsPage = async ({
 }) => {
   const { slug } = params;
 
-  const query = `*[_type == "post" && slug.current == $slug][0]{
-    _id,
-    title,
-    mainImage,
-    excerpt,
-    author->{
-      name,
-      image
-    },
-    publishedAt,
-    slug,
-    body,
-    categories[]-> {
-      title
-    }
-  }`;
-
-  const post: ListOfPostPost = await client.fetch(query, { slug });
+  // Fetch the post using the imported POST_QUERY and type
+  const post: POSTS_QUERYResult = await client.fetch(POST_QUERY, { slug });
 
   if (!post) {
-    // In Next.js App Router, you can use the notFound function
-    // from 'next/navigation' to render the 404 page
-    // import { notFound } from 'next/navigation';
-    // notFound();
-    return <div>Post not found</div>;
+    notFound(); // Renders the default 404 page
   }
 
   return (
     <>
-      {/* Use your existing ListOfPostDetailsPage code, replacing static content with dynamic data */}
       <section className="pb-[120px] pt-[150px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
@@ -83,9 +50,9 @@ const ListOfPostDetailsPage = async ({
                     <div className="mb-5 mr-10 flex items-center">
                       <div className="mr-4">
                         <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                          {post.author.image && (
+                          {post.author?.image?.asset?.url && (
                             <Image
-                              src={urlFor(post.author.image).url()}
+                              src={post.author.image.asset.url}
                               alt={post.author.name}
                               fill
                               className="object-cover"
@@ -95,14 +62,16 @@ const ListOfPostDetailsPage = async ({
                       </div>
                       <div className="w-full">
                         <span className="mb-1 text-base font-medium text-body-color">
-                          By <span>{post.author.name}</span>
+                          By <span>{post.author?.name}</span>
                         </span>
                       </div>
                     </div>
                     <div className="mb-5 flex items-center">
                       <p className="mr-5 flex items-center text-base font-medium text-body-color">
                         <span className="mr-3">{/* Calendar Icon */}</span>
-                        {new Date(post.publishedAt).toLocaleDateString()}
+                        {post.publishedAt
+                          ? new Date(post.publishedAt).toLocaleDateString()
+                          : 'No date'}
                       </p>
                       {/* Add more metadata if needed */}
                     </div>
@@ -123,12 +92,12 @@ const ListOfPostDetailsPage = async ({
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
                     {post.excerpt}
                   </p>
-                  {post.mainImage && (
+                  {post.mainImage?.asset?.url && (
                     <div className="mb-10 w-full overflow-hidden rounded">
                       <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                         <Image
-                          src={urlFor(post.mainImage).url()}
-                          alt={post.title}
+                          src={post.mainImage.asset.url}
+                          alt={post.title ?? 'Blog Post Image'}
                           fill
                           className="object-cover object-center"
                         />
