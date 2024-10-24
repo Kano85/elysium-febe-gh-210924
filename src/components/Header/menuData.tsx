@@ -5,82 +5,27 @@ import { MenuItem } from '@/sanity/menu';
 const menuData: MenuItem[] = [
   {
     id: 1,
-    title: 'Home',
+    title: 'Inicio',
     path: '/',
     newTab: false,
   },
   {
     id: 2,
-    title: 'About',
+    title: 'Sobre nosotros',
     path: '/about',
     newTab: false,
   },
   {
     id: 33,
-    title: 'Actualitat',
+    title: 'Actualidad',
     path: '/blog',
     newTab: false,
   },
   {
     id: 3,
-    title: 'Support',
+    title: 'Contacto',
     path: '/contact',
     newTab: false,
-  },
-  {
-    id: 4,
-    title: 'Pages',
-    newTab: false,
-    submenu: [
-      {
-        id: 41,
-        title: 'About Page',
-        path: '/about',
-        newTab: false,
-      },
-      {
-        id: 42,
-        title: 'Contact Page',
-        path: '/contact',
-        newTab: false,
-      },
-      {
-        id: 43,
-        title: 'ListOfPost Grid Page',
-        path: '/listofposts',
-        newTab: false,
-      },
-      {
-        id: 44,
-        title: 'ListOfPost Sidebar Page',
-        path: '/listofposts-sidebar',
-        newTab: false,
-      },
-      {
-        id: 45,
-        title: 'ListOfPost Details Page',
-        path: '/listofposts-details',
-        newTab: false,
-      },
-      {
-        id: 46,
-        title: 'Sign In Page',
-        path: '/signin',
-        newTab: false,
-      },
-      {
-        id: 47,
-        title: 'Sign Up Page',
-        path: '/signup',
-        newTab: false,
-      },
-      {
-        id: 48,
-        title: 'Error Page',
-        path: '/error',
-        newTab: false,
-      },
-    ],
   },
 ];
 

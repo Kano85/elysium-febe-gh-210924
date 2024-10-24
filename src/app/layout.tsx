@@ -9,6 +9,8 @@ import { Inter } from 'next/font/google';
 import 'react-modal-video/css/modal-video.css';
 import '../styles/index.css';
 
+import { Providers } from './providers'; // Moved import to the top for better organization
+
 const inter = Inter({ subsets: ['latin'] });
 
 // Define metadata at the layout level
@@ -27,6 +29,16 @@ export default function RootLayout({
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Suranna&display=swap"
+          rel="stylesheet"
+        />
         {/* You can add more meta tags if needed */}
       </head>
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
@@ -40,5 +52,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import { Providers } from './providers';

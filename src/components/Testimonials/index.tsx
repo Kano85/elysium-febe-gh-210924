@@ -5,28 +5,28 @@ import SingleTestimonial from './SingleTestimonial';
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: 'Musharof Chy',
-    designation: 'Founder @TailGrids',
+    name: 'Carlos Martínez',
+    designation: 'CEO @Consultores Financieros',
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      'Trabajar con Elysium ha sido una experiencia excepcional. Su enfoque personalizado y su compromiso con los resultados nos han permitido optimizar nuestra estructura fiscal de manera eficiente.',
     image: '/images/testimonials/auth-01.png',
     star: 5,
   },
   {
     id: 2,
-    name: 'Devid Weilium',
-    designation: 'Founder @UIdeck',
+    name: 'Mario García',
+    designation: 'Directora @Empresas Globales',
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      'El equipo de Elysium entiende nuestras necesidades a la perfección. Su apoyo en la constitución de sociedades internacionales ha sido clave para nuestro crecimiento.',
     image: '/images/testimonials/auth-02.png',
     star: 5,
   },
   {
     id: 3,
-    name: 'Lethium Frenci',
-    designation: 'Founder @Lineicons',
+    name: 'Javier López',
+    designation: 'Socio Fundador @Asesores Legales',
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      'La atención al detalle y el conocimiento profundo del equipo de Elysium han sido fundamentales para gestionar con éxito nuestros permisos de residencia y optimización fiscal.',
     image: '/images/testimonials/auth-03.png',
     star: 5,
   },
@@ -37,8 +37,8 @@ const Testimonials = () => {
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Testimonios que nos respaldan"
+          paragraph="Nuestros clientes son nuestra mejor carta de presentación. Sus experiencias reflejan el impacto de nuestras soluciones a medida y el compromiso que ponemos en cada colaboración."
           center
         />
 
@@ -85,8 +85,8 @@ const Testimonials = () => {
               y2="459.865"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" />
-              <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+              <stop stopColor="#6D685F" />
+              <stop offset="1" stopColor="#6D685F" stopOpacity="0" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_83:2"
@@ -96,8 +96,8 @@ const Testimonials = () => {
               y2="675.565"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" />
-              <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+              <stop stopColor="#6D685F" />
+              <stop offset="1" stopColor="#6D685F" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -137,8 +137,8 @@ const Testimonials = () => {
               y2="8.15715"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="#6D685F" stopOpacity="0" />
+              <stop offset="1" stopColor="#6D685F" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_72:302"
@@ -148,8 +148,8 @@ const Testimonials = () => {
               y2="-2.84285"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="#6D685F" stopOpacity="0" />
+              <stop offset="1" stopColor="#6D685F" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_72:302"
@@ -159,8 +159,8 @@ const Testimonials = () => {
               y2="19.1572"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="#6D685F" stopOpacity="0" />
+              <stop offset="1" stopColor="#6D685F" />
             </linearGradient>
             <linearGradient
               id="paint3_linear_72:302"
@@ -170,8 +170,8 @@ const Testimonials = () => {
               y2="31.1572"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#4A6CF7" stopOpacity="0" />
-              <stop offset="1" stopColor="#4A6CF7" />
+              <stop stopColor="#6D685F" stopOpacity="0" />
+              <stop offset="1" stopColor="#6D685F" />
             </linearGradient>
           </defs>
         </svg>

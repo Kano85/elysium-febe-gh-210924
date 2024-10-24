@@ -12,17 +12,21 @@ const AboutSectionTwo = () => {
               className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0"
               data-wow-delay=".15s"
             >
+              {/* Light Mode Image */}
               <Image
-                src="/images/about/about-image-2.svg"
-                alt="about image"
+                src="/images/about/pexels-brett-sayles-1098888-2048x1365.jpg"
+                alt="Elysium about image"
                 fill
-                className="drop-shadow-three dark:hidden dark:drop-shadow-none"
+                className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none"
+                priority
               />
+
+              {/* Dark Mode Image */}
               <Image
-                src="/images/about/about-image-2-dark.svg"
-                alt="about image"
+                src="/images/about/pexels-brett-sayles-1098888-2048x1365.jpg"
+                alt="Elysium about image in dark mode"
                 fill
-                className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
+                className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </div>
           </div>
@@ -30,29 +34,35 @@ const AboutSectionTwo = () => {
             <div className="max-w-[470px]">
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Bug free code
+                  Seguridad
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  En Elysium, la seguridad va más allá de proteger datos: es
+                  asegurar futuros. Nos enfocamos en analizar cada situación
+                  para garantizar tranquilidad y construir bases sólidas para
+                  tus proyectos.
                 </p>
               </div>
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Premier support
+                  Confianza
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  La confianza es el pilar de nuestro éxito. Más del 99% de
+                  nuestros clientes regresan, sabiendo que cumplimos cada
+                  promesa con integridad, y nos esforzamos cada día por mantener
+                  esa confianza.
                 </p>
               </div>
               <div className="mb-1">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Next.js
+                  Excelencia
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-                  consectetur adipiscing elit setim.
+                  Nos dedicamos a la perfección en cada detalle. Trabajamos con
+                  los mejores para ofrecer soluciones innovadoras que no solo
+                  resuelvan problemas, sino que inspiren y transformen cada
+                  proyecto en algo extraordinario.
                 </p>
               </div>
             </div>

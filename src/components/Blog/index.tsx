@@ -1,5 +1,7 @@
-'use client';
 // src/components/ListOfPost/index.tsx
+
+'use client';
+
 import { useEffect, useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
 import { sanityFetch } from '@/sanity/lib/client';
@@ -8,7 +10,9 @@ import { POSTS_QUERYResult } from '@/sanity/types';
 import SinglePost from './SinglePost';
 
 const ListOfPost = () => {
-  const [listofpostsData, setListOfPostData] = useState<POSTS_QUERYResult[]>([]);
+  const [listofpostsData, setListOfPostData] = useState<POSTS_QUERYResult[]>(
+    []
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -46,8 +50,8 @@ const ListOfPost = () => {
     >
       <div className="container">
         <SectionTitle
-          title="Our Latest ListOfPosts"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="Nuestras últimas publicaciones"
+          paragraph="Explora los artículos más recientes de nuestro blog, donde compartimos estrategias, noticias y consejos sobre consultoría fiscal, empresarial y más."
           center
         />
 
