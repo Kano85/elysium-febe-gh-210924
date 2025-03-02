@@ -1,14 +1,18 @@
-//tailwind.config.ts
-
+// tailwind.config.ts
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  // Define all content paths where Tailwind should scan for class names.
+  // Since we’re using the "src" folder as our base, we include the pages, app, components,
+  // and if applicable, any utils folder (moved from project 1).
   content: [
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/utils/**/*.{js,ts,jsx,tsx,mdx}', // if you have any utilities from project 1
   ],
   theme: {
+    // Project 2’s container and screen settings become our base.
     container: {
       center: true,
       padding: '1rem',
@@ -20,34 +24,87 @@ const config: Config = {
       lg: '992px',
       xl: '1200px',
       '2xl': '1400px',
+      // Retaining project 1’s "mobile" breakpoint if needed
+      mobile: '720px',
     },
     extend: {
+      // Merge font families from both projects.
       fontFamily: {
+        body: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'sans-serif',
+        ],
+        heading: ['Mori', 'sans-serif'],
         suranna: ['Suranna', 'serif'],
       },
+      // Merge colors from both projects.
       colors: {
-        current: 'currentColor',
-        transparent: 'transparent',
+        // From project 1
+        bg: '#ff5733',
+        light: '#fff',
+        dark: '#0e100f',
+        muted: '#a1a1a6',
+        link: '#2997ff',
+        // From project 2
+        primary: '#D4AF37',
         white: '#FFFFFF',
-        black: '#0F0F0F', // Deep black for background
-        dark: '#1D1D1D', // Slightly lighter for dark elements
-        primary: '#D4AF37', // Gold-like color
+        black: '#0F0F0F',
+        dark2: '#1D1D1D', // additional dark tone
         gray: {
-          dark: '#282828', // Dark gray for sections like the second screenshot
-          light: '#F0F0F0', // Light gray for text or background if needed
+          dark: '#282828',
+          light: '#F0F0F0',
         },
-        'bg-color-dark': '#121212', // Background dark color
+        'bg-color-dark': '#121212',
         'body-color': {
-          DEFAULT: '#B8B8B8', // Light gray text
-          dark: '#E0E0E0', // Slightly lighter gray for body text in dark mode
+          DEFAULT: '#B8B8B8',
+          dark: '#E0E0E0',
         },
         stroke: {
-          stroke: '#303030', // Dark stroke color for borders
+          stroke: '#303030',
           dark: '#404040',
         },
-        gold: '#D4AF37', // The gold color used in the text and icons
-        'h1-color': '#DAC48B', // Color for the h1 text
+        gold: '#D4AF37',
+        'h1-color': '#DAC48B',
       },
+      // Merge spacing and other extensions.
+      spacing: {
+        header: '4rem',
+        xs: '0.8rem',
+        sm: '1.6rem',
+        md: '2.4rem',
+        lg: '3.2rem',
+        xl: '4.8rem',
+      },
+      transitionDuration: {
+        base: '300ms',
+      },
+      zIndex: {
+        '1': '1',
+        '2': '2',
+        '3': '3',
+        '4': '4',
+        '5': '5',
+        '6': '6',
+        '7': '7',
+        '8': '8',
+        '9': '9',
+        '10': '10',
+        '15': '15',
+        '20': '20',
+      },
+      transformStyle: {
+        'preserve-3d': 'preserve-3d',
+      },
+      willChange: {
+        opacity: 'opacity',
+        transform: 'transform',
+        'transform-opacity': 'transform, opacity',
+        'filter-transform': 'filter, transform',
+      },
+      // Merge boxShadow and dropShadow settings from project 2
       boxShadow: {
         signUp: '0px 5px 10px rgba(0, 0, 0, 0.2)',
         one: '0px 2px 3px rgba(0, 0, 0, 0.05)',
@@ -68,6 +125,14 @@ const config: Config = {
     },
   },
   plugins: [],
+  // Keep the safelist from project 1 if those dynamic classes are still needed.
+  safelist: [
+    'transform-style-preserve-3d',
+    'will-change-opacity',
+    'will-change-transform',
+    'will-change-transform-opacity',
+    'will-change-filter-transform',
+  ],
 };
 
 export default config;

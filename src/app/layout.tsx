@@ -1,19 +1,17 @@
 // src/app/layout.tsx
+import { Inter, Suranna } from 'next/font/google';
+import './globals.css';
+
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ScrollToTop from '@/components/ScrollToTop';
+import GSAPWrapper from '@/components/GSAPWrapper';
+import { metadata as appMetadata } from './metadata';
 
-import { Inter, Suranna } from 'next/font/google';
-import 'react-modal-video/css/modal-video.css';
-import './globals.css';
+export const metadata = appMetadata;
 
 const inter = Inter({ subsets: ['latin'] });
 const suranna = Suranna({ subsets: ['latin'], weight: '400' });
-
-export const metadata = {
-  title: 'Elysium',
-  description: 'Project',
-};
 
 export default function RootLayout({
   children,
@@ -21,22 +19,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
+        {/* Cast title to string, providing a fallback if needed */}
+        <title>{appMetadata.title ? String(appMetadata.title) : ''}</title>
+        <meta
+          name="description"
+          content={
+            appMetadata.description ? String(appMetadata.description) : ''
+          }
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        {/* Remove the manual Suranna link here */}
       </head>
       <body className={`bg-black ${inter.className} ${suranna.className}`}>
         <Header />
-        {children}
-        <Footer />
+        {/* GSAPWrapper handles client-side animations */}
+        <GSAPWrapper>
+          <div id="smooth-wrapper" className="overflow-hidden w-full h-full">
+            <div id="smooth-content" className="will-change-transform">
+              {children}
+              <Footer />
+            </div>
+          </div>
+        </GSAPWrapper>
         <ScrollToTop />
       </body>
     </html>

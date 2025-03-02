@@ -1,5 +1,5 @@
 {
-  "name": "elysium-febe-210924",
+  "name": "merged-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,28 +12,32 @@
     "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@sanity/client": "^6.22.2",
     "@sanity/icons": "^3.4.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.61.0",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "next": "^14.2.24",
+    "autoprefixer": "10.4.15",
+    "gsap": "npm:@gsap/shockingly@^3.12.7",
+    "next": "^15.1.7",
     "next-sanity": "^0.8.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "postcss": "^8.5.3",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
     "react-modal-video": "^2.0.2",
     "sanity": "^2.36.6",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@types/react-modal-video": "^1.2.3",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.15",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "5.6.3"
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^15.1.7",
+    "typescript": "^5.7.3"
   }
 }

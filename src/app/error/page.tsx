@@ -158,7 +158,7 @@ const ErrorPage = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 z-[-1] hidden sm:block">
+        <div className="absolute bottom-0 left-0 z-neg-1 hidden sm:block">
           <svg
             width="406"
             height="286"
@@ -344,7 +344,7 @@ const ErrorPage = () => {
             </defs>
           </svg>
         </div>
-        <div className="absolute right-0 top-0 z-[-1] hidden sm:block">
+        <div className="absolute right-0 top-0 z-neg-1 hidden sm:block">
           <svg
             width="406"
             height="286"

@@ -46,7 +46,7 @@ const Breadcrumb = ({
         </div>
 
         <div>
-          <span className="absolute left-0 top-0 z-[-1]">
+          <span className="absolute left-0 top-0 z-neg-1">
             <svg
               width="287"
               height="254"
@@ -74,7 +74,7 @@ const Breadcrumb = ({
               </defs>
             </svg>
           </span>
-          <span className="absolute right-0 top-0 z-[-1]">
+          <span className="absolute right-0 top-0 z-neg-1">
             <svg
               width="628"
               height="258"

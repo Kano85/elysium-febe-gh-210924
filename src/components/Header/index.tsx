@@ -1,4 +1,4 @@
-//src/components/Header/index.tsx
+//
 
 'use client';
 
@@ -36,9 +36,9 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`header left-0 top-0 z-40 flex w-full items-center ${
+      className={`header left-0 top-0 z-15 flex w-full items-center ${
         sticky
-          ? 'fixed z-[9999] bg-gray-dark bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
+          ? 'fixed z-20 bg-gray-dark bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
           : 'absolute bg-transparent'
       }`}
     >
@@ -88,7 +88,7 @@ const Header: React.FC = () => {
 
               <nav
                 id="navbarCollapse"
-                className={`navbar absolute right-0 z-30 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 ${
+                className={`navbar absolute right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 ${
                   navbarOpen
                     ? 'visible top-full opacity-100'
                     : 'invisible top-[120%] opacity-0'

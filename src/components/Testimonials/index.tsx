@@ -48,7 +48,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-      <div className="absolute right-0 top-5 z-[-1]">
+      <div className="absolute right-0 top-5 z-neg-1">
         <svg
           width="238"
           height="531"
@@ -102,7 +102,7 @@ const Testimonials = () => {
           </defs>
         </svg>
       </div>
-      <div className="absolute bottom-5 left-0 z-[-1]">
+      <div className="absolute bottom-5 left-0 z-neg-1">
         <svg
           width="279"
           height="106"

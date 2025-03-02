@@ -172,7 +172,7 @@ const ListOfPostSidebarPage = () => {
                       aliqua. Quis lobortis scelerisque fermentum, The Neque ut
                       etiam sit amet.
                     </p>
-                    <span className="absolute left-0 top-0 z-[-1]">
+                    <span className="absolute left-0 top-0 z-neg-1">
                       <svg
                         width="132"
                         height="109"
@@ -224,7 +224,7 @@ const ListOfPostSidebarPage = () => {
                         </defs>
                       </svg>
                     </span>
-                    <span className="absolute bottom-0 right-0 z-[-1]">
+                    <span className="absolute bottom-0 right-0 z-neg-1">
                       <svg
                         width="53"
                         height="30"

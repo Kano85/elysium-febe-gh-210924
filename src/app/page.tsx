@@ -1,52 +1,60 @@
 // src/app/page.tsx
+
 'use client';
 
 import React from 'react';
 import Head from 'next/head';
 
+import Hero from '@/components/Hero';
+import USP from '@/components/USP/USP';
+import Pricing from '@/components/Pricing/Pricing';
+import Carousel from '@/components/Carousel/Carousel';
+import Marquee from '@/components/Marquee/Marquee';
+import Video from '@/components/Video';
+import Brands from '@/components/Brands';
 import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
-import ListOfPost from '@/components/Blog/ListOfPost';
-import Brands from '@/components/Brands';
-import ScrollUp from '@/components/Common/ScrollUp';
-import Contact from '@/components/Contact';
-// import Features from '@/components/Features';
-import Hero from '@/components/Hero';
 import Testimonials from '@/components/Testimonials';
-import Video from '@/components/Video';
+import ListOfPost from '@/components/Blog/ListOfPost';
+import Contact from '@/components/Contact';
+import ScrollUp from '@/components/Common/ScrollUp';
 
-import useFetchPosts from '@/hooks/useFetchPosts'; // Import the custom hook
+import useFetchPosts from '@/hooks/useFetchPosts';
 
 const Home: React.FC = () => {
-  const { posts, isLoading, error } = useFetchPosts(); // Use the custom hook
+  const { posts, isLoading, error } = useFetchPosts();
 
   return (
-    <div>
+    <>
       <Head>
-        <title>My ListOfPost & Startup Template</title>
+        <title>Merged Home Page</title>
         <meta
           name="description"
-          content="A collection of interesting listofposts posts and a great template for startups"
+          content="Merged Home Page combining content from two projects"
         />
       </Head>
       <ScrollUp />
-      <Hero />
-      {/* <Features /> */}
-      <Video />
-      <Brands />
-      <AboutSectionOne />
-      <AboutSectionTwo />
-      <Testimonials />
-      {/* Conditionally render the ListOfPost component based on loading and error states */}
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <div>{error}</div>
-      ) : (
-        <ListOfPost posts={posts} />
-      )}
-      <Contact />
-    </div>
+      <main>
+        <Hero />
+        <USP />
+        <Pricing />
+        <Carousel />
+        <Marquee />
+        <Video />
+        <Brands />
+        <AboutSectionOne />
+        <AboutSectionTwo />
+        <Testimonials />
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          <ListOfPost posts={posts} />
+        )}
+        <Contact />
+      </main>
+    </>
   );
 };
 
