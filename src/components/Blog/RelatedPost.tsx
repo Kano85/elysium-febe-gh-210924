@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const RelatedPost = ({
   image,
@@ -23,7 +23,7 @@ const RelatedPost = ({
         <h5>
           <Link
             href={slug}
-            className="mb-[6px] block text-base font-medium leading-snug text-black hover:text-primary dark:text-white dark:hover:text-primary"
+            className="mb-[6px] block text-base font-medium leading-snug text-white hover:text-primary"
           >
             {title}
           </Link>

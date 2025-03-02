@@ -9,8 +9,6 @@ import { Inter } from 'next/font/google';
 import 'react-modal-video/css/modal-video.css';
 import '../styles/index.css';
 
-import { Providers } from './providers'; // Moved import to the top for better organization
-
 const inter = Inter({ subsets: ['latin'] });
 
 // Define metadata at the layout level
@@ -41,13 +39,11 @@ export default function RootLayout({
         />
         {/* You can add more meta tags if needed */}
       </head>
-      <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
-        <Providers>
-          <Header />
-          {children} {/* Bring all child components passed to this layout */}
-          <Footer />
-          <ScrollToTop />
-        </Providers>
+      <body className={`bg-black ${inter.className}`}>
+        <Header />
+        {children} {/* Bring all child components passed to this layout */}
+        <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

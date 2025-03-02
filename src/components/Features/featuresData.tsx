@@ -1,3 +1,5 @@
+//src/components/Features/featuresData.tsx
+
 import { Feature } from '@/sanity/feature';
 
 const featuresData: Feature[] = [
@@ -92,4 +94,5 @@ const featuresData: Feature[] = [
       'Estrategias para reducir la carga fiscal y aumentar la eficiencia financiera tanto para empresas como individuos.',
   },
 ];
+
 export default featuresData;

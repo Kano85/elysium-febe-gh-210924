@@ -46,7 +46,7 @@ const ListOfPost = () => {
   return (
     <section
       id="listofposts"
-      className="bg-gray-light dark:bg-bg-color-dark py-16 md:py-20 lg:py-28"
+      className="bg-bg-color-dark py-16 md:py-20 lg:py-28"
     >
       <div className="container">
         <SectionTitle

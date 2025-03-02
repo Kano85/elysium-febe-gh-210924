@@ -1,5 +1,6 @@
+//tailwind.config.ts
+
 import type { Config } from 'tailwindcss';
-// import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -7,7 +8,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
+  darkMode: 'false',
   theme: {
     container: {
       center: true,

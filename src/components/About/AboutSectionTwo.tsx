@@ -8,35 +8,22 @@ const AboutSectionTwo = () => {
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">
-            <div
-              className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0"
-              data-wow-delay=".15s"
-            >
-              {/* Light Mode Image */}
+            <div className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0">
               <Image
                 src="/images/about/pexels-brett-sayles-1098888-2048x1365.jpg"
                 alt="Elysium about image"
                 fill
-                className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none"
-                priority
-              />
-
-              {/* Dark Mode Image */}
-              <Image
-                src="/images/about/pexels-brett-sayles-1098888-2048x1365.jpg"
-                alt="Elysium about image in dark mode"
-                fill
-                className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none"
+                className="mx-auto max-w-full" // Remove dark: classes
               />
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2">
             <div className="max-w-[470px]">
               <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                <h3 className="mb-4 text-xl font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Seguridad
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="text-base font-medium leading-relaxed text-body-color-dark sm:text-lg sm:leading-relaxed">
                   En Elysium, la seguridad va más allá de proteger datos: es
                   asegurar futuros. Nos enfocamos en analizar cada situación
                   para garantizar tranquilidad y construir bases sólidas para
@@ -44,10 +31,10 @@ const AboutSectionTwo = () => {
                 </p>
               </div>
               <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                <h3 className="mb-4 text-xl font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Confianza
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="text-base font-medium leading-relaxed text-body-color-dark sm:text-lg sm:leading-relaxed">
                   La confianza es el pilar de nuestro éxito. Más del 99% de
                   nuestros clientes regresan, sabiendo que cumplimos cada
                   promesa con integridad, y nos esforzamos cada día por mantener
@@ -55,10 +42,10 @@ const AboutSectionTwo = () => {
                 </p>
               </div>
               <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                <h3 className="mb-4 text-xl font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   Excelencia
                 </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="text-base font-medium leading-relaxed text-body-color-dark sm:text-lg sm:leading-relaxed">
                   Nos dedicamos a la perfección en cada detalle. Trabajamos con
                   los mejores para ofrecer soluciones innovadoras que no solo
                   resuelvan problemas, sino que inspiren y transformen cada

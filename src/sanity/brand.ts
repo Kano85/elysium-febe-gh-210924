@@ -1,9 +1,7 @@
-//src/sanity/brand.ts
-// Update the Brand type to make imageLight mandatory
+// src/sanity/brand.ts
 export interface Brand {
   id: string | number;
   href: string;
-  image: string;
-  imageLight: string; // Removed undefined
+  image: string; // Only keep the dark theme image
   name: string;
 }
