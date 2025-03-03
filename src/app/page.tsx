@@ -3,7 +3,6 @@
 'use client';
 
 import React from 'react';
-import Head from 'next/head';
 
 import Hero from '@/components/Hero';
 import USP from '@/components/USP/USP';
@@ -26,13 +25,6 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Merged Home Page</title>
-        <meta
-          name="description"
-          content="Merged Home Page combining content from two projects"
-        />
-      </Head>
       <ScrollUp />
       <main>
         <Hero />

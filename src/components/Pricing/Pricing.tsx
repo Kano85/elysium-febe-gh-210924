@@ -72,10 +72,7 @@ export default function Pricing() {
       className="w-full bg-bg py-lg relative z-5 max-md:py-md"
       ref={containerRef}
     >
-      <h2
-        className="text-light text-center mb-md max-md:mb-sm"
-        style={{ fontSize: 'clamp(3rem, 5vw, 5rem)' }}
-      >
+      <h2 className="text-light text-center mb-md max-md:mb-sm text-h2">
         Apple TV+ Plans
       </h2>
 
@@ -86,12 +83,7 @@ export default function Pricing() {
             ref={setCardRef(index)}
             className="flex-1 bg-light/10 rounded-[2rem] p-lg backdrop-blur-lg text-left flex flex-col justify-between min-w-[30rem] max-w-[38rem] max-md:max-w-[90%]"
           >
-            <h3
-              className="text-light mb-sm"
-              style={{ fontSize: 'clamp(2rem, 2.5vw, 3rem)' }}
-            >
-              {card.title}
-            </h3>
+            <h3 className="text-light mb-sm text-h3">{card.title}</h3>
 
             <p className="text-light/80 text-[1.8rem] mb-sm">{card.subtitle}</p>
 

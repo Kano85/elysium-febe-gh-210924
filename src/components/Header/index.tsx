@@ -1,4 +1,4 @@
-//
+//src/components/Header/index.tsx
 
 'use client';
 
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
+        <div className="relative -mx-4 flex items-center justify-center">
           <div className="w-60 max-w-full px-4 xl:mr-12">
             <Link
               href="/"
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          <div className="flex w-full items-center justify-between px-4">
+          <div className="flex w-fit items-center justify-between px-4">
             <div>
               <button
                 onClick={navbarToggleHandler}

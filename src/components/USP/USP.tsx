@@ -38,11 +38,7 @@ export default function USP() {
       if (!item) return;
       tl.fromTo(
         item,
-        {
-          opacity: 0,
-          y: 100,
-          filter: 'blur(5px)',
-        },
+        { opacity: 0, y: 100, filter: 'blur(5px)' },
         {
           opacity: 1,
           y: 0,
@@ -64,28 +60,11 @@ export default function USP() {
         <p
           key={index}
           ref={(el) => (itemsRef.current[index] = el)}
-          className="relative z-2 font-semibold leading-[1.1] my-8 max-w-[75%] max-md:max-w-full"
-          style={{
-            fontSize: 'var(--item-font-size)',
-            willChange: 'transform, opacity, filter',
-            transformStyle: 'preserve-3d',
-          }}
+          className="relative z-2 font-semibold leading-[1.1] my-8 max-w-[75%] max-md:max-w-full text-h2"
         >
           {text}
         </p>
       ))}
-
-      <style jsx>{`
-        .relative {
-          --item-font-size: clamp(3rem, 8vw, 5.5rem);
-        }
-
-        @media (max-width: 767px) {
-          .relative {
-            --item-font-size: clamp(2.5rem, 6vw, 4rem);
-          }
-        }
-      `}</style>
     </div>
   );
 }

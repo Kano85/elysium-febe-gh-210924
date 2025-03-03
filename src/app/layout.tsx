@@ -10,8 +10,18 @@ import { metadata as appMetadata } from './metadata';
 
 export const metadata = appMetadata;
 
-const inter = Inter({ subsets: ['latin'] });
-const suranna = Suranna({ subsets: ['latin'], weight: '400' });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const suranna = Suranna({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-suranna',
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -19,9 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${suranna.variable}`}
+    >
       <head>
-        {/* Cast title to string, providing a fallback if needed */}
         <title>{appMetadata.title ? String(appMetadata.title) : ''}</title>
         <meta
           name="description"
@@ -29,18 +42,11 @@ export default function RootLayout({
             appMetadata.description ? String(appMetadata.description) : ''
           }
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
       </head>
-      <body className={`bg-black ${inter.className} ${suranna.className}`}>
+      <body className="bg-black">
         <Header />
-        {/* GSAPWrapper handles client-side animations */}
         <GSAPWrapper>
-          <div id="smooth-wrapper" className="overflow-hidden w-full h-full">
+          <div id="smooth-wrapper" className="overflow-hidden w-full h-screen">
             <div id="smooth-content" className="will-change-transform">
               {children}
               <Footer />

@@ -1,58 +1,46 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  // Define all content paths where Tailwind should scan for class names.
-  // Since we’re using the "src" folder as our base, we include the pages, app, components,
-  // and if applicable, any utils folder (moved from project 1).
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/utils/**/*.{js,ts,jsx,tsx,mdx}', // if you have any utilities from project 1
+    './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    // Project 2’s container and screen settings become our base.
     container: {
       center: true,
       padding: '1rem',
     },
     screens: {
-      xs: '450px',
-      sm: '575px',
+      sm: '576px',
       md: '768px',
       lg: '992px',
-      xl: '1200px',
-      '2xl': '1400px',
-      // Retaining project 1’s "mobile" breakpoint if needed
-      mobile: '720px',
     },
     extend: {
-      // Merge font families from both projects.
       fontFamily: {
-        body: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          'sans-serif',
-        ],
-        heading: ['Mori', 'sans-serif'],
-        suranna: ['Suranna', 'serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        serif: ['var(--font-suranna)', 'serif'],
       },
-      // Merge colors from both projects.
+
+      fontSize: {
+        h1: 'clamp(2.4rem, 4.8vw, 4.8rem)', // was clamp(4rem, 8vw, 8rem)
+        h2: 'clamp(1.8rem, 3vw, 3rem)', // was clamp(3rem, 5vw, 5rem)
+        h3: 'clamp(1.2rem, 1.5vw, 1.8rem)', // was clamp(2rem, 2.5vw, 3rem)
+        h4: 'clamp(0.96rem, 1.2vw, 1.44rem)', // was clamp(1.6rem, 2vw, 2.4rem)
+        h5: 'clamp(1.8rem, 4.8vw, 3.3rem)', // from USP default: originally clamp(3rem, 8vw, 5.5rem)
+      },
+      // (Other theme extensions remain unchanged)
       colors: {
-        // From project 1
         bg: '#ff5733',
         light: '#fff',
         dark: '#0e100f',
         muted: '#a1a1a6',
         link: '#2997ff',
-        // From project 2
         primary: '#D4AF37',
         white: '#FFFFFF',
         black: '#0F0F0F',
-        dark2: '#1D1D1D', // additional dark tone
+        dark2: '#1D1D1D',
         gray: {
           dark: '#282828',
           light: '#F0F0F0',
@@ -69,7 +57,6 @@ const config: Config = {
         gold: '#D4AF37',
         'h1-color': '#DAC48B',
       },
-      // Merge spacing and other extensions.
       spacing: {
         header: '4rem',
         xs: '0.8rem',
@@ -104,7 +91,6 @@ const config: Config = {
         'transform-opacity': 'transform, opacity',
         'filter-transform': 'filter, transform',
       },
-      // Merge boxShadow and dropShadow settings from project 2
       boxShadow: {
         signUp: '0px 5px 10px rgba(0, 0, 0, 0.2)',
         one: '0px 2px 3px rgba(0, 0, 0, 0.05)',
@@ -125,7 +111,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  // Keep the safelist from project 1 if those dynamic classes are still needed.
   safelist: [
     'transform-style-preserve-3d',
     'will-change-opacity',

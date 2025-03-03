@@ -1,4 +1,4 @@
-//src/components/Hero/index.tsx
+// src/components/Hero/index.tsx
 'use client';
 
 import { useRef } from 'react';
@@ -25,7 +25,7 @@ export default function Hero() {
         scrub: true,
         pin: true,
         pinSpacing: false,
-        markers: true,
+        // Removed markers for production
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
@@ -35,7 +35,7 @@ export default function Hero() {
     tl.to(videoRef.current, { opacity: 0, ease: 'power1.in' }, 'start+=0');
     tl.to(
       contentRef.current,
-      { opacity: 0, y: -80, ease: 'power2.out', duration: 0.3 },
+      { opacity: 0, y: -128, ease: 'power2.out', duration: 0.3 },
       'start+=0'
     );
     tl.addLabel('end');
@@ -43,43 +43,34 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full min-h-screen overflow-hidden z-4 bg-blue transform-style-preserve-3d"
+      className="relative w-full h-screen overflow-hidden z-4 bg-blue transform-style-preserve-3d"
       ref={heroSectionRef}
     >
-      <video
-        autoPlay
-        muted
-        loop
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-100 will-change-opacity"
-        ref={videoRef}
-        preload="auto"
-      >
-        <source src="/videos/applevid.mp4" type="video/mp4" />
-      </video>
-
-      <div
-        className="relative z-5 h-full flex flex-col py-[40rem] px-[5rem] opacity-100 will-change-transform,opacity"
-        ref={contentRef}
-      >
-        <h1
-          className="mb-lg will-change-transform"
-          style={{
-            fontSize: 'clamp(4rem, 8vw, 8rem)',
-            lineHeight: 1.1,
-          }}
+      <div className="w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-100 will-change-opacity"
+          ref={videoRef}
+          preload="auto"
         >
-          All Apple Originals. <br />
-          Only on Apple TV+.
-        </h1>
+          <source src="/videos/applevid.mp4" type="video/mp4" />
+        </video>
 
-        <button className="btn-primary mb-md self-start">Stream Now</button>
-
-        <p
-          className="opacity-90"
-          style={{ fontSize: 'clamp(1.6rem, 2vw, 2.4rem)' }}
+        <div
+          className="relative z-5 h-full flex flex-col items-start justify-center px-[3.5rem] opacity-100 will-change-transform"
+          ref={contentRef}
         >
-          Watch on the 📺 app.
-        </p>
+          <h1 className="mb-[0.7rem] will-change-transform text-h1">
+            All Apple Originals. <br />
+            Only on Apple TV+.
+          </h1>
+
+          <button className="btn-primary mb-[0.7rem]">Stream Now</button>
+
+          <p className="opacity-90 text-h4">Watch on the 📺 app.</p>
+        </div>
       </div>
     </section>
   );
