@@ -11,6 +11,12 @@ const config: Config = {
     container: {
       center: true,
       padding: '1rem',
+      screens: {
+        sm: '100%', // Full width on small screens
+        md: '100%', // Full width on medium screens
+        lg: '1240px', // Max width on large screens
+        xl: '1420px', // Add xl breakpoint for even larger screens
+      },
     },
     screens: {
       sm: '576px',
@@ -22,11 +28,14 @@ const config: Config = {
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['var(--font-suranna)', 'serif'],
       },
+      lineHeight: {
+        tighter: '0.8',
+      },
 
       fontSize: {
-        h1: 'clamp(2.4rem, 4.8vw, 4.8rem)', // was clamp(4rem, 8vw, 8rem)
-        h2: 'clamp(1.8rem, 3vw, 3rem)', // was clamp(3rem, 5vw, 5rem)
-        h3: 'clamp(1.2rem, 1.5vw, 1.8rem)', // was clamp(2rem, 2.5vw, 3rem)
+        h1: 'clamp(3.5rem, 4.6vw, 5.2rem)', // was clamp(4rem, 8vw, 8rem)
+        h2: 'clamp(2.5rem, 3.6vw, 4.2rem)', // was clamp(3rem, 5vw, 5rem)
+        h3: 'clamp(1.5rem, 2vw, 2.8rem)', // was clamp(2rem, 2.5vw, 3rem)
         h4: 'clamp(0.96rem, 1.2vw, 1.44rem)', // was clamp(1.6rem, 2vw, 2.4rem)
         h5: 'clamp(1.8rem, 4.8vw, 3.3rem)', // from USP default: originally clamp(3rem, 8vw, 5.5rem)
       },

@@ -64,9 +64,9 @@ export default function Carousel() {
   }, []);
 
   return (
-    <section className="h-[130vh] relative w-full overflow-hidden">
-      <div className="sticky top-0 mt-[30vh] h-screen flex items-center justify-center">
-        <div className="flex gap-4 py-4 h-screen items-center justify-center w-full">
+    <section className="h-[50vh] sm:h-[50vh] md:h-[90vh] lg:h-[130vh] relative w-full overflow-hidden pb-24">
+      <div className="sticky top-0 mt-[10vh] sm:mt-[10vh] md:mt-[20vh] lg:mt-[30vh] h-[40vh] sm:h-[40vh] md:h-[70vh] lg:h-screen flex items-center justify-center">
+        <div className="flex gap-2 sm:gap-3 md:gap-4 py-4 items-center justify-center w-full max-h-full">
           {/* Slider 1 */}
           <div
             ref={slider1Ref}
@@ -77,7 +77,7 @@ export default function Carousel() {
               alt="Slider Image 1"
               width={800}
               height={450}
-              className="w-[66vw] aspect-video object-cover block"
+              className="w-[50vw] sm:w-[60vw] md:w-[66vw] aspect-video object-cover block"
               priority
               unoptimized
             />
@@ -93,7 +93,7 @@ export default function Carousel() {
               alt="Slider Image 2"
               width={800}
               height={450}
-              className="w-[66vw] aspect-video object-cover block"
+              className="w-[50vw] sm:w-[60vw] md:w-[66vw] aspect-video object-cover block"
               priority
               unoptimized
             />
@@ -109,7 +109,7 @@ export default function Carousel() {
               alt="Slider Image 3"
               width={800}
               height={450}
-              className="w-[66vw] aspect-video object-cover block"
+              className="w-[50vw] sm:w-[60vw] md:w-[66vw] aspect-video object-cover block"
               priority
               unoptimized
             />

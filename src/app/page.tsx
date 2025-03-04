@@ -6,7 +6,7 @@ import React from 'react';
 
 import Hero from '@/components/Hero';
 import USP from '@/components/USP/USP';
-import Pricing from '@/components/Pricing/Pricing';
+// import Pricing from '@/components/Pricing/Pricing';
 import Carousel from '@/components/Carousel/Carousel';
 import Marquee from '@/components/Marquee/Marquee';
 import Video from '@/components/Video';
@@ -15,7 +15,7 @@ import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
 import Testimonials from '@/components/Testimonials';
 import ListOfPost from '@/components/Blog/ListOfPost';
-import Contact from '@/components/Contact';
+// import Contact from '@/components/Contact';
 import ScrollUp from '@/components/Common/ScrollUp';
 
 import useFetchPosts from '@/hooks/useFetchPosts';
@@ -29,13 +29,10 @@ const Home: React.FC = () => {
       <main>
         <Hero />
         <USP />
-        <Pricing />
-        <Carousel />
-        <Marquee />
-        <Video />
-        <Brands />
+        {/* <Pricing /> */}
         <AboutSectionOne />
         <AboutSectionTwo />
+        <Carousel />
         <Testimonials />
         {isLoading ? (
           <div>Loading...</div>
@@ -44,7 +41,10 @@ const Home: React.FC = () => {
         ) : (
           <ListOfPost posts={posts} />
         )}
-        <Contact />
+        {/* <Contact /> */}
+        <Video />
+        <Brands />
+        <Marquee />
       </main>
     </>
   );

@@ -59,17 +59,15 @@ export default function Hero() {
         </video>
 
         <div
-          className="relative z-5 h-full flex flex-col items-start justify-center px-[3.5rem] opacity-100 will-change-transform"
+          className="relative z-5 h-full flex flex-col items-center justify-center px-[3.5rem] opacity-100 will-change-transform"
           ref={contentRef}
         >
-          <h1 className="mb-[0.7rem] will-change-transform text-h1">
-            All Apple Originals. <br />
-            Only on Apple TV+.
+          <h1 className="mb-[0.7rem] will-change-transform text-h2 font-serif leading-tighter text-center">
+            Building lasting <br />
+            partnerships
           </h1>
 
-          <button className="btn-primary mb-[0.7rem]">Stream Now</button>
-
-          <p className="opacity-90 text-h4">Watch on the 📺 app.</p>
+          <p className="opacity-90 text-h4">Descubrenos</p>
         </div>
       </div>
     </section>
