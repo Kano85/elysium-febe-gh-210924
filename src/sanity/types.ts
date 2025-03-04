@@ -137,7 +137,6 @@ export type Post = {
         _key: string;
       }
   >;
-  excerpt?: string;
 };
 
 export type Author = {
@@ -159,7 +158,6 @@ export type Author = {
     crop?: SanityImageCrop;
     _type: 'image';
   };
-
   bio?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -305,44 +303,136 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// src/sanity/types.ts
-
-import { PortableTextBlock } from '@portabletext/types';
-
-export type POSTS_QUERYResult = {
+// Source: ./src/sanity/lib/queries.ts
+// Variable: ALL_POSTS_QUERY
+// Query: *[_type == "post"]{    _id,    title,    slug,    mainImage{      asset->{        _ref,        _type,        url      },      hotspot,      crop,      alt,      _type    },    publishedAt,    excerpt,    body  }
+export type ALL_POSTS_QUERYResult = Array<{
   _id: string;
   title: string | null;
-  slug: { current: string } | null;
+  slug: Slug | null;
   mainImage: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      url: string;
-    };
-    hotspot?: any; // Replace with specific types if available
-    crop?: any;
-    alt?: string;
+    asset: {
+      _ref: null;
+      _type: 'sanity.imageAsset';
+      url: string | null;
+    } | null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+    alt: string | null;
+    _type: 'image';
   } | null;
   publishedAt: string | null;
-  excerpt: string | null;
-  body: PortableTextBlock[];
-  author?: {
-    name: string;
-    image?: {
+  excerpt: null;
+  body: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
+        listItem?: 'bullet';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: 'image';
+        _key: string;
+      }
+  > | null;
+}>;
+// Variable: POST_QUERY
+// Query: *[_type == "post" && slug.current == $slug][0]{    _id,    title,    slug,    mainImage{      asset->{        _ref,        _type,        url      },      hotspot,      crop,      alt,      _type    },    publishedAt,    excerpt,    body,    author->{      name,      image    },    categories[]->{      title    }  }
+export type POST_QUERYResult = {
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  mainImage: {
+    asset: {
+      _ref: null;
+      _type: 'sanity.imageAsset';
+      url: string | null;
+    } | null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+    alt: string | null;
+    _type: 'image';
+  } | null;
+  publishedAt: string | null;
+  excerpt: null;
+  body: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
+        listItem?: 'bullet';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: 'image';
+        _key: string;
+      }
+  > | null;
+  author: {
+    name: string | null;
+    image: {
       asset?: {
         _ref: string;
         _type: 'reference';
-        url: string;
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
       };
-    };
-  };
-  categories?: { title: string }[]; // Added categories
-};
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: 'image';
+    } | null;
+  } | null;
+  categories: Array<{
+    title: string | null;
+  }> | null;
+} | null;
 
 // Query TypeMap
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
-    '*[_type == "post" && defined(slug.current)]{\n  _id,\n  title,\n  slug,\n  mainImage,\n  publishedAt,\n  excerpt,\n  body\n}': POSTS_QUERYResult;
+    '\n  *[_type == "post"]{\n    _id,\n    title,\n    slug,\n    mainImage{\n      asset->{\n        _ref,\n        _type,\n        url\n      },\n      hotspot,\n      crop,\n      alt,\n      _type\n    },\n    publishedAt,\n    excerpt,\n    body\n  }\n': ALL_POSTS_QUERYResult;
+    '\n  *[_type == "post" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    mainImage{\n      asset->{\n        _ref,\n        _type,\n        url\n      },\n      hotspot,\n      crop,\n      alt,\n      _type\n    },\n    publishedAt,\n    excerpt,\n    body,\n    author->{\n      name,\n      image\n    },\n    categories[]->{\n      title\n    }\n  }\n': POST_QUERYResult;
   }
 }

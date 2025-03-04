@@ -1,8 +1,10 @@
+//src/components/Testimonials/index.tsx
+
 import { Testimonial } from '@/sanity/testimonial';
 import SectionTitle from '../Common/SectionTitle';
 import SingleTestimonial from './SingleTestimonial';
 
-const testimonialData: Testimonial[] = [
+export const testimonialData: Testimonial[] = [
   {
     id: 1,
     name: 'Carlos Martínez',
@@ -41,7 +43,6 @@ const Testimonials = () => {
           paragraph="Nuestros clientes son nuestra mejor carta de presentación. Sus experiencias reflejan el impacto de nuestras soluciones a medida y el compromiso que ponemos en cada colaboración."
           center
         />
-
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {testimonialData.map((testimonial) => (
             <SingleTestimonial key={testimonial.id} testimonial={testimonial} />
@@ -120,7 +121,7 @@ const Testimonials = () => {
               stroke="url(#paint1_linear_72:302)"
             />
             <path
-              d="M-57 23L50.0728 85.8548C55.5501 90.0219 70.8513 96.7589 88.2373 90.3692C109.97 82.3821 116.861 71.9642 156.615 74.7423C178.778 76.291 195.31 80.2985 205.911 73.3533C216.513 66.408 224.994 58.7682 243.016 60.1572C255.835 61.1453 265.278 61.8936 278 56.3373"
+              d="M-57 23L50.0728 85.8548C55.5501 90.0219 70.8513 96.7589 88.2373 90.369C109.97 82.3821 116.861 71.9642 156.615 74.7423C178.778 76.291 195.31 80.2985 205.911 73.3533C216.513 66.408 224.994 58.7682 243.016 60.1572C255.835 61.1453 265.278 61.8936 278 56.3373"
               stroke="url(#paint2_linear_72:302)"
             />
             <path

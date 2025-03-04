@@ -13,7 +13,7 @@ import Video from '@/components/Video';
 import Brands from '@/components/Brands';
 import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
-import Testimonials from '@/components/Testimonials';
+// import Testimonials from '@/components/Testimonials';
 import ListOfPost from '@/components/Blog/ListOfPost';
 // import Contact from '@/components/Contact';
 import ScrollUp from '@/components/Common/ScrollUp';
@@ -32,8 +32,8 @@ const Home: React.FC = () => {
         {/* <Pricing /> */}
         <AboutSectionOne />
         <AboutSectionTwo />
-        <Carousel />
-        <Testimonials />
+
+        {/* <Testimonials /> */}
         {isLoading ? (
           <div>Loading...</div>
         ) : error ? (
@@ -44,6 +44,7 @@ const Home: React.FC = () => {
         {/* <Contact /> */}
         <Video />
         <Brands />
+        <Carousel />
         <Marquee />
       </main>
     </>

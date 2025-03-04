@@ -1,17 +1,17 @@
 // src/app/blog/[slug]/page.tsx
-// In this case you can not use the same UseEffect hook like in the other pages. In Dynamic pages is not possible to use client.
-// 'use client';
 
 import SharePost from '@/components/Blog/SharePost';
 import TagButton from '@/components/Blog/TagButton';
 import Image from 'next/image';
 
 import { PortableText } from '@portabletext/react';
-import { notFound } from 'next/navigation'; // For proper 404 handling
+import { notFound } from 'next/navigation';
 
 import { client } from '@/sanity/lib/client';
-import { POST_QUERY } from '@/sanity/lib/queries'; // Import the single post query
-import { POSTS_QUERYResult } from '@/sanity/types'; // Import the type
+import { POST_QUERY } from '@/sanity/lib/queries';
+import { POST_QUERYResult } from '@/sanity/types'; // Corrected import
+
+import { sanityFetch } from '@/sanity/lib/client'; // Corrected import path
 
 export async function generateStaticParams() {
   const query = `*[_type == "post"]{ slug }`;
@@ -21,18 +21,22 @@ export async function generateStaticParams() {
   }));
 }
 
-const ListOfPostDetailsPage = async ({
-  params,
-}: {
+interface PageProps {
   params: { slug: string };
-}) => {
+}
+
+const ListOfPostDetailsPage = async ({ params }: PageProps) => {
   const { slug } = params;
 
-  // Fetch the post using the imported POST_QUERY and type
-  const post: POSTS_QUERYResult = await client.fetch(POST_QUERY, { slug });
+  const post: POST_QUERYResult = await sanityFetch({
+    // Corrected type
+    query: POST_QUERY,
+    params: { slug },
+    tags: [`post-${slug}`],
+  });
 
   if (!post) {
-    notFound(); // Renders the default 404 page
+    notFound();
   }
 
   return (

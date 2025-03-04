@@ -1,12 +1,12 @@
 //src/components/Blog/SinglePost.tsx
 
-import { POSTS_QUERYResult } from '@/sanity/types';
+import { POST_QUERYResult } from '@/sanity/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '@/sanity/lib/image'; // Correct import path for urlFor
 
 interface SinglePostProps {
-  listofposts: POSTS_QUERYResult;
+  listofposts: POST_QUERYResult; // <-- Changed type
 }
 
 const SinglePost = ({ listofposts }: SinglePostProps) => {
