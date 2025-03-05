@@ -16,17 +16,23 @@ const menuData: MenuItem[] = [
     newTab: false,
   },
   {
-    id: 33,
+    id: 3,
     title: 'Actualidad',
     path: '/blog',
     newTab: false,
   },
   {
-    id: 3,
+    id: 4,
     title: 'Contacto',
     path: '/contact',
     newTab: false,
   },
+  // {
+  //   id: 4,
+  //   title: 'Blog-sidebar',
+  //   path: '/blog-sidebar',
+  //   newTab: false,
+  // },
 ];
 
 export default menuData;
