@@ -62,7 +62,7 @@ export default function Hero() {
           className="relative z-5 h-full flex flex-col items-center justify-center px-[3.5rem] opacity-100 will-change-transform"
           ref={contentRef}
         >
-          <h1 className="mb-[0.7rem] will-change-transform text-h2 font-serif leading-tighter text-center">
+          <h1 className="mb-[0.7rem] will-change-transform text-h2 font-serif text-center">
             Building lasting <br />
             partnerships
           </h1>

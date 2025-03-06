@@ -28,9 +28,6 @@ const config: Config = {
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['var(--font-suranna)', 'serif'],
       },
-      lineHeight: {
-        tighter: '0.8',
-      },
 
       fontSize: {
         h1: 'clamp(3.5rem, 4.6vw, 5.2rem)', // was clamp(4rem, 8vw, 8rem)

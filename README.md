@@ -47,7 +47,7 @@ import MoreStories from '../../../components/MoreStories';
 
 import { sanityFetch } from '../../../sanity/lib/client';
 import { POST_QUERY, ALL_POSTS_QUERY } from '../../../sanity/lib/queries';
-import { POSTS_QUERYResult } from '../../../sanity/types'; // Import POSTS_QUERYResult
+import { ALL_POSTS_QUERYResult } from '../../../sanity/types'; // Import ALL_POSTS_QUERYResult
 
 import { notFound } from 'next/navigation';
 
@@ -57,8 +57,8 @@ slug: string;
 };
 }
 
-// Extend POSTS_QUERYResult and add the author field
-interface Post extends POSTS_QUERYResult {
+// Extend ALL_POSTS_QUERYResult and add the author field
+interface Post extends ALL_POSTS_QUERYResult {
 author: {
 name: string;
 image?: string | null;
@@ -77,7 +77,7 @@ if (!post) {
 return notFound();
 }
 
-const morePosts = await sanityFetch<POSTS_QUERYResult[]>({
+const morePosts = await sanityFetch<ALL_POSTS_QUERYResult[]>({
 query: ALL_POSTS_QUERY,
 params: {},
 });

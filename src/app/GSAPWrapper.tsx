@@ -1,3 +1,5 @@
+//src/app/GSAPWrapper.tsx
+
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -14,7 +16,6 @@ export default function GSAPWrapper({
   useEffect(() => {
     if (typeof window === 'undefined' || initialized.current) return;
 
-    // Dynamically import GSAP and plugins
     const initializeGSAP = async () => {
       try {
         const gsap = (await import('gsap')).default;
@@ -23,7 +24,6 @@ export default function GSAPWrapper({
 
         gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-        // Small delay to ensure DOM is ready
         setTimeout(() => {
           try {
             const smoother = ScrollSmoother.create({
@@ -32,10 +32,8 @@ export default function GSAPWrapper({
               normalizeScroll: true,
               ignoreMobileResize: true,
             });
-
             initialized.current = true;
 
-            // Store smoother instance for cleanup
             return () => {
               smoother.kill();
             };

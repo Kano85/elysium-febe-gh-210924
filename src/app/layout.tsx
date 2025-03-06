@@ -1,4 +1,5 @@
 // src/app/layout.tsx
+
 import { Inter, Suranna } from 'next/font/google';
 import './globals.css';
 

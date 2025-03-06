@@ -1,41 +1,45 @@
 // src/app/blog/[slug]/page.tsx
 
-import SharePost from '@/components/Blog/SharePost';
+// import SharePost from '@/components/Blog/SharePost';
+
 import TagButton from '@/components/Blog/TagButton';
 import Image from 'next/image';
-
+import { urlFor } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 import { notFound } from 'next/navigation';
-
 import { client } from '@/sanity/lib/client';
 import { POST_QUERY } from '@/sanity/lib/queries';
-import { POST_QUERYResult } from '@/sanity/types'; // Corrected import
+import { POST_QUERYResult, Slug } from '@/sanity/types';
+import { sanityFetch } from '@/sanity/lib/client';
 
-import { sanityFetch } from '@/sanity/lib/client'; // Corrected import path
+// Define the Props type exactly like in the Sanity documentation example
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateStaticParams() {
-  const query = `*[_type == "post"]{ slug }`;
-  const posts = await client.fetch(query);
-  return posts.map((post: { slug: { current: string } }) => ({
-    slug: post.slug.current,
-  }));
+  const query = `*[_type == "post" && defined(slug.current)]{ slug }`;
+  const posts = await client.fetch<{ slug: Slug | null }[]>(query);
+
+  return posts
+    .filter((post) => post.slug?.current)
+    .map((post) => ({
+      slug: post.slug!.current,
+    }));
 }
 
-interface PageProps {
-  params: { slug: string };
-}
-
-const ListOfPostDetailsPage = async ({ params }: PageProps) => {
+const ListOfPostDetailsPage = async (props: Props) => {
+  // Await the params Promise before accessing slug
+  const params = await props.params;
   const { slug } = params;
 
   const post: POST_QUERYResult = await sanityFetch({
-    // Corrected type
     query: POST_QUERY,
     params: { slug },
     tags: [`post-${slug}`],
   });
 
-  if (!post) {
+  if (!post || !post.slug?.current) {
     notFound();
   }
 
@@ -54,10 +58,14 @@ const ListOfPostDetailsPage = async ({ params }: PageProps) => {
                     <div className="mb-5 mr-10 flex items-center">
                       <div className="mr-4">
                         <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                          {post.author?.image?.asset?.url && (
+                          {post.author?.image && (
                             <Image
-                              src={post.author.image.asset.url}
-                              alt={post.author.name}
+                              src={urlFor(post.author.image).url()}
+                              alt={
+                                post.mainImage?.alt ||
+                                post.title ||
+                                'Blog Post Image'
+                              }
                               fill
                               className="object-cover"
                             />
@@ -101,7 +109,11 @@ const ListOfPostDetailsPage = async ({ params }: PageProps) => {
                       <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                         <Image
                           src={post.mainImage.asset.url}
-                          alt={post.title ?? 'Blog Post Image'}
+                          alt={
+                            post.mainImage.alt ||
+                            post.title ||
+                            'Blog Post Image'
+                          }
                           fill
                           className="object-cover object-center"
                         />
@@ -109,7 +121,7 @@ const ListOfPostDetailsPage = async ({ params }: PageProps) => {
                     </div>
                   )}
                   <div className="mb-10">
-                    <PortableText value={post.body} />
+                    <PortableText value={post.body || []} />
                   </div>
                   <div className="items-center justify-between sm:flex">
                     <div className="mb-5">
@@ -120,20 +132,19 @@ const ListOfPostDetailsPage = async ({ params }: PageProps) => {
                         {post.categories?.map((category) => (
                           <TagButton
                             key={category.title}
-                            text={category.title}
+                            text={category.title || 'Untitled'}
                           />
                         ))}
                       </div>
                     </div>
-                    <div className="mb-5">
-                      <h5 className="mb-3 text-sm font-medium text-body-color sm:text-right">
-                        Share this post:
-                      </h5>
-                      <div className="flex items-center sm:justify-end">
-                        <SharePost />
-                      </div>
-                    </div>
-                    {/* Include other components or sections as needed */}
+                    {/* <div className="mb-5">
+                        <h5 className="mb-3 text-sm font-medium text-body-color sm:text-right">
+                          Share this post:
+                        </h5>
+                        <div className="flex items-center sm:justify-end">
+                          <SharePost />
+                        </div>
+                      </div> */}
                   </div>
                 </div>
               </div>

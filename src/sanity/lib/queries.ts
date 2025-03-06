@@ -20,7 +20,11 @@ export const ALL_POSTS_QUERY = groq`
     },
     publishedAt,
     excerpt,
-    body
+    body,
+    "author": author->{
+      name,
+      image
+    }
   }
 `;
 
@@ -31,7 +35,7 @@ export const POST_QUERY = groq`
     slug,
     mainImage{
       asset->{
-        _ref,
+        _id,
         _type,
         url
       },
@@ -52,6 +56,3 @@ export const POST_QUERY = groq`
     }
   }
 `;
-
-// Alias if necessary
-export const POSTS_QUERY = ALL_POSTS_QUERY;

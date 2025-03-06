@@ -7,26 +7,25 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: process.env.NODE_ENV === 'production',
-  perspective: 'published',
-  stega: {
-    enabled: process.env.NODE_ENV === 'development',
-    studioUrl: '/studio', // Add this line - points to your Studio location
-  },
+  useCdn: false,
 });
 
-interface FetchParams {
+// Minimal type extension for tag support
+type SanityFetchParams = {
   query: string;
   params?: Record<string, unknown>;
-}
+  tags?: string[];
+};
 
-export const sanityFetch = async <T>({
+export async function sanityFetch<T>({
   query,
   params = {},
   tags = [],
-}: FetchParams & { tags?: string[] }): Promise<T> => {
+}: SanityFetchParams): Promise<T> {
   return client.fetch<T>(query, params, {
-    cache: 'force-cache',
-    next: { tags },
+    next: {
+      revalidate: tags.length > 0 ? false : 30,
+      tags,
+    },
   });
-};
+}

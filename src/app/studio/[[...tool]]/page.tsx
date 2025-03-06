@@ -1,3 +1,6 @@
+// src/app/studio/[[...tool]]/page.tsx
+'use client';
+
 import { NextStudio } from 'next-sanity/studio';
 import config from '../../../../sanity.config';
 
@@ -9,11 +12,10 @@ if (!config?.projectId || !config?.dataset) {
   );
 }
 
-export { metadata, viewport } from 'next-sanity/studio';
-
 export default function StudioPage() {
   return <NextStudio config={config} />;
 }
+
 if (process.env.NODE_ENV === 'development') {
   console.log('Sanity config:', config);
 }

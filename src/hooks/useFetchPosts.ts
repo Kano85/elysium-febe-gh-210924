@@ -1,12 +1,12 @@
 // src/hooks/useFetchPosts.ts
-
 import { useState, useEffect } from 'react';
 import { client } from '@/sanity/lib/client';
 import { ALL_POSTS_QUERY } from '@/sanity/lib/queries';
-import { POSTS_QUERYResult } from '@/sanity/types';
+import { ALL_POSTS_QUERYResult } from '@/sanity/types';
 
 const useFetchPosts = () => {
-  const [posts, setPosts] = useState<POSTS_QUERYResult[]>([]);
+  // Use ALL_POSTS_QUERYResult (which is already an array)
+  const [posts, setPosts] = useState<ALL_POSTS_QUERYResult>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -14,7 +14,7 @@ const useFetchPosts = () => {
     const fetchPosts = async () => {
       try {
         const postsData =
-          await client.fetch<POSTS_QUERYResult[]>(ALL_POSTS_QUERY);
+          await client.fetch<ALL_POSTS_QUERYResult>(ALL_POSTS_QUERY);
         if (postsData && Array.isArray(postsData)) {
           setPosts(postsData);
         } else {
