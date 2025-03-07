@@ -10,9 +10,9 @@ import Image from 'next/image';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const SLIDER_IMAGES = [
-  { src: '/images/image-2.jpg', width: 800, height: 450 },
-  { src: '/images/img3.jpg', width: 800, height: 450 },
-  { src: '/images/image-4.jpg', width: 800, height: 450 },
+  { src: '/images/image-2.png', width: 800, height: 450 },
+  { src: '/images/img3.png', width: 800, height: 450 },
+  { src: '/images/image-4.png', width: 800, height: 450 },
 ];
 
 export default function Carousel() {

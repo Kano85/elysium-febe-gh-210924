@@ -2,6 +2,6 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'My App',
-  description: 'Description of my app',
+  title: 'Elysium',
+  description: 'Global Finance Consulting',
 };

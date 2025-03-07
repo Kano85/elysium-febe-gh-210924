@@ -7,7 +7,7 @@ import React from 'react';
 import Hero from '@/components/Hero';
 import USP from '@/components/USP/USP';
 import Carousel from '@/components/Carousel/Carousel';
-import Marquee from '@/components/Marquee/Marquee';
+// import Marquee from '@/components/Marquee/Marquee';
 import Video from '@/components/Video';
 import Brands from '@/components/Brands';
 import AboutSectionOne from '@/components/About/AboutSectionOne';
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         <Video />
         <Brands />
         <Carousel />
-        <Marquee />
+        {/* <Marquee /> */}
       </main>
     </>
   );

@@ -28,7 +28,7 @@ const ListOfPost: React.FC<ListOfPostProps> = ({ posts }) => {
           paragraph="Explora los artículos más recientes de nuestro blog..."
           center
         />
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3">
           {posts.map((post) => {
             const {
               _id,

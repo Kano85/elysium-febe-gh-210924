@@ -58,7 +58,7 @@ const AboutSectionOne = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
                 <Image
-                  src="/images/about/pexels-mike-chai-285623-842339-2048x1367.jpg"
+                  src="/images/about/ruffl.png"
                   alt="Elysium about image"
                   fill
                   className="mx-auto max-w-full drop-shadow-none lg:mr-0" // Remove dark: classes

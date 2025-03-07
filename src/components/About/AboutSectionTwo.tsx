@@ -10,7 +10,7 @@ const AboutSectionTwo = () => {
           <div className="w-full px-4 lg:w-1/2">
             <div className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0">
               <Image
-                src="/images/about/pexels-brett-sayles-1098888-2048x1365.jpg"
+                src="/images/about/recep.png"
                 alt="Elysium about image"
                 fill
                 className="mx-auto max-w-full" // Remove dark: classes
