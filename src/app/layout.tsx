@@ -1,4 +1,4 @@
-// src/app/layout.tsx
+//src/app/layout.tsx
 
 import { Inter, Suranna } from 'next/font/google';
 import './globals.css';
@@ -6,10 +6,11 @@ import './globals.css';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ScrollToTop from '@/components/ScrollToTop';
-import GSAPWrapper from '@/app/GSAPWrapper';
-import { metadata as appMetadata } from './metadata';
 
-export const metadata = appMetadata;
+const metadata = {
+  title: 'Elysium',
+  description: 'Global Finance Consulting',
+};
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,24 +37,17 @@ export default function RootLayout({
       className={`${inter.variable} ${suranna.variable}`}
     >
       <head>
-        <title>{appMetadata.title ? String(appMetadata.title) : ''}</title>
-        <meta
-          name="description"
-          content={
-            appMetadata.description ? String(appMetadata.description) : ''
-          }
-        />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
       </head>
       <body className="bg-black">
         <Header />
-        <GSAPWrapper>
-          <div id="smooth-wrapper" className="overflow-hidden w-full h-screen">
-            <div id="smooth-content" className="will-change-transform">
-              {children}
-              <Footer />
-            </div>
+        <div id="smooth-wrapper" className="overflow-hidden w-full h-screen">
+          <div id="smooth-content" className="will-change-transform">
+            {children}
+            <Footer />
           </div>
-        </GSAPWrapper>
+        </div>
         <ScrollToTop />
       </body>
     </html>
