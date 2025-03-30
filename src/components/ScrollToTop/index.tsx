@@ -1,35 +1,49 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { useGSAP } from '@gsap/react';
+
+// Register plugins
+gsap.registerPlugin(ScrollToPlugin, useGSAP);
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
 
-  // Top: 0 takes us all the way back to the top of the page
-  // Behavior: smooth keeps it smooth!
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
+  // Using useGSAP hook for context management
+  const { contextSafe } = useGSAP({ scope: containerRef });
+
+  useGSAP(
+    () => {
+      // Button visibility logic
+      const toggleVisibility = () => {
+        if (window.scrollY > 300) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      };
+
+      window.addEventListener('scroll', toggleVisibility);
+
+      return () => window.removeEventListener('scroll', toggleVisibility);
+    },
+    { scope: containerRef, dependencies: [] }
+  );
+
+  // Making the scrollToTop function context-safe
+  const scrollToTop = contextSafe(() => {
+    // Using GSAP's ScrollToPlugin for smooth animation
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: 0,
+      ease: 'power3.out',
     });
-  };
-
-  useEffect(() => {
-    // Button is displayed after scrolling for 500 pixels
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
+  });
 
   return (
-    <div className="fixed bottom-8 right-8 z-20">
+    <div ref={containerRef} className="fixed bottom-8 right-8 z-20">
       {isVisible && (
         <div
           onClick={scrollToTop}
