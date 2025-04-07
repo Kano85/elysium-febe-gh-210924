@@ -5,7 +5,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 
 import menuData from './menuData';
 import type { MenuItem } from '@/sanity/menu';
@@ -13,17 +13,22 @@ import { isMenuItemWithPath } from '@/sanity/menu';
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
-  const [sticky, setSticky] = useState<boolean>(false);
+  const [sticky] = useState<boolean>(false);
   const [openIndex, setOpenIndex] = useState<number>(-1);
   const currentPath = usePathname();
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
 
   const handleStickyNavbar = useCallback(() => {
-    window.scrollY >= 80 ? setSticky(true) : setSticky(false);
-  }, []);
+    if (sticky) {
+      headerRef.current?.classList.add('sticky');
+    } else {
+      headerRef.current?.classList.remove('sticky');
+    }
+  }, [sticky]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleStickyNavbar);
@@ -31,11 +36,16 @@ const Header: React.FC = () => {
   }, [handleStickyNavbar]);
 
   const handleSubmenu = (index: number) => {
-    openIndex === index ? setOpenIndex(-1) : setOpenIndex(index);
+    if (openIndex === index) {
+      setOpenIndex(-1);
+    } else {
+      setOpenIndex(index);
+    }
   };
 
   return (
     <header
+      ref={headerRef}
       className={`header left-0 top-0 z-15 flex w-full items-center ${
         sticky
           ? 'fixed z-20 bg-gray-dark bg-opacity-80 shadow-sticky backdrop-blur-sm transition'

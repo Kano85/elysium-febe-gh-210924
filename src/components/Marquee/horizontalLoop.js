@@ -92,8 +92,9 @@ export default function horizontalLoop(items, config) {
   }
   function toIndex(index, vars) {
     vars = vars || {};
-    Math.abs(index - curIndex) > length / 2 &&
-      (index += index > curIndex ? -length : length); // always go in the shortest direction
+    if (Math.abs(index - curIndex) > length / 2) {
+      index += index > curIndex ? -length : length; // always go in the shortest direction
+    }
     let newIndex = gsap.utils.wrap(0, length, index),
       time = times[newIndex];
     if (time > tl.time() !== index > curIndex) {

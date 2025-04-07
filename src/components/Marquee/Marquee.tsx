@@ -1,3 +1,5 @@
+//src/components/Marquee/Marquee.tsx
+
 'use client';
 
 import { useRef, useEffect } from 'react';
@@ -6,6 +8,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import horizontalLoop from '@/components/Marquee/horizontalLoop';
 import { testimonialData } from '@/components/Testimonials';
+// Import the Testimonial type from the correct location
+import { Testimonial } from '@/sanity/testimonial';
 import SingleTestimonial from '../Testimonials/SingleTestimonial';
 
 gsap.registerPlugin(Observer, useGSAP);
@@ -22,9 +26,13 @@ const createDuplicatedData = () => {
 export default function Marquee() {
   const containerRef = useRef<HTMLDivElement>(null);
   const marquee1Ref = useRef<HTMLDivElement>(null);
-  const loops = useRef<{ marquee1: any }>({ marquee1: null });
 
-  const duplicatedData = createDuplicatedData();
+  // Fix: Update the type to match what horizontalLoop returns
+  const loops = useRef<{ marquee1: gsap.core.Timeline | null }>({
+    marquee1: null,
+  });
+
+  const duplicatedData: Testimonial[] = createDuplicatedData();
 
   // Initialize marquee animation for the single row
   const initMarquees = () => {
