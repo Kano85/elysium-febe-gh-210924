@@ -1,15 +1,15 @@
 // src/app/layout.tsx
-
 import { Inter, Suranna } from 'next/font/google';
 import './globals.css';
-
-import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import ScrollToTop from '@/components/ScrollToTop';
-import GSAPWrapper from '@/app/GSAPWrapper';
-import { metadata as appMetadata } from './metadata';
+import SmoothScrollLayout from '@/components/SmoothScrollLayout';
 
-export const metadata = appMetadata;
+export const metadata: Metadata = {
+  title: 'Elysium',
+  description: 'Global Finance Consulting',
+};
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,25 +35,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${suranna.variable}`}
     >
-      <head>
-        <title>{appMetadata.title ? String(appMetadata.title) : ''}</title>
-        <meta
-          name="description"
-          content={
-            appMetadata.description ? String(appMetadata.description) : ''
-          }
-        />
-      </head>
       <body className="bg-black">
         <Header />
-        <GSAPWrapper>
-          <div id="smooth-wrapper" className="overflow-hidden w-full h-screen">
-            <div id="smooth-content" className="will-change-transform">
-              {children}
-              <Footer />
-            </div>
-          </div>
-        </GSAPWrapper>
+        <SmoothScrollLayout>{children}</SmoothScrollLayout>
         <ScrollToTop />
       </body>
     </html>

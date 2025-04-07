@@ -7,12 +7,12 @@ import React from 'react';
 import Hero from '@/components/Hero';
 import USP from '@/components/USP/USP';
 import Carousel from '@/components/Carousel/Carousel';
-// import Marquee from '@/components/Marquee/Marquee';
 import Video from '@/components/Video';
 import Brands from '@/components/Brands';
 import AboutSectionOne from '@/components/About/AboutSectionOne';
 import AboutSectionTwo from '@/components/About/AboutSectionTwo';
 import ScrollUp from '@/components/Common/ScrollUp';
+import Footer from '@/components/Footer';
 
 // Import the presentational ListOfPost
 import ListOfPost from '@/components/Blog/ListOfPost';
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         <Video />
         <Brands />
         <Carousel />
-        {/* <Marquee /> */}
+        <Footer />
       </main>
     </>
   );
