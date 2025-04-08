@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-import Hero from '@/components/Hero';
+import Hero from '@/components/Hero/Hero';
 import USP from '@/components/USP/USP';
 import Carousel from '@/components/Carousel/Carousel';
 import Video from '@/components/Video';

@@ -1,4 +1,4 @@
-// src/components/Hero/index.tsx
+// src/components/Hero/Hero.tsx
 'use client';
 
 import { useRef } from 'react';
@@ -25,7 +25,6 @@ export default function Hero() {
         scrub: true,
         pin: true,
         pinSpacing: false,
-        // Removed markers for production
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
@@ -43,7 +42,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden z-4 bg-blue transform-style-preserve-3d"
+      className="relative w-full h-screen overflow-hidden z-4 bg-projects-colorstyles-hero-dark transform-style-preserve-3d"
       ref={heroSectionRef}
     >
       <div className="w-full h-full">
@@ -59,15 +58,22 @@ export default function Hero() {
         </video>
 
         <div
-          className="relative z-5 h-full flex flex-col items-center justify-center px-[3.5rem] opacity-100 will-change-transform"
+          className="relative z-5 h-full flex flex-col items-start justify-center pl-[50px] lg:pl-[130px] pr-[3.5rem] opacity-100 will-change-transform gap-4"
           ref={contentRef}
         >
-          <h1 className="mb-[0.7rem] will-change-transform text-h2 font-serif text-center">
-            Building lasting <br />
-            partnerships
+          <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragment font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
+            <span className="block">Building Lasting</span>
+            <span className="block">Partnerships</span>
           </h1>
 
-          <p className="opacity-90 text-h4">Descubrenos</p>
+          <p className="text-projects-colorstyles-mainbody-veig font-fragment text-[1rem] lg:text-h4 leading-[1.4rem] lg:leading-[1.25rem] text-left opacity-90 max-w-[500px]">
+            <span className="block">
+              Donde la confianza se convierte en compromiso
+            </span>
+            <span className="block">
+              que perdura y abre nuevas oportunidades
+            </span>
+          </p>
         </div>
       </div>
     </section>

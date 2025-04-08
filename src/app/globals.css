@@ -1,14 +1,21 @@
+/* src/app/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  /* Set default body styles */
-  body {
-    @apply bg-black text-gray-300;
+  @font-face {
+    font-family: 'PP Fragment';
+    src: url('/fonts/PPFragment-SansRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
   }
 
-  /* Global Reset */
+  body {
+    @apply bg-projects-colorstyles-hero-dark text-projects-colorstyles-mainbody-veig;
+  }
+
   * {
     @apply m-0 p-0 box-border list-none;
     text-decoration: none;
@@ -39,6 +46,7 @@
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
+
   .btn-primary {
     @apply bg-light text-bg py-[0.72rem] px-[1.32rem] 
            rounded-full text-h4 cursor-pointer 
