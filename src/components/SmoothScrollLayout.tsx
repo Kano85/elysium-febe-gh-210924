@@ -37,7 +37,7 @@ export default function SmoothScrollLayout({
   }, [pathname]); // Re-run on route change
 
   return (
-    <div id="smooth-wrapper" className="overflow-hidden w-full h-screen">
+    <div id="smooth-wrapper" className="overflow-hidden w-full">
       <div id="smooth-content" className="will-change-transform">
         {children}
       </div>
