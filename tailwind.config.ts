@@ -28,7 +28,8 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['var(--font-suranna)', 'serif'],
-        fragment: ['PP Fragment', 'sans-serif'],
+        fragmentSans: ['PP Fragment Sans', 'sans-serif'],
+        fragmentSerif: ['PP Fragment Serif Light', 'serif'],
       },
       fontSize: {
         h1: 'clamp(3.5rem, 4.6vw, 5.2rem)',

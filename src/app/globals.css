@@ -11,6 +11,12 @@
     font-weight: 400;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'PP Fragment Serif Light';
+    src: url('/fonts/PPFragment-SerifLight.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
 
   body {
     @apply bg-projects-colorstyles-hero-dark text-projects-colorstyles-mainbody-veig;

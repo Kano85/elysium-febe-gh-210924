@@ -64,7 +64,7 @@ export default function Hero() {
           className="relative z-5 h-full flex flex-col items-start justify-center pl-[50px] lg:pl-[130px] pr-[3.5rem] opacity-100 will-change-transform gap-4"
           ref={contentRef}
         >
-          <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragment font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
+          <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
             {t('Building lasting')} <br />
             {t('partnerships')}
           </h1>
