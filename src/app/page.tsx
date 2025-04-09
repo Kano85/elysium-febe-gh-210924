@@ -18,8 +18,14 @@ import Footer from '@/components/Footer';
 import ListOfPost from '@/components/Blog/ListOfPost';
 import useFetchPosts from '@/hooks/useFetchPosts';
 
+import { useTranslation } from 'react-i18next';
+import { getFullLanguageName, LanguageCodes } from '@/lib/utils';
 const Home: React.FC = () => {
-  const { posts, isLoading, error } = useFetchPosts();
+  const { i18n } = useTranslation();
+  const selectedLanguage = (i18n.language || 'en') as LanguageCodes;
+  const { posts, isLoading, error } = useFetchPosts(
+    getFullLanguageName(selectedLanguage)
+  );
 
   return (
     <>

@@ -1,7 +1,7 @@
 //src/components/Common/Breadcrumb.tsx
-
+'use client';
 import Link from 'next/link';
-
+import { useTranslation } from 'react-i18next';
 const Breadcrumb = ({
   pageName,
   description,
@@ -9,34 +9,35 @@ const Breadcrumb = ({
   pageName: string;
   description: string;
 }) => {
+  const { t } = useTranslation();
   return (
     <>
-      <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px]">
+      <section className="lg:pt-[150px] overflow-hidden pt-28 relative z-10">
         <div className="container">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 md:w-8/12 lg:w-7/12">
-              <div className="mb-8 max-w-[570px] md:mb-0 lg:mb-12">
-                <h1 className="mb-5 text-2xl font-bold text-white sm:text-3xl">
-                  {pageName}
+          <div className="flex flex-wrap -mx-4 items-center">
+            <div className="w-full lg:w-7/12 md:w-8/12 px-4">
+              <div className="lg:mb-12 max-w-[570px] mb-8 md:mb-0">
+                <h1 className="text-2xl text-white font-bold mb-5 sm:text-3xl">
+                  {t('title')}
                 </h1>
-                <p className="text-base font-medium leading-relaxed text-body-color-dark">
-                  {description}
+                <p className="text-base text-body-color-dark font-medium leading-relaxed">
+                  {t('description')}
                 </p>
               </div>
             </div>
-            <div className="w-full px-4 md:w-4/12 lg:w-5/12">
+            <div className="w-full lg:w-5/12 md:w-4/12 px-4">
               <div className="text-end">
                 <ul className="flex items-center md:justify-end">
                   <li className="flex items-center">
                     <Link
                       href="/"
-                      className="pr-1 text-base font-medium text-body-color-dark hover:text-primary"
+                      className="text-base text-body-color-dark font-medium hover:text-primary pr-1"
                     >
                       Home
                     </Link>
-                    <span className="mr-3 block h-2 w-2 rotate-45 border-r-2 border-t-2 border-body-color-dark"></span>
+                    <span className="border-body-color-dark border-r-2 border-t-2 h-2 w-2 block mr-3 rotate-45"></span>
                   </li>
-                  <li className="text-base font-medium text-primary">
+                  <li className="text-base text-primary font-medium">
                     {pageName}
                   </li>
                 </ul>

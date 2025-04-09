@@ -1,7 +1,8 @@
 // src/components/About/AboutSectionOne.tsx
-
+'use client';
 import Image from 'next/image';
 import SectionTitle from '../Common/SectionTitle';
+import { useTranslation } from 'react-i18next';
 
 // Define the props interface
 interface ListProps {
@@ -16,8 +17,8 @@ const checkIcon = (
 
 // Type the List component using the interface
 const List: React.FC<ListProps> = ({ text }) => (
-  <p className="mb-5 flex items-center text-lg font-medium text-body-color">
-    <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
+  <p className="flex text-body-color text-lg font-medium items-center mb-5">
+    <span className="flex bg-opacity-10 bg-primary h-[30px] justify-center rounded-md text-primary w-[30px] items-center mr-4">
       {checkIcon}
     </span>
     {text}
@@ -25,43 +26,47 @@ const List: React.FC<ListProps> = ({ text }) => (
 );
 
 const AboutSectionOne = () => {
+  const { t } = useTranslation(); // ✅ Use Translation Hook
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
+    <section id="about" className="lg:pt-28 md:pt-20 pt-16">
       <div className="container">
-        <div className="border-b border-white/[.15] pb-16 md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
+        <div className="border-b border-white/[.15] lg:pb-28 md:pb-20 pb-16">
+          <div className="flex flex-wrap -mx-4 items-center">
+            <div className="w-full lg:w-1/2 px-4">
               <SectionTitle
-                title="Elysium en cifras"
-                paragraph="A lo largo de los años, hemos construido una reputación sólida que se sustenta en la satisfacción y la lealtad de nuestros clientes. A continuación, algunos de los números que avalan nuestro trabajo"
+                title={t('Elysium en cifras')} // ✅ Translate Title
+                paragraph={t(
+                  'A lo largo de los años, hemos construido una reputación sólida que se sustenta en la satisfacción y la lealtad de nuestros clientes. A continuación, algunos de los números que avalan nuestro trabajo'
+                )} // ✅ Translate Paragraph
                 mb="44px"
               />
 
               <div
-                className="mb-12 max-w-[570px] lg:mb-0"
+                className="lg:mb-0 max-w-[570px] mb-12"
                 data-wow-delay=".15s"
               >
-                <div className="mx-[-12px] flex flex-wrap">
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="+15 Años de experiencia" />
-                    <List text="<48h Respuesta rápida" />
+                <div className="flex flex-wrap mx-[-12px]">
+                  <div className="w-full lg:w-full px-3 sm:w-1/2 xl:w-1/2">
+                    <List text={t('+15 Años de experiencia')} />{' '}
+                    {/* ✅ Translate List Items */}
+                    <List text={t('<48h Respuesta rápida')} />
                   </div>
 
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="90 % clientes recurrentes" />
-                    <List text="Otros datos " />
+                  <div className="w-full lg:w-full px-3 sm:w-1/2 xl:w-1/2">
+                    <List text={t('90 % clientes recurrentes')} />
+                    <List text={t('Otros datos')} />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
+            <div className="w-full lg:w-1/2 px-4">
+              <div className="aspect-[25/24] lg:mr-0 max-w-[500px] mx-auto relative">
                 <Image
                   src="/images/about/ruffl.png"
-                  alt="Elysium about image"
+                  alt={t('Elysium about image')} // ✅ Translate Alt Text
                   fill
-                  className="mx-auto max-w-full drop-shadow-none lg:mr-0" // Remove dark: classes
+                  className="drop-shadow-none lg:mr-0 max-w-full mx-auto" // Remove dark: classes
                   priority
                 />
               </div>

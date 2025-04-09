@@ -1,36 +1,36 @@
 'use client';
+import { useTranslation } from 'react-i18next';
 
 const NewsLatterBox = () => {
+  const { t } = useTranslation();
   return (
-    <div className="relative z-10 rounded-sm bg-gray-dark p-8 shadow-three sm:p-11 lg:p-8 xl:p-11">
-      <h3 className="mb-4 text-2xl font-bold leading-tight text-white">
-        Suscríbete para recibir actualizaciones
+    <div className="bg-gray-dark p-8 rounded-sm shadow-three lg:p-8 relative sm:p-11 xl:p-11 z-10">
+      <h3 className="text-2xl text-white font-bold leading-tight mb-4">
+        {t('subscribe_updates')}
       </h3>
-      <p className="mb-11 border-b border-white border-opacity-25 pb-11 text-base leading-relaxed text-body-color-dark">
-        Mantente informado con las últimas noticias y novedades de nuestros
-        servicios de consultoría y asesoramiento empresarial.
+      <p className="border-b border-opacity-25 border-white text-base text-body-color-dark leading-relaxed mb-11 pb-11">
+        {t('stay_informed')}
       </p>
       <div>
         <input
           type="text"
           name="name"
-          placeholder="Introduce tu nombre"
-          className="border-stroke mb-4 w-full rounded-sm border bg-[#2C303B] px-6 py-3 text-base text-body-color-dark outline-none focus:border-primary shadow-two focus:shadow-none"
+          placeholder={t('enter_name')}
+          className="bg-[#2C303B] border border-stroke rounded-sm shadow-two text-base text-body-color-dark w-full focus:border-primary focus:shadow-none mb-4 outline-none px-6 py-3"
         />
         <input
           type="email"
           name="email"
-          placeholder="Introduce tu correo electrónico"
-          className="border-stroke mb-4 w-full rounded-sm border bg-[#2C303B] px-6 py-3 text-base text-body-color-dark outline-none focus:border-primary shadow-two focus:shadow-none"
+          placeholder={t('enter_email')}
+          className="bg-[#2C303B] border border-stroke rounded-sm shadow-two text-base text-body-color-dark w-full focus:border-primary focus:shadow-none mb-4 outline-none px-6 py-3"
         />
         <input
           type="submit"
-          value="Suscribirse"
-          className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit-dark duration-300 hover:bg-primary/90"
+          value={t('subscribe')}
+          className="flex bg-primary justify-center rounded-sm shadow-submit-dark text-base text-white w-full cursor-pointer duration-300 font-medium hover:bg-primary/90 items-center mb-5 px-9 py-4"
         />
-        <p className="text-center text-base leading-relaxed text-body-color-dark">
-          Garantizamos la privacidad de tus datos. No enviamos correos no
-          deseados.
+        <p className="text-base text-body-color-dark text-center leading-relaxed">
+          {t('privacy_assurance')}
         </p>
       </div>
 

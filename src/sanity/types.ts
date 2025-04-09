@@ -344,6 +344,10 @@ export type ALL_POSTS_QUERYResult = Array<{
       _type: "image";
     } | null;
   } | null;
+  category: {
+    _id: string;
+    title: string;
+  } | null;
 }>;
 // Variable: POST_QUERY
 // Query: *[_type == "post" && slug.current == $slug][0]{    _id,    title,    slug,    mainImage{      asset->{        _id,        _type,        url      },      hotspot,      crop,      alt,      _type    },    publishedAt,    excerpt,    body,    author->{      name,      image    },    categories[]->{      title    }  }

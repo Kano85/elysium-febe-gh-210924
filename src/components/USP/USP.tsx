@@ -5,89 +5,91 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const USP_ITEMS: string[] = [
-  'Consultoría fiscal global — 15+ años de experiencia internacional en planificación fiscal estratégica',
-  'Soluciones integrales — Reubicación empresarial y personal con enfoque en optimización fiscal',
-  'Respuestas rápidas — Garantía de respuesta en menos de 48 horas hábiles',
-  'Soporte personalizado — Atención directa con expertos en derecho fiscal internacional',
+  'Global Tax Consultancy — 15+ years of experience',
+  'Comprehensive Solutions — Relocation and Tax Planning',
+  'Fast Responses — Less than 48 hours',
+  'Personalized Support — Direct contact with experts',
 ];
 
 export default function USP() {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLParagraphElement | null)[]>([]);
+  const { t } = useTranslation();
+  useGSAP(() => {
+    if (!containerRef.current) return;
 
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
+    // Clear previous animations if need it
+    // gsap.killTweensOf(itemsRef.current);
 
-      // Clear previous animations
-      gsap.killTweensOf(itemsRef.current);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'center 100%',
+        end: 'bottom 70%',
+        scrub: true,
+        toggleActions: 'play none none reverse',
+        markers: false, // Disabled markers for production
+      },
+    });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          scrub: 1,
-          toggleActions: 'play none none reverse',
+    itemsRef.current.forEach((item, index) => {
+      if (!item) return;
+
+      // Y Position animation
+      tl.fromTo(
+        item,
+        { y: 100 },
+        {
+          y: 0,
+          duration: 0.4,
+          ease: 'power2.out',
         },
-      });
+        index === 0 ? '>' : '+=0.15'
+      );
 
-      itemsRef.current.forEach((item, index) => {
-        if (!item) return;
-
-        tl.fromTo(
-          item,
-          { y: 100, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: 'powers3.out',
-          },
-          index * 0.15
-        );
-      });
-    },
-    { dependencies: [], scope: containerRef }
-  );
+      // Opacity animation (starts at same time but lasts longer)
+      tl.fromTo(
+        item,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power1.inOut',
+        },
+        '<' // Start at same time as position animation
+      );
+    });
+  });
 
   return (
     <div
-      className="relative z-6 py-32 px-[6.25rem] h-full flex flex-col items-start justify-center gap-8 overflow-hidden bg-transparent"
+      className="flex flex-col h-full justify-center gap-12 items-center lg:px-24 md:gap-16 md:px-16 md:py-32 overflow-hidden px-8 py-24 relative z-6"
       ref={containerRef}
     >
-      <div className="w-full max-w-[49.5rem] relative z-[1]">
-        {USP_ITEMS.map((text, index) => {
-          const [mainText, subText] = text.split(' — ');
-
-          return (
-            <p
-              key={index}
-              ref={(el) => {
-                itemsRef.current[index] = el;
-              }}
-              className="mb-8 last:mb-0 text-background-default font-fragment opacity-0 translate-y-[100px]"
-            >
-              <span className="text-[1.375rem] font-semibold block mb-2">
-                “{mainText}
-              </span>
-              <span className="text-[1.125rem] leading-[1.75rem] tracking-wide opacity-90">
-                {subText}
-              </span>
-              {index === USP_ITEMS.length - 1 && (
-                <span className="mt-6 text-[1.125rem] underline decoration-from-font block">
-                  Descubre cómo nuestras estrategias pueden llevar tu negocio al
-                  siguiente nivel
-                </span>
-              )}
-            </p>
-          );
-        })}
-      </div>
+      {USP_ITEMS.map((text, index) => {
+        const [mainText, subText] = text.split(' — ');
+        return (
+          <p
+            key={index}
+            ref={(el) => {
+              itemsRef.current[index] = el;
+            }}
+            className="text-center text-light font-serif max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2"
+          >
+            <span className="text-h3 block font-bold mb-3 md:text-h2">
+              {t(mainText)}
+            </span>
+            <span className="text-h5 font-light leading-snug md:text-h4 opacity-90">
+              {t(subText)}
+            </span>
+          </p>
+        );
+      })}
     </div>
   );
 }

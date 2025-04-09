@@ -5,10 +5,13 @@ import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   const heroSectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -62,17 +65,12 @@ export default function Hero() {
           ref={contentRef}
         >
           <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragment font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-            <span className="block">Building Lasting</span>
-            <span className="block">Partnerships</span>
+            {t('Building lasting')} <br />
+            {t('partnerships')}
           </h1>
 
           <p className="text-projects-colorstyles-mainbody-veig font-fragment text-[1rem] lg:text-h4 leading-[1.4rem] lg:leading-[1.25rem] text-left opacity-90 max-w-[500px]">
-            <span className="block">
-              Donde la confianza se convierte en compromiso
-            </span>
-            <span className="block">
-              que perdura y abre nuevas oportunidades
-            </span>
+            {t('Discover us')}
           </p>
         </div>
       </div>

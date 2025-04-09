@@ -5,16 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SectionTitle from '@/components/Common/SectionTitle';
 import Marquee from '@/components/Marquee/Marquee';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <footer className="relative z-10 bg-gray-dark pt-16 md:pt-20 lg:pt-24">
+      <footer className="bg-gray-dark lg:pt-24 md:pt-20 pt-16 relative z-10">
         {/* Container for the SectionTitle */}
         <div className="container">
           <SectionTitle
-            title="Building Lasting Partnerships"
-            paragraph="Let's collaborate and achieve great things together."
+            title={t('Building lasting')}
+            paragraph={t('partnerships')}
             center
             mb="60px"
           />
@@ -22,7 +24,7 @@ const Footer = () => {
 
         {/* Marquee moved outside the container so its lateral content is visible */}
         <div
-          className="relative flex flex-col gap-12 overflow-visible p-8 sm:p-6"
+          className="flex flex-col p-8 gap-12 overflow-visible relative sm:p-6"
           id="next-section"
         >
           <Marquee />
@@ -30,10 +32,10 @@ const Footer = () => {
 
         {/* Rest of the Footer Content inside the container */}
         <div className="container">
-          <div className="-mx-4 flex flex-wrap mt-12">
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
-              <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 inline-block">
+          <div className="flex flex-wrap -mx-4 mt-12">
+            <div className="w-full lg:w-4/12 md:w-1/2 px-4 xl:w-5/12">
+              <div className="lg:mb-16 max-w-[360px] mb-12">
+                <Link href="/" className="inline-block mb-8">
                   <Image
                     src="/images/logo/elysium-logo.svg"
                     alt="logo"
@@ -42,10 +44,8 @@ const Footer = () => {
                     height={30}
                   />
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color-dark">
-                  En Elysium Consulting Firm, brindamos soluciones
-                  personalizadas que impulsan tu crecimiento y seguridad
-                  empresarial. Tu éxito es nuestra prioridad.
+                <p className="text-base text-body-color-dark leading-relaxed mb-9">
+                  {t('Elysium description')}
                 </p>
                 <div className="flex items-center">
                   <a
@@ -53,7 +53,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color-dark duration-300 hover:text-primary"
+                    className="text-body-color-dark duration-300 hover:text-primary mr-6"
                   >
                     <svg
                       width="18"
@@ -73,7 +73,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color-dark duration-300 hover:text-primary"
+                    className="text-body-color-dark duration-300 hover:text-primary mr-6"
                   >
                     <svg
                       width="18"
@@ -95,7 +95,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color-dark duration-300 hover:text-primary"
+                    className="text-body-color-dark duration-300 hover:text-primary mr-6"
                   >
                     <svg
                       width="18"
@@ -126,98 +126,102 @@ const Footer = () => {
               </div>
             </div>
             {/* Footer Column: Useful Links */}
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-white">
-                  Enlaces útiles
+            <div className="w-full lg:w-2/12 md:w-1/2 px-4 sm:w-1/2 xl:w-2/12">
+              <div className="lg:mb-16 mb-12">
+                <h2 className="text-white text-xl font-bold mb-10">
+                  {t('Useful links')}
                 </h2>
                 <ul>
                   <li>
                     <Link
                       href="/listofposts"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Publicaciones recientes
+                      {t('Recent posts')}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Servicios
+                      {t('Services')}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/about"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Sobre nosotros
+                      {t('About us')}
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
             {/* Footer Column: Legal */}
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-white">Legal</h2>
+            <div className="w-full lg:w-2/12 md:w-1/2 px-4 sm:w-1/2 xl:w-2/12">
+              <div className="lg:mb-16 mb-12">
+                <h2 className="text-white text-xl font-bold mb-10">
+                  {t('Legal')}
+                </h2>
                 <ul>
                   <li>
                     <Link
                       href="/terms"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Términos de servicio
+                      {t('Terms of service')}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/privacy"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Política de privacidad
+                      {t('Privacy policy')}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/refunds"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Política de reembolsos
+                      {t('Refund policy')}
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
             {/* Footer Column: Soporte */}
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-white">Soporte</h2>
+            <div className="w-full lg:w-4/12 md:w-1/2 px-4 xl:w-3/12">
+              <div className="lg:mb-16 mb-12">
+                <h2 className="text-white text-xl font-bold mb-10">
+                  {t('Support')}
+                </h2>
                 <ul>
                   <li>
                     <Link
                       href="/contact"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Contacto
+                      {t('Contact')}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      FAQs
+                      {t('FAQs')}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/about"
-                      className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
+                      className="text-base text-body-color-dark duration-300 hover:text-primary inline-block mb-4"
                     >
-                      Sobre nosotros
+                      {t('About us')}
                     </Link>
                   </li>
                 </ul>
@@ -225,10 +229,10 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent"></div>
+          <div className="bg-gradient-to-r h-px w-full from-transparent to-transparent via-[#D2D8E183]"></div>
           <div className="py-8">
-            <p className="text-center text-base text-white">
-              © Elysium Consulting Firm. Todos los derechos reservados.
+            <p className="text-base text-center text-white">
+              {t('© Elysium Consulting Firm. All rights reserved.')}
             </p>
           </div>
         </div>
