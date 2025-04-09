@@ -5,13 +5,13 @@ import { MenuItem } from '@/sanity/menu';
 const menuData: MenuItem[] = [
   {
     id: 1,
-    title: 'Inicio',
+    title: 'home',
     path: '/',
     newTab: false,
   },
   {
     id: 2,
-    title: 'Sobre nosotros',
+    title: 'about us',
     path: '/about',
     newTab: false,
   },

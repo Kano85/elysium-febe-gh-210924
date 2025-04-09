@@ -141,7 +141,7 @@ const Header: React.FC = () => {
                             aria-expanded={openIndex === index}
                             className="flex justify-between text-base text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
                           >
-                            {menuItem.title}
+                            {t(menuItem.title)}
                             <span className="pl-3">
                               <svg width="25" height="24" viewBox="0 0 25 24">
                                 <path

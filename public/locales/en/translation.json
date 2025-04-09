@@ -25,8 +25,8 @@
   "Como líderes en consultoría, nos enfocamos en entender tus necesidades y acompañarte en cada desafío. Nuestra dedicación es tan personal como nuestro compromiso con tu crecimiento y bienestar.": "As leaders in consulting, we focus on understanding your needs and supporting you through every challenge. Our dedication is as personal as our commitment to your growth and well-being.",
   "Video image": "Video image",
   "Play video": "Play video",
-  "Building lasting": "Building Lasting Partnerships",
-  "partnerships": "Let's collaborate and achieve great things together.",
+  "Building lasting": "Building Lasting",
+  "partnerships": "partnerships",
   "Useful links": "Useful Links",
   "Recent posts": "Recent Posts",
   "Services": "Services",
@@ -60,13 +60,11 @@
   "enter_message": "Enter your message",
   "send_ticket": "Send Ticket",
   "subscribe_updates": "Subscribe to receive updates",
-    "stay_informed": "Stay informed with the latest news and updates about our consulting and advisory services.",
-    "subscribe": "Subscribe",
-    "privacy_assurance": "We guarantee the privacy of your data. We do not send spam.",
-    "title": "Contact Page",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
-    "title-user": "Testimonials That Support Us",
-    "description-user": "Our clients are our best representation. Their experiences reflect the impact of our tailored solutions and the commitment we put into each collaboration."
-
-  
+  "stay_informed": "Stay informed with the latest news and updates about our consulting and advisory services.",
+  "subscribe": "Subscribe",
+  "privacy_assurance": "We guarantee the privacy of your data. We do not send spam.",
+  "title": "Contact Page",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+  "title-user": "Testimonials That Support Us",
+  "description-user": "Our clients are our best representation. Their experiences reflect the impact of our tailored solutions and the commitment we put into each collaboration."
 }
