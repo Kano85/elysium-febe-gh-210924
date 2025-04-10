@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 const Breadcrumb = ({
   pageName,
-  description,
 }: {
   pageName: string;
   description: string;

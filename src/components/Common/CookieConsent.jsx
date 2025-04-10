@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { CookieIcon } from "lucide-react";
-import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { CookieIcon } from 'lucide-react';
+import { Button } from './button';
+import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 export default function CookieConsent({
-  variant = "default",
+  variant = 'default',
   demo = false,
   onAcceptCallback = () => {},
   onDeclineCallback = () => {},
@@ -17,7 +17,7 @@ export default function CookieConsent({
   const accept = () => {
     setIsOpen(false);
     document.cookie =
-      "cookieConsent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+      'cookieConsent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
     setTimeout(() => {
       setHide(true);
     }, 700);
@@ -36,7 +36,7 @@ export default function CookieConsent({
     setIsOpen(true); // Show the cookie banner immediately
 
     try {
-      if (document.cookie.includes("cookieConsent=true")) {
+      if (document.cookie.includes('cookieConsent=true')) {
         if (!demo) {
           setIsOpen(false);
           setTimeout(() => {
@@ -45,18 +45,18 @@ export default function CookieConsent({
         }
       }
     } catch (e) {
-      console.log("Error: ", e);
+      console.log('Error: ', e);
     }
   }, [demo]);
 
-  return variant != "small" ? (
+  return variant != 'small' ? (
     <div
       className={cn(
-        "fixed z-[9999] bottom-0 left-0 right-0 sm:left-4 sm:bottom-4 w-full sm:max-w-md duration-700",
+        'fixed z-[9999] bottom-0 left-0 right-0 sm:left-4 sm:bottom-4 w-full sm:max-w-md duration-700',
         !isOpen
-          ? "transition-[opacity,transform] translate-y-8 opacity-0"
-          : "transition-[opacity,transform] translate-y-0 opacity-100",
-        hide && "hidden"
+          ? 'transition-[opacity,transform] translate-y-8 opacity-0'
+          : 'transition-[opacity,transform] translate-y-0 opacity-100',
+        hide && 'hidden'
       )}
     >
       <div className="dark:bg-card bg-background rounded-md m-3 border border-border shadow-lg">
@@ -97,11 +97,11 @@ export default function CookieConsent({
   ) : (
     <div
       className={cn(
-        "fixed z-[200] bottom-0 left-0 right-0 sm:left-4 sm:bottom-4 w-full sm:max-w-md duration-700",
+        'fixed z-[200] bottom-0 left-0 right-0 sm:left-4 sm:bottom-4 w-full sm:max-w-md duration-700',
         !isOpen
-          ? "transition-[opacity,transform] translate-y-8 opacity-0"
-          : "transition-[opacity,transform] translate-y-0 opacity-100",
-        hide && "hidden"
+          ? 'transition-[opacity,transform] translate-y-8 opacity-0'
+          : 'transition-[opacity,transform] translate-y-0 opacity-100',
+        hide && 'hidden'
       )}
     >
       <div className="m-3 dark:bg-card bg-background border border-border rounded-lg">

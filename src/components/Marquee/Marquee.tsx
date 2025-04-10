@@ -27,8 +27,8 @@ export default function Marquee() {
   const containerRef = useRef<HTMLDivElement>(null);
   const marquee1Ref = useRef<HTMLDivElement>(null);
 
-  // Fix: Update the type to match what horizontalLoop returns
-  const loops = useRef<{ marquee1: gsap.core.Timeline | null }>({
+  // Fixing the type for our loops ref
+  const loops = useRef<{ marquee1: ReturnType<typeof gsap.timeline> | null }>({
     marquee1: null,
   });
 
@@ -68,8 +68,8 @@ export default function Marquee() {
         setTimeout(() => {
           initMarquees();
 
-          // Set up the observer AFTER the marquee is initialized
-          let animation: gsap.core.Timeline;
+          // Use the correct type for the animation variable
+          let animation: ReturnType<typeof gsap.timeline> | undefined;
           Observer.create({
             target: window,
             type: 'wheel',
