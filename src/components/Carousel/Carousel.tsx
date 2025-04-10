@@ -18,7 +18,7 @@ const SLIDER_IMAGES = [
 export default function Carousel() {
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const timeline = useRef<gsap.core.Timeline>();
+  const timeline = useRef<ReturnType<typeof gsap.timeline>>();
   const carouselId = useRef(
     `carousel-${Math.random().toString(36).substr(2, 9)}`
   );
