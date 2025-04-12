@@ -7,6 +7,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     container: {
@@ -121,7 +122,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
   safelist: [
     'transform-style-preserve-3d',
     'will-change-opacity',

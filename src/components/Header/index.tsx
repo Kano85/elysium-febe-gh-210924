@@ -183,19 +183,18 @@ const Header: React.FC = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="white"
-                    size="sm"
-                    className="flex items-center w-auto"
+                    variant="ghost"
+                    size="lg"
+                    className="text-white flex items-center w-auto px-2"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      className="mr-1 h-4 w-4 fill-current"
-                    >
-                      <path d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zM192 0c0 0 16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5C259.4 75.7 268.7 107.9 274.8 144z" />
-                    </svg>
+                    <Image
+                      src="/icons/Globe.svg"
+                      alt="Language Globe"
+                      width={24}
+                      height={24}
+                    />
                     {i18n.language.toUpperCase()}
-                    <ChevronDown className="ml-1 h-4 w-4 text-black" />
+                    <ChevronDown className="ml-1 h-4 text-white" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
