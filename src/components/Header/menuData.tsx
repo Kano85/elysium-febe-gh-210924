@@ -1,6 +1,6 @@
 // src/components/Header/menuData.tsx
 
-import { MenuItem } from '@/sanity/menu';
+import { MenuItem } from '@/sanity/shared-types';
 
 const menuData: MenuItem[] = [
   {

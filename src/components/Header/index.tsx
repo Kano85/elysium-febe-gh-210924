@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next'; // Import useTranslation
 import { CheckmarkIcon } from '@sanity/icons';
 import { ChevronDown } from 'lucide-react';
 import menuData from './menuData';
-import type { MenuItem } from '@/sanity/menu';
-import { isMenuItemWithPath } from '@/sanity/menu';
+import type { MenuItem } from '@/sanity/shared-types';
+import { isMenuItemWithPath } from '@/sanity/shared-types';
 import {
   DropdownMenu,
   DropdownMenuContent,
