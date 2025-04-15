@@ -9,7 +9,7 @@ import { useGSAP } from '@gsap/react';
 import horizontalLoop from '@/components/Marquee/horizontalLoop';
 import { testimonialData } from '@/components/Testimonials';
 // Import the Testimonial type from the correct location
-import { Testimonial } from '@/sanity/testimonial';
+import { Testimonial } from '@/sanity/shared-types';
 import SingleTestimonial from '../Testimonials/SingleTestimonial';
 
 gsap.registerPlugin(Observer, useGSAP);

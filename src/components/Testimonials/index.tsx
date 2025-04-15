@@ -1,6 +1,6 @@
 //src/components/Testimonials/index.tsx
 
-import { Testimonial } from '@/sanity/testimonial';
+import { Testimonial } from '@/sanity/shared-types';
 import SectionTitle from '../Common/SectionTitle';
 import SingleTestimonial from './SingleTestimonial';
 

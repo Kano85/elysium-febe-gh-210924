@@ -1,6 +1,6 @@
 //src/components/Testimonials/SingleTestimonial.tsx
 
-import { Testimonial } from '@/sanity/testimonial';
+import { Testimonial } from '@/sanity/shared-types';
 import Image from 'next/image';
 
 const starIcon = (

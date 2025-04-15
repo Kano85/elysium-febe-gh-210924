@@ -1,5 +1,5 @@
 // src/components/Brands/brandsData.tsx
-import { Brand } from '@/sanity/brand';
+import { Brand } from '@/sanity/shared-types';
 
 const brandsData: Brand[] = [
   {

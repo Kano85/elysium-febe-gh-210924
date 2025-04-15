@@ -1,6 +1,6 @@
 //src/components/Features/featuresData.tsx
 
-import { Feature } from '@/sanity/feature';
+import { Feature } from '@/sanity/shared-types';
 
 const featuresData: Feature[] = [
   {

@@ -1,5 +1,5 @@
 //src/components/Features/SingleFeature.tsx
-import { Feature } from '@/sanity/feature';
+import { Feature } from '@/sanity/shared-types'; // Ensure this path is correct
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
   const { icon, title, paragraph } = feature;

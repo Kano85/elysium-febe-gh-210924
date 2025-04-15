@@ -1,7 +1,7 @@
 // src/components/Brands/index.tsx
 
 import React from 'react';
-import { Brand } from '@/sanity/brand';
+import { Brand } from '@/sanity/shared-types'; // Ensure this path is correct
 import SingleBrand from './SingleBrand';
 import brandsData from './brandsData'; // Ensure this is correctly imported
 
