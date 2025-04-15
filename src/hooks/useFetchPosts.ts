@@ -32,7 +32,7 @@ const useFetchPosts = (selectedLanguageFullForm: string) => {
       }
     };
     fetchPosts();
-  }, [i18n.language, selectedLanguageFullForm]);
+  }, [i18n.language]);
 
   return { posts, isLoading, error };
 };

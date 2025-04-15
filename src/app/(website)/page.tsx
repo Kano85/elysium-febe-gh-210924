@@ -4,15 +4,15 @@
 
 import React from 'react';
 
-import Hero from '@/components/Hero/Hero';
-import USP from '@/components/USP/USP';
-import Carousel from '@/components/Carousel/Carousel';
-import Video from '@/components/Video';
-import Brands from '@/components/Brands';
-import AboutSectionOne from '@/components/About/AboutSectionOne';
-import AboutSectionTwo from '@/components/About/AboutSectionTwo';
-import ScrollUp from '@/components/Common/ScrollUp';
-import Footer from '@/components/Footer';
+import Hero from '../../components/Hero/Hero';
+import USP from '../../components/USP/USP';
+import Carousel from '../../components/Carousel/Carousel';
+import Video from '../../components/Video';
+import Brands from '../../components/Brands';
+import AboutSectionOne from '../../components/About/AboutSectionOne';
+import AboutSectionTwo from '../../components/About/AboutSectionTwo';
+import ScrollUp from '../../components/Common/ScrollUp';
+import Footer from '../../components/Footer';
 
 // Import the presentational ListOfPost
 import ListOfPost from '@/components/Blog/ListOfPost';
