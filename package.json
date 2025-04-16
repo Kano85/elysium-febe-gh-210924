@@ -21,6 +21,8 @@
     "@sanity/vision": "^3.78.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "esbuild": "^0.25.2",
     "gsap": "npm:@gsap/shockingly@^3.12.7",
     "i18next": "^24.2.3",
