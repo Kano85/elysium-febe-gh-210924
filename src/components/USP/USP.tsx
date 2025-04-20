@@ -11,15 +11,23 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 type USPItem = string;
 
 const USP_ITEMS: USPItem[] = [
-  `¿Quieres optimizar tu fiscalidad, proteger tu patrimonio y tomar decisiones con tranquilidad?`,
-  `En ELYSIUM te ayudamos a hacerlo bien, con garantías legales y visión estratégica.
-Sabemos que dar el paso hacia Andorra —o replantear tu situación fiscal— genera dudas:`,
+  `¿Quieres optimizar tu fiscalidad, 
+  proteger tu patrimonio y tomar decisiones con tranquilidad?`,
+  `En ELYSIUM te ayudamos a hacerlo bien, 
+  con garantías legales y visión estratégica.
+Sabemos que dar el paso hacia Andorra o 
+replantear tu situación fiscal genera dudas:`,
   `¿Me va a perseguir Hacienda?
 ¿Tendré que desvincularme por completo de mi país?
 ¿Realmente podré mejorar mi situación?`,
-  `La buena noticia es que sí: es posible estructurar tu caso con eficacia, dentro de la ley y sin errores.
-Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o inversores que han empezado a generar ingresos relevantes y buscan claridad, eficiencia y tranquilidad en Andorra.
-Con experiencia en firmas líderes y un enfoque global, te ayudamos a establecer tu residencia fiscal, constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo.`,
+  `La buena noticia es que sí: 
+  es posible estructurar tu caso con eficacia, dentro de la ley y sin errores.
+Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o 
+inversores que han empezado a generar ingresos relevantes y buscan claridad, 
+eficiencia y tranquilidad en Andorra.
+Con experiencia en firmas líderes y un enfoque global, 
+te ayudamos a establecer tu residencia fiscal, 
+constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo.`,
   `Nuestros clientes no solo quieren pagar menos.
 Quieren hacerlo legalmente y con seguridad.
 Quieren seguir gestionando su vida y su negocio con libertad.
@@ -79,7 +87,7 @@ export default function USP() {
             }}
             style={{
               fontSize: 'clamp(1.2rem, 1.9vw, 1.5rem)',
-              fontWeight: 300,
+              fontWeight: 400,
             }}
             className={
               `whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ` +

@@ -1,21 +1,11 @@
-// src/components/Blog/ListOfPost.tsx
 'use client';
 
-import React from 'react';
-import SectionTitle from '@/components/Common/SectionTitle';
-import { ALL_POSTS_QUERYResult } from '@/sanity/types';
+import type React from 'react';
+import type { ALL_POSTS_QUERYResult } from '@/sanity/types';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Badge } from '@/components/Common/badge';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from '@/components/Common/card';
 import {
   Carousel,
   CarouselContent,
@@ -27,8 +17,6 @@ import {
 interface ListOfPostProps {
   posts: ALL_POSTS_QUERYResult;
 }
-
-const categories = ['economy', 'finance', 'politics'];
 
 const ListOfPost: React.FC<ListOfPostProps> = ({ posts }) => {
   const { t } = useTranslation();
@@ -43,73 +31,84 @@ const ListOfPost: React.FC<ListOfPostProps> = ({ posts }) => {
   };
 
   return (
-    <section
-      id="listofposts"
-      className="bg-bg-color-dark lg:py-28 md:py-20 py-16"
-    >
+    <section id="listofposts" className="bg-[#1e2123] lg:py-28 md:py-20 py-16">
       <div className="container">
-        <SectionTitle
-          title={t('recent_posts')}
-          paragraph={t('explore_recent_articles')}
-          center
-        />
-        <Carousel
-          className="mx-auto w-full xl:max-w-[72rem]"
-          opts={{ align: 'start' }}
-        >
-          <CarouselContent>
-            {posts.map((post) => {
-              const randomCategory =
-                categories[Math.floor(Math.random() * categories.length)];
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-[#ffb800] text-4xl md:text-5xl font-light mb-4">
+            {t('recent_posts')}
+          </h2>
+          <p className="text-[#9d9b94]">{t('explore_recent_articles')}</p>
+        </div>
 
-              return (
-                <CarouselItem
-                  key={post._id}
-                  className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
-                >
-                  <Link
-                    href={`/blog/${post.slug?.current}`}
-                    className="group block h-full w-full"
-                    aria-label="Read full article"
+        <div className="relative">
+          <Carousel
+            className="mx-auto w-full xl:max-w-[72rem]"
+            opts={{ align: 'start' }}
+          >
+            <CarouselContent className="gap-24">
+              {posts.map((post) => {
+                return (
+                  <CarouselItem
+                    key={post._id}
+                    className="basis-full lg:basis-1/4"
                   >
-                    <Card
-                      className="relative flex h-[426px] w-full items-center justify-center bg-cover bg-bottom transition-transform group-hover:scale-98"
-                      style={{
-                        backgroundImage: post.mainImage?.asset
-                          ? `url('${urlFor(post.mainImage).url()}')`
-                          : 'none',
-                      }}
+                    <Link
+                      href={`/blog/${post.slug?.current}`}
+                      className="block h-full w-full"
+                      aria-label="Read full article"
                     >
-                      <div className="absolute inset-0 rounded-lg bg-black opacity-20 transition-opacity group-hover:opacity-30" />
-                      <CardContent className="absolute z-10 flex h-full flex-col items-start justify-between px-5 py-7">
-                        <CardHeader>
-                          <Badge variant="outline">{randomCategory}</Badge>
-                        </CardHeader>
-                        <CardFooter className="flex flex-col gap-8">
-                          <CardTitle className="text-white">
+                      <div className="relative rounded-lg overflow-hidden h-[448px] min-w-[208px] group">
+                        <div className="absolute inset-0 bg-black/40 z-10"></div>
+                        <div
+                          className="absolute inset-0 bg-cover bg-center"
+                          style={{
+                            backgroundImage: post.mainImage?.asset
+                              ? `url('${urlFor(post.mainImage).url()}')`
+                              : 'none',
+                          }}
+                        ></div>
+                        <div className="absolute top-4 left-4 z-20">
+                          <Badge
+                            variant="outline"
+                            className="text-white text-sm"
+                          >
+                            {post.category?.title || 'Finance'}
+                          </Badge>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                          <h3 className="text-white text-xl font-medium mb-6">
                             {post.title}
-                          </CardTitle>
-                          <CardDescription className="flex w-full flex-row items-center justify-between gap-1 text-white">
-                            <div className="date font-medium tabular-nums">
+                          </h3>
+                          <div className="flex items-center gap-2">
+                            <span className="text-white text-sm">
+                              {post.author?.name || t('unknown_author')}
+                            </span>
+                            <span className="text-[#9d9b94] text-sm ml-auto">
                               {post.publishedAt
                                 ? formatDate(post.publishedAt)
                                 : t('no_date')}
-                            </div>
-                            <div className="author font-medium tabular-nums">
-                              {post.author?.name || t('unknown_author')}
-                            </div>
-                          </CardDescription>
-                        </CardFooter>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-          <CarouselPrevious className="left-4 flex h-8 w-8 items-center justify-center rounded-none bg-gradient-to-r from-purple-500 to-pink-500 text-white xl:-left-12 xl:h-12 xl:w-12" />
-          <CarouselNext className="right-4 flex h-8 w-8 items-center justify-center rounded-none bg-gradient-to-l from-purple-500 to-pink-500 text-white xl:-right-12 xl:h-12 xl:w-12" />
-        </Carousel>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 flex items-center justify-center shadow-lg bg-gradient-to-r from-amber-400 to-yellow-500 rounded-none" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 flex items-center justify-center shadow-lg bg-gradient-to-r from-amber-400 to-yellow-500 rounded-none" />
+          </Carousel>
+        </div>
+
+        <div className="mt-8 text-right">
+          <Link
+            href="/blog"
+            className="text-[#d9d9d9] hover:text-[#ffb800] transition-colors"
+          >
+            {t('discover_more')}
+          </Link>
+        </div>
       </div>
     </section>
   );

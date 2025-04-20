@@ -7,10 +7,9 @@ import React from 'react';
 import Hero from '../../components/Hero/Hero';
 import USP from '../../components/USP/USP';
 import Carousel from '../../components/Carousel/Carousel';
-import Video from '../../components/Video';
+import AboutUs from '../../components/AboutUs';
 import Brands from '../../components/Brands';
-import AboutSectionOne from '../../components/About/AboutSectionOne';
-import AboutSectionTwo from '../../components/About/AboutSectionTwo';
+import Mission from '../../components/Mission/Mission';
 import ScrollUp from '../../components/Common/ScrollUp';
 import Footer from '../../components/Footer';
 
@@ -33,8 +32,7 @@ const Home: React.FC = () => {
       <main>
         <Hero />
         <USP />
-        <AboutSectionOne />
-        <AboutSectionTwo />
+        <Mission />
         {isLoading ? (
           <div>Loading...</div>
         ) : error ? (
@@ -42,7 +40,7 @@ const Home: React.FC = () => {
         ) : (
           <ListOfPost posts={posts} />
         )}
-        <Video />
+        <AboutUs />
         <Brands />
         <Carousel />
         <Footer />
