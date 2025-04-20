@@ -24,7 +24,7 @@ export default function MissionSection() {
         <div className="grid md:grid-cols-2 gap-lg mb-xl">
           <div>
             <Image
-              src="/placeholder.svg?height=600&width=500"
+              src="/images/mission/mission1.png"
               alt="Professional in business attire"
               width={500}
               height={600}
@@ -76,16 +76,16 @@ export default function MissionSection() {
               Excelencia que se nota en los detalles.
             </h2>
             <p className="text-projects-colorstyles-text-gold text-base">
-              No buscamos hacer "lo correcto": buscamos hacerlo mejor. Venimos
-              de firmas de primer nivel y hemos aprendido que lo que marca la
-              diferencia no es lo grande, sino lo preciso. En cada
+              No buscamos hacer &quot;lo correcto&quot;: buscamos hacerlo mejor.
+              Venimos de firmas de primer nivel y hemos aprendido que lo que
+              marca la diferencia no es lo grande, sino lo preciso. En cada
               recomendación, documento o decisión, este nuestro estándar de
               calidad.
             </p>
           </div>
           <div className="order-1 md:order-2">
             <Image
-              src="/placeholder.svg?height=600&width=500"
+              src="/images/mission/mission2.png"
               alt="Business professionals in a meeting"
               width={500}
               height={600}
