@@ -22,7 +22,7 @@ export default function SmoothScrollLayout({
   useGSAP(() => {
     // Initialize ScrollSmoother
     smoother.current = ScrollSmoother.create({
-      smooth: 3.9,
+      smooth: 2.5,
       effects: true,
       normalizeScroll: true,
       ignoreMobileResize: true,
