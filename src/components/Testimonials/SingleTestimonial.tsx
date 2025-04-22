@@ -11,9 +11,9 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
   const { star, name, image, content, designation } = testimonial;
 
   const ratingIcons = [];
-  for (let index = 0; index < star; index++) {
+  for (let i = 0; i < star; i++) {
     ratingIcons.push(
-      <span key={index} className="text-yellow-400">
+      <span key={i} className="elysium-body-xs text-yellow-400">
         {starIcon}
       </span>
     );
@@ -26,14 +26,16 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
         <div className="flex mb-4 space-x-1">{ratingIcons}</div>
 
         {/* Testimonial Text */}
-        <p className="mb-6 text-white text-xl leading-relaxed">{content}</p>
+        <p className="mb-6 text-white elysium-body-s leading-relaxed">
+          {content}
+        </p>
 
         {/* Divider */}
-        <div className="border-t border-[#6b6b78] my-6"></div>
+        <div className="border-t border-[#6b6b78] my-2"></div>
 
         {/* Author Info */}
         <div className="flex items-center">
-          <div className="relative mr-4 h-14 w-14 overflow-hidden rounded-full">
+          <div className="relative mr-4 h-16 w-14 overflow-hidden rounded-full">
             <Image
               src={image || '/placeholder.svg'}
               alt={name}
@@ -43,10 +45,12 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
             />
           </div>
           <div className="flex-1">
-            <h3 className="text-[#bcb9b4] text-xl font-medium">{name}</h3>
+            <h3 className="text-[#bcb9b4] elysium-body-xs font-medium">
+              {name}
+            </h3>
           </div>
           <div>
-            <p className="text-[#6b6b78] text-lg">{designation}</p>
+            <p className="text-[#6b6b78] elysium-body-xs">{designation}</p>
           </div>
         </div>
       </div>

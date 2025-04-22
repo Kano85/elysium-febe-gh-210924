@@ -33,18 +33,18 @@ const config: Config = {
         fragmentSerif: ['PP Fragment Serif Light', 'serif'],
       },
       fontSize: {
-        h1: 'clamp(3.5rem, 4.6vw, 5.2rem)',
-        h2: 'clamp(2.5rem, 3.6vw, 4.2rem)',
-        h3: 'clamp(1.5rem, 2vw, 2.8rem)',
-        h4: 'clamp(0.96rem, 1.2vw, 1.44rem)',
-        h5: 'clamp(1.8rem, 4.8vw, 3.3rem)',
+        h1: 'clamp(3.5rem, 4.6vw, 5.2rem)', // 56px - 83.2px
+        h2: 'clamp(2.5rem, 3.6vw, 4.2rem)', // 40px - 67.2px
+        h3: 'clamp(1.5rem, 2vw, 2.8rem)', // 24px - 44.8px
+        h4: 'clamp(0.96rem, 1.2vw, 1.44rem)', // 15.36px - 23.04px
+        h5: 'clamp(1.8rem, 4.8vw, 3.3rem)', // 28.8px - 52.8px
       },
       colors: {
         'gold-light': '#A78952',
         'gold-dark': '#DFC383',
-        'projects-colorstyles-mainbody-veig': '#f8f7f3',
-        'projects-colorstyles-hero-dark': '#1e2123',
-        bg: '#ff5733',
+        'mainbody-veig': '#f8f7f3',
+        'hero-dark': '#1e2123',
+        bg: '#1e2123',
         light: '#fff',
         dark: '#0e100f',
         muted: '#a1a1a6',
@@ -57,10 +57,10 @@ const config: Config = {
           dark: '#282828',
           light: '#F0F0F0',
         },
-        'bg-color-dark': '#121212',
+        'bg-color-dark': '#1e2123',
         'body-color': {
-          DEFAULT: '#B8B8B8',
-          dark: '#E0E0E0',
+          DEFAULT: '#1e2123',
+          dark: '#1e2123',
         },
         stroke: {
           stroke: '#303030',

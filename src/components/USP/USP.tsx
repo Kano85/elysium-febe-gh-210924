@@ -49,7 +49,7 @@ export default function USP() {
         end: 'bottom 70%',
         scrub: true,
         toggleActions: 'play none none reverse',
-        markers: true, // Disable markers for production
+        markers: false, // Disable markers for production
       },
     });
 

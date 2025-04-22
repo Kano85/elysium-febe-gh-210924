@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutUs() {
   return (
-    <main className="min-h-screen bg-projects-colorstyles-hero-dark text-white py-xl px-sm md:px-md lg:px-lg">
+    <main className="min-h-screen bg-hero-dark text-white py-xl px-sm md:px-md lg:px-lg">
       <div className="container mx-auto">
         <div className="text-center mb-xl">
           <h1 className="text-h1 font-serif text-h1-color mb-sm">

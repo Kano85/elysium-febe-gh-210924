@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function MissionSection() {
   return (
-    <main className="bg-projects-colorstyles-hero-dark text-projects-colorstyles-mainbody-veig min-h-screen">
+    <main className="bg-hero-dark text-mainbody-veig min-h-screen">
       <div className="container mx-auto py-xl">
         {/* Hero Section */}
         <div className="mb-xl">

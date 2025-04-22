@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+  /*───────────────────────────────────────────────────────────
+    Custom Fonts
+  ───────────────────────────────────────────────────────────*/
   @font-face {
     font-family: 'PP Fragment';
     src: url('/fonts/PPFragment-SansRegular.otf') format('opentype');
@@ -18,11 +21,12 @@
     font-style: normal;
   }
 
-  body {
-    @apply bg-projects-colorstyles-hero-dark text-projects-colorstyles-mainbody-veig;
-  }
-
-  * {
+  /*───────────────────────────────────────────────────────────
+    Global Resets & Body Styles
+  ───────────────────────────────────────────────────────────*/
+  *,
+  *::before,
+  *::after {
     @apply m-0 p-0 box-border list-none;
     text-decoration: none;
   }
@@ -30,9 +34,16 @@
   html {
     @apply overflow-x-clip;
   }
+
+  body {
+    @apply bg-hero-dark text-mainbody-veig;
+  }
 }
 
 @layer components {
+  /*───────────────────────────────────────────────────────────
+    Existing Component Utilities
+  ───────────────────────────────────────────────────────────*/
   input[type='checkbox']:checked ~ label span svg {
     @apply inline-flex;
   }
@@ -53,9 +64,100 @@
     @apply opacity-100;
   }
 
-  .btn-primary {
-    @apply bg-light text-bg py-[0.72rem] px-[1.32rem] 
-           rounded-full text-h4 cursor-pointer 
-           border-none w-fit transition-all duration-base;
+  /*───────────────────────────────────────────────────────────
+    Elysium Heading 2
+    (Figma desktop: 60px / 74px)
+  ───────────────────────────────────────────────────────────*/
+  .elysium-heading-2 {
+    font-family: 'PP Fragment', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* min=36px, fluid, max=60px */
+    font-size: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+    /* min=44px, fluid, max=74px */
+    line-height: clamp(2.75rem, 6vw + 1rem, 4.625rem);
+  }
+
+  /*───────────────────────────────────────────────────────────
+    Elysium Heading 3
+    (Figma desktop: 48px / 60px)
+  ───────────────────────────────────────────────────────────*/
+  .elysium-heading-3 {
+    font-family: 'PP Fragment', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* min=28px, fluid, max=48px */
+    font-size: clamp(1.75rem, 4vw + 1rem, 3rem);
+    /* min=36px, fluid, max=60px */
+    line-height: clamp(2.25rem, 5vw + 1rem, 3.75rem);
+  }
+
+  /*───────────────────────────────────────────────────────────
+    Elysium Heading 3 sm
+    (Figma desktop: 28px / 40px)
+  ───────────────────────────────────────────────────────────*/
+  .elysium-heading-3-sm {
+    font-family: 'PP Fragment', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* min=20px, fluid, max=28px */
+    font-size: clamp(1.25rem, 2.5vw + 0.5rem, 1.75rem);
+    /* min=28px, fluid, max=40px */
+    line-height: clamp(1.75rem, 3.5vw + 0.5rem, 2.5rem);
+  }
+  /*───────────────────────────────────────────────────────────
+  Elysium Heading 5 (Inter, 600)
+  (Figma desktop: 30px / 38px)
+──────────────────────────────────────────────────────────*/
+  .elysium-heading-5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    /* min=20px, fluid, max=30px */
+    font-size: clamp(1.25rem, 3.5vw + 0.5rem, 1.875rem);
+    /* min=26px, fluid, max=38px */
+    line-height: clamp(1.625rem, 4vw + 0.5rem, 2.375rem);
+  }
+
+  /*───────────────────────────────────────────────────────────
+  Elysium Body L (Inter, 300)
+  (Figma desktop: 18px / 28px)
+──────────────────────────────────────────────────────────*/
+  .elysium-body-l {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    /* min=14px, fluid, max=18px */
+    font-size: clamp(0.875rem, 2vw + 0.5rem, 1.125rem);
+    /* min=20px, fluid, max=28px */
+    line-height: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);
+  }
+
+  /*───────────────────────────────────────────────────────────
+  Elysium Body S (Inter, 300)
+  (Figma desktop: 14px / 20px)
+──────────────────────────────────────────────────────────*/
+  .elysium-body-s {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    /* min=12px, fluid, max=14px */
+    font-size: clamp(0.75rem, 1.5vw + 0.25rem, 0.875rem);
+    /* min=16px, fluid, max=20px */
+    line-height: clamp(1rem, 2.5vw + 0.25rem, 1.25rem);
+  }
+
+  /*───────────────────────────────────────────────────────────
+  Elysium Body XS (Inter, 300)
+  (Figma desktop: 12px / 20px)
+──────────────────────────────────────────────────────────*/
+  .elysium-body-xs {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    /* min=10px, fluid, max=12px */
+    font-size: clamp(0.625rem, 1vw + 0.25rem, 0.75rem);
+    /* min=16px, fluid, max=20px */
+    line-height: clamp(1rem, 2vw + 0.25rem, 1.25rem);
   }
 }

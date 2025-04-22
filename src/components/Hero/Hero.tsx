@@ -45,7 +45,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden z-4 bg-projects-colorstyles-hero-dark transform-style-preserve-3d"
+      className="relative w-full h-screen overflow-hidden z-4 bg-hero-dark transform-style-preserve-3d"
       ref={heroSectionRef}
     >
       <div className="w-full h-full">
@@ -69,7 +69,7 @@ export default function Hero() {
             {t('partnerships')}
           </h1>
 
-          <p className="text-projects-colorstyles-mainbody-veig font-fragment text-[1rem] lg:text-h4 leading-[1.4rem] lg:leading-[1.25rem] text-left opacity-90 max-w-[500px]">
+          <p className="text-mainbody-veig font-fragment text-[1rem] lg:text-h4 leading-[1.4rem] lg:leading-[1.25rem] text-left opacity-90 max-w-[500px]">
             {t('Discover us')}
           </p>
         </div>

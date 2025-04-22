@@ -38,7 +38,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${suranna.variable}`}
     >
-      <body className="bg-black">
+      <body className="bg-hero-dark">
         <I18nWrapper>
           <Header />
           <SmoothScrollLayout>{children}</SmoothScrollLayout>
