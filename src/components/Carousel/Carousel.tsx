@@ -1,137 +1,51 @@
+//src/components/Carousel/Carousel.tsx
 'use client';
 
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef, useEffect } from 'react';
-import Image from 'next/image';
+import React from 'react';
 
-// Register plugins once
-gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-const SLIDER_IMAGES = [
-  { src: '/images/image-2.png', width: 800, height: 450 },
-  { src: '/images/img3.png', width: 800, height: 450 },
-  { src: '/images/image-4.png', width: 800, height: 450 },
-];
-
-export default function Carousel() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const timeline = useRef<ReturnType<typeof gsap.timeline>>();
-  const carouselId = useRef(
-    `carousel-${Math.random().toString(36).substr(2, 9)}`
-  );
-
-  // Handle window resize - only refresh this component's ScrollTrigger
-  useEffect(() => {
-    const handleResize = () => {
-      const triggers = ScrollTrigger.getAll();
-      const carouselTrigger = triggers.find(
-        (st) => st.vars.id === carouselId.current
-      );
-      if (carouselTrigger) {
-        carouselTrigger.refresh();
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useGSAP(
-    () => {
-      if (!containerRef.current || !wrapperRef.current) return;
-
-      // Clean up existing timeline for this component only
-      if (timeline.current) {
-        timeline.current.kill();
-      }
-
-      timeline.current = gsap
-        .timeline({
-          scrollTrigger: {
-            id: carouselId.current,
-            trigger: containerRef.current,
-            start: 'top center',
-            end: 'bottom center',
-            scrub: 1,
-            invalidateOnRefresh: true,
-            // markers: process.env.NODE_ENV === 'development',
-          },
-          defaults: { ease: 'power2.out' },
-        })
-        .fromTo(
-          wrapperRef.current.querySelector('.slider-2'),
-          { scale: 3.5, transformOrigin: 'center center' },
-          { scale: 1 }
-        )
-        .fromTo(
-          [wrapperRef.current.querySelectorAll('.slider-1, .slider-3')],
-          { opacity: 0, x: 100 },
-          { opacity: 1, x: 0 },
-          '<'
-        );
-
-      return () => {
-        // Only kill this component's timeline and ScrollTrigger
-        if (timeline.current) {
-          timeline.current.kill();
-        }
-
-        const triggers = ScrollTrigger.getAll();
-        const carouselTrigger = triggers.find(
-          (st) => st.vars.id === carouselId.current
-        );
-        if (carouselTrigger) {
-          carouselTrigger.kill();
-        }
-      };
-    },
-    { scope: containerRef }
-  );
-
-  // Handle image load more carefully
-  const handleImageLoaded = () => {
-    const triggers = ScrollTrigger.getAll();
-    const carouselTrigger = triggers.find(
-      (st) => st.vars.id === carouselId.current
-    );
-    if (carouselTrigger) {
-      carouselTrigger.refresh();
-    }
-  };
-
+export const MetricsMarketing = (): JSX.Element => {
   return (
-    <section
-      ref={containerRef}
-      className="relative w-full h-[50vh] sm:h-[50vh] md:h-[90vh] lg:h-[130vh] overflow-hidden pb-24"
-    >
-      <div
-        ref={wrapperRef}
-        className="sticky top-0 mt-[10vh] sm:mt-[10vh] md:mt-[20vh] lg:mt-[30vh] h-[40vh] sm:h-[40vh] md:h-[70vh] lg:h-screen flex items-center justify-center"
-      >
-        <div className="flex gap-2 sm:gap-3 md:gap-4 py-4 items-center justify-center w-full max-h-full">
-          {SLIDER_IMAGES.map((img, index) => (
-            <div
-              key={img.src}
-              className={`flex-shrink-0 rounded-xl overflow-hidden ${
-                index === 1 ? 'z-20' : 'z-10'
-              } slider-${index + 1}`}
-            >
-              <Image
-                src={img.src}
-                alt={`Slider Image ${index + 1}`}
-                width={800}
-                height={450}
-                className="w-[50vw] sm:w-[60vw] md:w-[66vw] aspect-video object-cover block"
-                priority
-                onLoad={handleImageLoaded}
-              />
+    <section className="flex flex-col w-full max-w-[1440px] mx-auto gap-[64px] px-[100px] py-[130px] bg-projects-colorstyleshero-dark">
+      {/* Heading */}
+      <div className="w-full max-w-[1240px] h-[60px]">
+        <h2 className="inline-block font-elysium-text-heading-3-elysium text-transparent bg-clip-text bg-gradient-to-b from-[#A78952] to-[#DFC383] leading-[60px] whitespace-nowrap">
+          Datos que hablan por sí solos
+        </h2>
+      </div>
+
+      {/* Metrics Row */}
+      <div className="flex flex-wrap w-full max-w-[1200px] gap-[64px]">
+        {[
+          {
+            value: '90%',
+            text: 'Más del 95 % de nuestros clientes repiten y amplían servicios.',
+          },
+          {
+            value: '<48H',
+            text: 'Respuesta en menos de 48 h. ¡Tu tiempo importa!',
+          },
+          {
+            value: '+15',
+            text: '15 años de experiencia en fiscalidad internacional y estrategia.',
+          },
+          {
+            value: '+120',
+            text: 'Traslados de residencia gestionados con éxito.',
+          },
+        ].map(({ value, text }, i) => (
+          <div
+            key={i}
+            className="flex-1 grow flex flex-col items-start gap-[8px] pl-[20px] border-l border-1-colors-neutral-neutral-borders"
+          >
+            <div className="font-elysium-text-heading-3-elysium text-1-colors-base-base-white text-[48px] leading-[60px] whitespace-nowrap">
+              {value}
             </div>
-          ))}
-        </div>
+            <p className="font-elysium-text-body-l-elysium text-projects-colorstylesmainbody-veig">
+              {text}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};

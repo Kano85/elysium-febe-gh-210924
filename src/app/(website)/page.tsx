@@ -6,7 +6,7 @@ import React from 'react';
 
 import Hero from '../../components/Hero/Hero';
 import USP from '../../components/USP/USP';
-import Carousel from '../../components/Carousel/Carousel';
+import { MetricsMarketing } from '../../components/Carousel/Carousel';
 import AboutUs from '../../components/AboutUs';
 import Brands from '../../components/Brands';
 import Mission from '../../components/Mission/Mission';
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         )}
         <AboutUs />
         <Brands />
-        <Carousel />
+        <MetricsMarketing />
         <Footer />
       </main>
     </>

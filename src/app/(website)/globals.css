@@ -4,10 +4,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/*────────────────────────────────────────────────────────────
+  Design Tokens (CSS variables)
+────────────────────────────────────────────────────────────*/
+:root {
+  /* Spacing tokens */
+  --tokens-update-spacing-0: 0px;
+  --tokens-update-spacing-1-4px: 4px;
+  --tokens-update-spacing-2-8px: 8px;
+  --tokens-update-spacing-3-12px: 12px;
+  --tokens-update-spacing-5-20px: 20px;
+  --tokens-update-spacing-6-24px: 24px;
+  --tokens-update-spacing-8-32px: 32px;
+  --tokens-update-spacing-16-64px: 64px;
+
+  /* Breakpoints */
+  --3-breakpoints-desktop-breakpoint-xl: 1200px;
+
+  /* Radii */
+  --4-radius-radius-none: 0px;
+
+  /* Font Families */
+  --elysium-text-body-l-elysium-font-family: 'Inter', Helvetica;
+  --elysium-text-body-s-elysium-font-family: 'Inter', Helvetica;
+  --elysium-text-body-XS-elysium-font-family: 'Inter', Helvetica;
+  --elysium-text-heading-2-elysium-font-family: 'PP Fragment', Helvetica;
+  --elysium-text-heading-3-elysium-font-family: 'PP Fragment', Helvetica;
+  --elysium-text-heading-3-elysium-sm-font-family: 'PP Fragment', Helvetica;
+  --elysium-text-heading-5-elysium-font-family: 'Inter', Helvetica;
+
+  /* Project colors (Mission + Metrics) */
+  --projects-colorstylesdisable-text: rgba(157, 155, 148, 1);
+  --projects-colorstyleshero-dark: rgba(30, 33, 35, 1);
+  --projects-colorstylesmainbody-veig: rgba(248, 247, 243, 1);
+
+  /* Metrics colors */
+  --1-colors-base-base-white: rgba(255, 255, 255, 1);
+  --1-colors-neutral-neutral-borders: rgba(238, 242, 246, 1);
+}
+
+/*────────────────────────────────────────────────────────────
+  Base styles & resets
+────────────────────────────────────────────────────────────*/
 @layer base {
-  /*───────────────────────────────────────────────────────────
-    Custom Fonts
-  ───────────────────────────────────────────────────────────*/
+  /* Custom Fonts */
   @font-face {
     font-family: 'PP Fragment';
     src: url('/fonts/PPFragment-SansRegular.otf') format('opentype');
@@ -21,9 +61,7 @@
     font-style: normal;
   }
 
-  /*───────────────────────────────────────────────────────────
-    Global Resets & Body Styles
-  ───────────────────────────────────────────────────────────*/
+  /* Global resets */
   *,
   *::before,
   *::after {
@@ -40,30 +78,31 @@
   }
 }
 
+/*────────────────────────────────────────────────────────────
+  Component & utility classes
+────────────────────────────────────────────────────────────*/
 @layer components {
-  /*───────────────────────────────────────────────────────────
-    Existing Component Utilities
-  ───────────────────────────────────────────────────────────*/
+  /* Example utility */
+  .all-\[unset\] {
+    all: unset;
+  }
+
+  /* Input toggles, sticky headers, etc. (keep your existing ones) */
   input[type='checkbox']:checked ~ label span svg {
     @apply inline-flex;
   }
-
   .sticky .header-logo {
     @apply py-5 lg:py-2;
   }
-
   .sticky .menu-scroll.active {
     @apply opacity-70;
   }
-
   input#togglePlan:checked ~ .dot {
     @apply translate-x-full;
   }
-
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
-
   /*───────────────────────────────────────────────────────────
     Elysium Heading 2
     (Figma desktop: 60px / 74px)
