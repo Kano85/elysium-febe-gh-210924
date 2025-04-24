@@ -12,6 +12,7 @@ import Brands from '../../components/Brands';
 import Mission from '../../components/Mission/Mission';
 import ScrollUp from '../../components/Common/ScrollUp';
 import Footer from '../../components/Footer';
+import ScaleAnimation from '../../components/ScaleAnimation/ScaleAnimation';
 
 // Import the presentational ListOfPost
 import ListOfPost from '@/components/Blog/ListOfPost';
@@ -42,6 +43,8 @@ const Home: React.FC = () => {
         )}
         <AboutUs />
         <Brands />
+        <ScaleAnimation />
+
         <MetricsMarketing />
         <Footer />
       </main>

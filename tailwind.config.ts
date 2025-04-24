@@ -10,6 +10,7 @@ const config: Config = {
     './node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    // centered container helper
     container: {
       center: true,
       padding: '1rem',
@@ -20,11 +21,14 @@ const config: Config = {
         xl: '1420px',
       },
     },
+
+    // your breakpoints
     screens: {
       sm: '576px',
       md: '768px',
       lg: '992px',
     },
+
     extend: {
       colors: {
         // Core brand
@@ -32,23 +36,30 @@ const config: Config = {
         'gold-dark': '#DFC383',
         'mainbody-veig': '#f8f7f3',
         'hero-dark': '#1e2123',
-        // Mission/Projects tokens
+
+        // Mission / Projects tokens
         'projects-colorstylesdisable-text':
           'var(--projects-colorstylesdisable-text)',
         'projects-colorstyleshero-dark': 'var(--projects-colorstyleshero-dark)',
         'projects-colorstylesmainbody-veig':
           'var(--projects-colorstylesmainbody-veig)',
-        // Metrics tokens
+
+        // Metrics / Marketing tokens
         '1-colors-base-base-white': 'var(--1-colors-base-base-white)',
         '1-colors-neutral-neutral-borders':
           'var(--1-colors-neutral-neutral-borders)',
+
+        // Placeholder‐text for CTA
+        'neutral-neutral-placeholder-text': '#6c7684',
       },
+
       fontFamily: {
         // Global fonts
         sans: ['var(--font-inter)', 'sans-serif'],
         serif: ['var(--font-suranna)', 'serif'],
         fragmentSans: ['PP Fragment Sans', 'sans-serif'],
         fragmentSerif: ['PP Fragment Serif Light', 'serif'],
+
         // Elysium component fonts
         'elysium-text-body-l-elysium':
           'var(--elysium-text-body-l-elysium-font-family)',
@@ -56,6 +67,7 @@ const config: Config = {
           'var(--elysium-text-body-s-elysium-font-family)',
         'elysium-text-body-XS-elysium':
           'var(--elysium-text-body-XS-elysium-font-family)',
+
         'elysium-text-heading-2-elysium':
           'var(--elysium-text-heading-2-elysium-font-family)',
         'elysium-text-heading-3-elysium':
@@ -65,6 +77,7 @@ const config: Config = {
         'elysium-text-heading-5-elysium':
           'var(--elysium-text-heading-5-elysium-font-family)',
       },
+
       fontSize: {
         h1: 'clamp(3.5rem, 4.6vw, 5.2rem)', // 56px–83.2px
         h2: 'clamp(2.5rem, 3.6vw, 4.2rem)', // 40px–67.2px
@@ -72,6 +85,7 @@ const config: Config = {
         h4: 'clamp(0.96rem,1.2vw,1.44rem)', // 15.36px–23.04px
         h5: 'clamp(1.8rem, 4.8vw, 3.3rem)', // 28.8px–52.8px
       },
+
       spacing: {
         header: '4rem',
         xs: '0.8rem',
@@ -80,12 +94,15 @@ const config: Config = {
         lg: '3.2rem',
         xl: '4.8rem',
       },
+
       borderWidth: {
         '1': '1px',
       },
+
       transitionDuration: {
         base: '300ms',
       },
+
       zIndex: {
         '1': '1',
         '2': '2',
@@ -100,15 +117,18 @@ const config: Config = {
         '15': '15',
         '20': '20',
       },
+
       transformStyle: {
         'preserve-3d': 'preserve-3d',
       },
+
       willChange: {
         opacity: 'opacity',
         transform: 'transform',
         'transform-opacity': 'transform, opacity',
         'filter-transform': 'filter, transform',
       },
+
       boxShadow: {
         signUp: '0px 5px 10px rgba(0, 0, 0, 0.2)',
         one: '0px 2px 3px rgba(0, 0, 0, 0.05)',
@@ -123,6 +143,7 @@ const config: Config = {
         'btn-hover': '0px 1px 2px rgba(0,0,0,0.15)',
         'btn-light': '0px 1px 2px rgba(0,0,0,0.1)',
       },
+
       dropShadow: {
         three: '0px 5px 15px rgba(0, 0, 0, 0.05)',
       },
