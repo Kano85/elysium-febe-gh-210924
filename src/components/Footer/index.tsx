@@ -28,8 +28,8 @@ const Footer: NextPage<FooterType> = ({ className = '' }) => {
               </div>
             </div>
             <div className="flex flex-row items-center justify-start gap-10">
-              <Social social="Instagram" style="Black" socialIcon="instagram" />
-              <Social social="LinkedIn" style="Black" socialIcon="linkedin" />
+              <Social socialIcon="instagram" />
+              <Social socialIcon="linkedin" />
             </div>
           </div>
 
@@ -93,18 +93,14 @@ const Footer: NextPage<FooterType> = ({ className = '' }) => {
                 </div>
               </div>
               <Link
-                color="Color"
                 icon="mail"
                 iconLeft
                 iconRight={false}
-                weight="Regular"
               />
               <Link
-                color="Color"
                 icon="phone"
                 iconLeft
                 iconRight={false}
-                weight="Regular"
                 linkAlignSelf="unset"
               />
             </div>

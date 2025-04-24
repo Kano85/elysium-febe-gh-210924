@@ -2,12 +2,10 @@ import Link from 'next/link';
 import { Instagram, Linkedin, Facebook, Twitter } from 'lucide-react';
 
 export type SocialProps = {
-  social: string;
-  style: string;
   socialIcon: string;
 };
 
-const Social = ({ social, style, socialIcon }: SocialProps) => {
+const Social = ({ socialIcon }: SocialProps) => {
   // Render the appropriate icon based on the socialIcon prop
   const renderIcon = () => {
     switch (socialIcon.toLowerCase()) {

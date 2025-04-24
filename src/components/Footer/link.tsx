@@ -2,22 +2,13 @@ import NextLink from 'next/link';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
 
 export type LinkProps = {
-  color: string;
   icon: string;
   iconLeft: boolean;
   iconRight: boolean;
-  weight: string;
   linkAlignSelf?: string;
 };
 
-const Link = ({
-  color,
-  icon,
-  iconLeft,
-  iconRight,
-  weight,
-  linkAlignSelf = '',
-}: LinkProps) => {
+const Link = ({ icon, iconLeft, iconRight, linkAlignSelf = '' }: LinkProps) => {
   // Render the appropriate icon based on the icon prop
   const renderIcon = () => {
     switch (icon.toLowerCase()) {
