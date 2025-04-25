@@ -15,8 +15,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/Common/dropdown-menu';
-import { Button } from '@/components/Common/button';
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);

@@ -68,5 +68,12 @@
   "title": "Contact Page",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
   "title-user": "Testimonials That Support Us",
-  "description-user": "Our clients are our best representation. Their experiences reflect the impact of our tailored solutions and the commitment we put into each collaboration."
+  "description-user": "Our clients are our best representation. Their experiences reflect the impact of our tailored solutions and the commitment we put into each collaboration.",
+  "contact.nameLabel": "Name",
+  "contact.namePlaceholder": "Enter your name",
+  "contact.emailLabel": "Email",
+  "contact.emailPlaceholder": "Enter your email",
+  "contact.messageLabel": "Message",
+  "contact.messagePlaceholder": "Enter your message",
+  "contact.submitButton": "Send Message"
 }

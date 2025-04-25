@@ -1,15 +1,19 @@
 // app/contact/page.tsx
+'use client';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ContactForm from '@/components/Contact/index';
+import Breadcrumb from '@/components/Common/Breadcrumb';
 
 export default function ContactPage() {
   const { t } = useTranslation();
 
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">{t('contact.pageTitle')}</h1>
-      <ContactForm />
-    </main>
+    <>
+      <Breadcrumb pageName={t('title')} description={t('description')} />
+      <section className="container mx-auto px-4 py-12">
+        <ContactForm />
+      </section>
+    </>
   );
 }

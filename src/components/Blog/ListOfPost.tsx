@@ -5,14 +5,14 @@ import type { ALL_POSTS_QUERYResult } from '@/sanity/types';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import { Badge } from '@/components/Common/badge';
+import { Badge } from '@/components/ui/badge';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/Common/carousel';
+} from '@/components/ui/carousel';
 
 interface ListOfPostProps {
   posts: ALL_POSTS_QUERYResult;

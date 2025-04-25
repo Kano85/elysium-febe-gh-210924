@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Button } from '../Common/button';
+import { Button } from '../ui/button';
 
 const CallToActionMarketingBlock: NextPage = () => {
   return (

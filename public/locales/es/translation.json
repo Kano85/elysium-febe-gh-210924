@@ -65,5 +65,12 @@
   "title": "Página de Contacto",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
   "title-user": "Testimonios que nos respaldan",
-  "description-user": "Nuestros clientes son nuestra mejor carta de presentación. Sus experiencias reflejan el impacto de nuestras soluciones a medida y el compromiso que ponemos en cada colaboración."
+  "description-user": "Nuestros clientes son nuestra mejor carta de presentación. Sus experiencias reflejan el impacto de nuestras soluciones a medida y el compromiso que ponemos en cada colaboración.",
+  "contact.nameLabel": "Nombre",
+  "contact.namePlaceholder": "Ingresa tu nombre",
+  "contact.emailLabel": "Correo electrónico",
+  "contact.emailPlaceholder": "Ingresa tu correo electrónico",
+  "contact.messageLabel": "Mensaje",
+  "contact.messagePlaceholder": "Escribe tu mensaje aquí",
+  "contact.submitButton": "Enviar mensaje"
 }

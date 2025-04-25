@@ -3,10 +3,10 @@
 
 import React, { useState, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Label } from '@/components/Common/label';
-import { Input } from '@/components/Common/input';
-import { Textarea } from '@/components/Common/textarea';
-import { Button } from '@/components/Common/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
 const ContactForm: React.FC = () => {
   const { t } = useTranslation();
@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
     if (formData.get('phone')) return;
 
     try {
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const res = await fetch('https://formspree.io/f/xblojvll', {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' },
@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md space-y-4">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 px-4">
       <div>
         <Label htmlFor="name">{t('contact.nameLabel')}</Label>
         <Input
