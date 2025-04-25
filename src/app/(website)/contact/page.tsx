@@ -1,25 +1,15 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import Contact from "@/components/Contact";
+// app/contact/page.tsx
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import ContactForm from '@/components/Contact/index';
 
-import { Metadata } from "next";
+export default function ContactPage() {
+  const { t } = useTranslation();
 
-export const metadata: Metadata = {
-  title: "Contact Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Contact Page for Startup Nextjs Template",
-  // other metadata
-};
-
-const ContactPage = () => {
   return (
-    <>
-      <Breadcrumb
-        pageName="Contact Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
-      />
-
-      <Contact />
-    </>
+    <main className="p-6">
+      <h1 className="text-2xl font-bold mb-4">{t('contact.pageTitle')}</h1>
+      <ContactForm />
+    </main>
   );
-};
-
-export default ContactPage;
+}

@@ -1,89 +1,109 @@
+// components/ContactForm.tsx
 'use client';
-import { useTranslation } from 'react-i18next';
-import NewsLatterBox from './NewsLatterBox';
 
-const Contact = () => {
+import React, { useState, FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Label } from '@/components/Common/label';
+import { Input } from '@/components/Common/input';
+import { Textarea } from '@/components/Common/textarea';
+import { Button } from '@/components/Common/button';
+
+const ContactForm: React.FC = () => {
   const { t } = useTranslation();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Honeypot check
+    if (formData.get('phone')) return;
+
+    try {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        setSuccess(true);
+        form.reset();
+        setError(null);
+      } else {
+        const data = await res.json();
+        const msgs = data.errors?.map((e: any) => e.message).join(', ');
+        throw new Error(msgs || 'Form submission failed');
+      }
+    } catch (err) {
+      console.error(err);
+      setError(t('contact.errorGeneric'));
+    }
+  };
+
+  if (success) {
+    return (
+      <p className="text-green-600 font-medium">
+        ✅ {t('contact.successMessage')}
+      </p>
+    );
+  }
 
   return (
-    <section id="contact" className="lg:py-28 md:py-20 overflow-hidden py-16">
-      <div className="container">
-        <div className="flex flex-wrap -mx-4">
-          <div className="w-full lg:w-7/12 px-4 xl:w-8/12">
-            <div
-              className="bg-gray-dark rounded-sm shadow-three lg:mb-5 lg:px-8 mb-12 px-8 py-11 sm:p-[55px] xl:p-[55px]"
-              data-wow-delay=".15s"
-            >
-              <h2 className="text-2xl text-white font-bold lg:text-2xl mb-3 sm:text-3xl xl:text-3xl">
-                {t('need_help')}
-              </h2>
-              <p className="text-base text-body-color-dark font-medium mb-12">
-                {t('support_team')}
-              </p>
-              <form>
-                <div className="flex flex-wrap -mx-4">
-                  <div className="w-full md:w-1/2 px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="name"
-                        className="text-sm text-white block font-medium mb-3"
-                      >
-                        {t('your_name')}
-                      </label>
-                      <input
-                        type="text"
-                        placeholder={t('enter_name')}
-                        className="bg-[#2C303B] border border-stroke rounded-sm shadow-two text-base text-body-color-dark w-full focus:border-primary focus:shadow-none outline-none px-6 py-3"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full md:w-1/2 px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="email"
-                        className="text-sm text-white block font-medium mb-3"
-                      >
-                        {t('your_email')}
-                      </label>
-                      <input
-                        type="email"
-                        placeholder={t('enter_email')}
-                        className="bg-[#2C303B] border border-stroke rounded-sm shadow-two text-base text-body-color-dark w-full focus:border-primary focus:shadow-none outline-none px-6 py-3"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="text-sm text-white block font-medium mb-3"
-                      >
-                        {t('your_message')}
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        placeholder={t('enter_message')}
-                        className="bg-[#2C303B] border border-stroke rounded-sm shadow-two text-base text-body-color-dark w-full focus:border-primary focus:shadow-none outline-none px-6 py-3 resize-none"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <button className="bg-primary rounded-sm shadow-submit-dark text-base text-white duration-300 font-medium hover:bg-primary/90 px-9 py-4">
-                      {t('send_ticket')}
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div className="w-full lg:w-5/12 px-4 xl:w-4/12">
-            <NewsLatterBox />
-          </div>
-        </div>
+    <form onSubmit={handleSubmit} className="max-w-md space-y-4">
+      <div>
+        <Label htmlFor="name">{t('contact.nameLabel')}</Label>
+        <Input
+          id="name"
+          name="name"
+          type="text"
+          required
+          placeholder={t('contact.namePlaceholder')}
+        />
       </div>
-    </section>
+
+      <div>
+        <Label htmlFor="email">{t('contact.emailLabel')}</Label>
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder={t('contact.emailPlaceholder')}
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="message">{t('contact.messageLabel')}</Label>
+        <Textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          placeholder={t('contact.messagePlaceholder')}
+        />
+      </div>
+
+      {/* Honeypot field */}
+      <div className="hidden">
+        <Label htmlFor="phone">{t('contact.phoneLabel')}</Label>
+        <Input
+          id="phone"
+          name="phone"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          placeholder={t('contact.phonePlaceholder')}
+        />
+      </div>
+
+      <Button type="submit">{t('contact.submitButton')}</Button>
+
+      {error && <p className="text-red-500 font-medium">{error}</p>}
+    </form>
   );
 };
 
-export default Contact;
+export default ContactForm;

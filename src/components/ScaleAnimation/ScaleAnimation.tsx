@@ -17,14 +17,13 @@ const ScaleAnimation = () => {
   });
 
   const scale = useTransform(
-    smoothProgress, 
-    isMobile ? [0.1, 0.5] : [0.2, 1], 
+    smoothProgress,
+    isMobile ? [0.1, 0.5] : [0.2, 1],
     [1, 20]
   );
 
   const innerTextOpacity = useTransform(smoothProgress, [0.1, 0.2], [1, 0]);
   const y = useTransform(smoothProgress, [0.1, 0.2], ["0%", "-400%"]);
-  const x = useTransform(smoothProgress, [0.1, 0.2], ["15%", "0%"]);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -45,8 +44,8 @@ const ScaleAnimation = () => {
       >
         <div className="absolute top-1/4 -translate-y-1/4 left-0  w-full flex items-center justify-center">
           <motion.div
-            style={{ scale, x }}
-            className="flex items-center justify-center bg-transparent text-[200px] sm:text-[350px]  lg:text-[500px]  text-white"
+            style={{ scale }}
+            className="flex origin-[center_40%] items-center justify-center bg-transparent text-[200px] sm:text-[350px]  lg:text-[500px]  text-white"
           >
             <h2>9</h2>
             <h2 className="relative ">
@@ -66,7 +65,7 @@ const ScaleAnimation = () => {
             </h2>
             <h2 className="relative text-transparent max-w-[110px] sm:max-w-[190px] lg:max-w-[270px] overflow-hidden  ">
               %
-              <span className="absolute left-0 bottom-[30%]   translate-y-1/2 font-serif text-6xl sm:text-8xl md:text-[110px] lg:text-[130px]  text-white">
+              <span className="absolute left-0 bottom-[30%]  pb-5 md:pb-10  translate-y-1/2 font-serif text-6xl sm:text-8xl md:text-[110px] lg:text-[130px]  text-white">
                 %
               </span>
             </h2>
@@ -85,4 +84,3 @@ const ScaleAnimation = () => {
 };
 
 export default ScaleAnimation;
-
