@@ -75,5 +75,7 @@
   "contact.emailPlaceholder": "Enter your email",
   "contact.messageLabel": "Message",
   "contact.messagePlaceholder": "Enter your message",
-  "contact.submitButton": "Send Message"
+  "contact.submitButton": "Send Message",
+  "contact.successMessage": "Your message has been sent successfully!",
+  "contact.errorGeneric": "Oops! Something went wrong. Please try again later."
 }

@@ -8,7 +8,6 @@ import Hero from '../../components/Hero/Hero';
 import USP from '../../components/USP/USP';
 import { MetricsMarketing } from '../../components/Carousel/Carousel';
 import AboutUs from '../../components/AboutUs';
-import Brands from '../../components/Brands';
 import Mission from '../../components/Mission/Mission';
 import ScrollUp from '../../components/Common/ScrollUp';
 import Footer from '../../components/Footer';
@@ -42,7 +41,6 @@ const Home: React.FC = () => {
           <ListOfPost posts={posts} />
         )}
         <AboutUs />
-        <Brands />
         <ScaleAnimation />
 
         <MetricsMarketing />

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Social from './social';
 import Link from './link';
 import { ChevronUp, MapPin } from 'lucide-react';
+import Marquee from '../Marquee/Marquee';
+import SectionTitle from '../Common/SectionTitle';
 
 export type FooterType = {
   className?: string;
@@ -11,8 +13,14 @@ export type FooterType = {
 const Footer: NextPage<FooterType> = ({ className = '' }) => {
   return (
     <div
-      className={`w-full max-w-[1440px] bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-0 px-4 sm:px-8 md:px-12 lg:px-[100px] box-border text-left text-[18px] text-[#9d9b94] font-Elysium-text-Body-XS-Elysium ${className}`}
+      className={`w-full bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-0 px-4 sm:px-8 md:px-12 lg:px-[100px] box-border text-left text-[18px] text-[#9d9b94] font-Elysium-text-Body-XS-Elysium ${className}`}
     >
+      <SectionTitle
+        title="Building Lasting Partnerships"
+        paragraph="No solo ofrecemos consultoría, forjamos alianzas que perduran en el tiempo"
+        center
+      />
+      <Marquee />
       <div className="self-stretch overflow-hidden flex flex-col items-center justify-start w-full">
         <div className="self-stretch flex flex-col md:flex-row items-start md:items-end justify-between py-8 md:py-spacing-6xl px-0 gap-8 md:gap-0 w-full">
           {/* Logo and social icons */}
@@ -92,11 +100,7 @@ const Footer: NextPage<FooterType> = ({ className = '' }) => {
                   Comunicación
                 </div>
               </div>
-              <Link
-                icon="mail"
-                iconLeft
-                iconRight={false}
-              />
+              <Link icon="mail" iconLeft iconRight={false} />
               <Link
                 icon="phone"
                 iconLeft

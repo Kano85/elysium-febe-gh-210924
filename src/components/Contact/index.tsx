@@ -1,17 +1,20 @@
 // components/ContactForm.tsx
 'use client';
 
-import React, { useState, FormEvent } from 'react';
+import React, { FormEvent, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const ContactForm: React.FC = () => {
   const { t } = useTranslation();
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,6 +24,13 @@ const ContactForm: React.FC = () => {
     // Honeypot check
     if (formData.get('phone')) return;
 
+    // reCAPTCHA check
+    if (!recaptchaToken) {
+      toast.error(t('contact.recaptchaRequired'));
+      return;
+    }
+    formData.append('g-recaptcha-response', recaptchaToken);
+
     try {
       const res = await fetch('https://formspree.io/f/xblojvll', {
         method: 'POST',
@@ -29,9 +39,10 @@ const ContactForm: React.FC = () => {
       });
 
       if (res.ok) {
-        setSuccess(true);
+        toast.success(t('contact.successMessage'));
         form.reset();
-        setError(null);
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
       } else {
         const data = await res.json();
         const msgs = data.errors?.map((e: any) => e.message).join(', ');
@@ -39,17 +50,11 @@ const ContactForm: React.FC = () => {
       }
     } catch (err) {
       console.error(err);
-      setError(t('contact.errorGeneric'));
+      toast.error(t('contact.errorGeneric'));
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
     }
   };
-
-  if (success) {
-    return (
-      <p className="text-green-600 font-medium">
-        ✅ {t('contact.successMessage')}
-      </p>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 px-4">
@@ -99,9 +104,18 @@ const ContactForm: React.FC = () => {
         />
       </div>
 
+      {/* Google reCAPTCHA widget */}
+      <div>
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+          ref={recaptchaRef}
+          onChange={setRecaptchaToken}
+        />
+      </div>
+
       <Button type="submit">{t('contact.submitButton')}</Button>
 
-      {error && <p className="text-red-500 font-medium">{error}</p>}
+      {/* error handled via toast notifications */}
     </form>
   );
 };

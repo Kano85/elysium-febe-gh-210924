@@ -34,7 +34,7 @@ const ListOfPost: React.FC<ListOfPostProps> = ({ posts }) => {
     <section id="listofposts" className="bg-[#1e2123] lg:py-28 md:py-20 py-16">
       <div className="container">
         <div className="mb-12 max-w-3xl">
-          <h2 className="text-[#ffb800] text-4xl md:text-5xl font-light mb-4">
+          <h2 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
             {t('recent_posts')}
           </h2>
           <p className="text-[#9d9b94]">{t('explore_recent_articles')}</p>

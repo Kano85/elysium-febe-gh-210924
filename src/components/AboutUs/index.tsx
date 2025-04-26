@@ -4,11 +4,11 @@ export default function AboutUs() {
   return (
     <main className="min-h-screen bg-hero-dark text-white py-xl px-sm md:px-md lg:px-lg">
       <div className="container mx-auto">
-        <div className="text-center mb-xl">
-          <h1 className="text-h1 font-serif text-h1-color mb-sm">
+        <div className="text-left mb-xl">
+          <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
             La experiencia no es solo técnica, es personal
           </h1>
-          <p className="text-body-color text-h4">
+          <p className="font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text">
             Desde Andorra al mundo, un equipo unido por la excelencia y la
             pasión.
           </p>

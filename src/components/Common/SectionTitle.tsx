@@ -17,10 +17,14 @@ const SectionTitle = ({
       className={`w-full ${center ? 'mx-auto text-center' : ''}`}
       style={{ maxWidth: width, marginBottom: mb }}
     >
-      <h2 className="mb-4 text-3xl font-bold leading-tight text-h1-color font-serif sm:text-4xl md:text-[65px]">
+      <h2
+        className={`mb-4 text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent ${center ? 'text-center' : 'text-left'}`}
+      >
         {title}
       </h2>
-      <p className="text-base !leading-relaxed text-body-color-dark md:text-lg">
+      <p
+        className={`font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text ${center ? 'text-center' : 'text-left'}`}
+      >
         {paragraph}
       </p>
     </div>

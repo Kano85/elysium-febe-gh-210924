@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
-import { motion, useTransform, useScroll, useSpring } from "framer-motion";
-import { AnimatedText } from "./AnimatedText";
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
+import { AnimatedText } from './AnimatedText';
 
 const ScaleAnimation = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -8,7 +8,7 @@ const ScaleAnimation = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"],
+    offset: ['start start', 'end end'],
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
@@ -23,18 +23,18 @@ const ScaleAnimation = () => {
   );
 
   const innerTextOpacity = useTransform(smoothProgress, [0.1, 0.2], [1, 0]);
-  const y = useTransform(smoothProgress, [0.1, 0.2], ["0%", "-400%"]);
+  const y = useTransform(smoothProgress, [0.1, 0.2], ['0%', '-400%']);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
     };
 
     checkScreenSize();
 
-    window.addEventListener("resize", checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
 
-    return () => window.removeEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
   return (
     <section className="bg-transparent text-white">
