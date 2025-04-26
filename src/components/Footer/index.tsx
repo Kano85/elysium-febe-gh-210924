@@ -86,7 +86,7 @@ const Footer: NextPage<FooterType> = ({ className = '' }) => {
                   />
                   <div className="relative leading-[20px]">
                     <p className="m-0">{`Avinguda Carlemany `}</p>
-                    <p className="m-0">{`657. 6e 2a, AD700, `}</p>
+                    <p className="m-0">{`67 6e 2a, AD700, `}</p>
                     <p className="m-0">Andorra</p>
                   </div>
                 </div>
