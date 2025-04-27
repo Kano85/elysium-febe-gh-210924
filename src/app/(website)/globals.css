@@ -108,7 +108,7 @@
     (Figma desktop: 60px / 74px)
   ───────────────────────────────────────────────────────────*/
   .elysium-heading-2 {
-    font-family: 'PP Fragment', sans-serif;
+    font-family: 'PP Fragment Serif Light', serif;
     font-weight: 400;
     font-style: normal;
     /* min=36px, fluid, max=60px */
@@ -122,7 +122,7 @@
     (Figma desktop: 48px / 60px)
   ───────────────────────────────────────────────────────────*/
   .elysium-heading-3 {
-    font-family: 'PP Fragment', sans-serif;
+    font-family: 'PP Fragment Serif Light', serif;
     font-weight: 400;
     font-style: normal;
     /* min=28px, fluid, max=48px */

@@ -1,22 +1,20 @@
 // src/components/Mission.tsx
 import React from 'react';
 import Image from 'next/image';
+import SectionTitle from '../Common/SectionTitle';
 
 export default function Mission(): JSX.Element {
   return (
-    <section className="flex flex-col w-full max-w-[1440px] mx-auto gap-[64px] pt-[120px] pb-[80px] px-[100px] bg-projects-colorstyleshero-dark">
+    <section className="flex flex-col w-full  gap-[64px] pt-40 pb-[80px] px-8 lg:px-24 bg-projects-colorstyleshero-dark">
       {/* Hero */}
-      <div className="flex flex-col w-full gap-[12px] px-[2.3rem]">
-        <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-          Cuando se trata de decisiones importantes, <br />
-          lo caro es equivocarse.
-        </h1>
-        <p className="font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text ">
-          Por eso nuestros clientes confían en nosotros desde el principio:
-          porque hacerlo bien a la primera te hace ganar tiempo, dinero… y
-          libertad.
-        </p>
-      </div>
+      <SectionTitle
+        title={
+          'Cuando se trata de decisiones importantes, lo caro es equivocarse.'
+        }
+        paragraph={
+          'Por eso nuestros clientes confían en nosotros desde el principio: porque hacerlo bien a la primera te hace ganar tiempo, dinero… y libertad.'
+        }
+      />
 
       {/* First Content */}
       <div className="flex flex-wrap justify-between items-start gap-[80px] px-[50px]">

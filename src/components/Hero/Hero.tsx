@@ -61,15 +61,15 @@ export default function Hero() {
         </video>
 
         <div
-          className="relative z-5 h-full flex flex-col items-start justify-center pl-[50px] lg:pl-[130px] pr-[3.5rem] opacity-100 will-change-transform gap-4"
+          className="relative z-5 h-full flex flex-col items-start justify-center pl-8 lg:pl-24 space-y-4 opacity-100 will-change-transform"
           ref={contentRef}
         >
-          <h1 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
+          <h1 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
             {t('Building lasting')} <br />
             {t('partnerships')}
           </h1>
 
-          <p className="text-mainbody-veig font-fragment text-[1rem] lg:text-h4 leading-[1.4rem] lg:leading-[1.25rem] text-left opacity-90 max-w-[500px]">
+          <p className="elysium-body-l text-left opacity-90 max-w-[500px]">
             {t('Discover us')}
           </p>
         </div>

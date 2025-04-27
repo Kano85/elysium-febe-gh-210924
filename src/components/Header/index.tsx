@@ -50,7 +50,9 @@ const Header: React.FC = () => {
     i18n.changeLanguage(lng);
   };
 
-  const languages = [
+  type Language = { code: string; label: string };
+
+  const languages: Language[] = [
     { code: 'en', label: 'English' },
     { code: 'es', label: 'Español' },
     { code: 'fr', label: 'Français' },
@@ -59,19 +61,19 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`header left-0 top-0 z-15 flex w-full items-center ${
+      className={`header left-0 top-0 z-15 flex w-full items-center  ${
         sticky
           ? 'fixed z-20 bg-gray-dark bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
           : 'absolute bg-transparent'
       }`}
     >
-      <div className="container">
-        <div className="flex justify-center -mx-4 items-center relative">
-          <div className="w-60 max-w-full px-4 xl:mr-12">
+      <div className="w-full">
+        <div className="flex justify-between w-full items-center relative pl-8 lg:pl-24 pr-8 lg:pr-24">
+          <div className="w-64 max-w-full xl:mr-12">
             <Link
               href="/"
               className={`header-logo block w-full ${
-                sticky ? 'py-5 lg:py-2' : 'py-8'
+                sticky ? 'py-2 lg:py-2' : 'py-2'
               }`}
             >
               <Image
@@ -84,13 +86,35 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          <div className="flex justify-between w-fit items-center px-4">
-            <div>
+          <div className="flex justify-end w-fit lg:w-[75%] items-center self-center pl-4 lg:px-4 mx-auto flex-row-reverse lg:flex-row">
+            <div className="relative w-full ">
               <button
                 onClick={navbarToggleHandler}
                 id="navbarToggler"
                 aria-label="Mobile Menu"
-                className="rounded-lg absolute block focus:ring-2 lg:hidden px-3 py-[6px] right-4 ring-primary top-1/2 translate-y-[-50%]"
+                className="rounded-lg absolute block focus:ring-2 lg:hidden pl-3 py-[6px] right-0 ring-primary top-1/2 translate-y-[-50%]"
+              >
+                <span
+                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
+                    navbarOpen ? 'top-[7px] rotate-45' : ''
+                  }`}
+                />
+                <span
+                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
+                    navbarOpen ? 'opacity-0' : ''
+                  }`}
+                />
+                <span
+                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
+                    navbarOpen ? 'top-[-8px] -rotate-45' : ''
+                  }`}
+                />
+              </button>
+              <button
+                // onClick={navbarToggleHandler}
+                id="navbarToggler"
+                aria-label="hidden"
+                className="rounded-lg pointer-events-none !invisible !opacity-0 block focus:ring-2 lg:hidden px-3 py-[6px] right-4 ring-primary top-1/2 translate-y-[-50%]"
               >
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
@@ -111,13 +135,13 @@ const Header: React.FC = () => {
 
               <nav
                 id="navbarCollapse"
-                className={`navbar absolute right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 ${
+                className={`navbar absolute lg:bg-yellow-300 right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100  ${
                   navbarOpen
                     ? 'visible top-full opacity-100'
                     : 'invisible top-[120%] opacity-0'
                 }`}
               >
-                <ul className="block lg:flex lg:space-x-12">
+                <ul className="block lg:flex lg:space-x-12 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-[calc(50%+130px)] lg:-translate-y-1/2">
                   {menuData.map((menuItem: MenuItem, index: number) => (
                     <li
                       key={`${menuItem.title}-${index}`}
@@ -126,7 +150,7 @@ const Header: React.FC = () => {
                       {isMenuItemWithPath(menuItem) ? (
                         <Link
                           href={menuItem.path}
-                          className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                          className={`flex py-2 text-base whitespace-nowrap lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                             currentPath === menuItem.path
                               ? 'text-white'
                               : 'text-white/70 hover:text-white'
@@ -140,7 +164,7 @@ const Header: React.FC = () => {
                             onClick={() => handleSubmenu(index)}
                             aria-haspopup="true"
                             aria-expanded={openIndex === index}
-                            className="flex justify-between text-base text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
+                            className="flex justify-between text-base whitespace-nowrap text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
                           >
                             {t(menuItem.title)}
                             <span className="pl-3">
@@ -179,9 +203,9 @@ const Header: React.FC = () => {
             </div>
 
             {/* Language Switcher */}
-            <div className="flex items-center ml-4 space-x-2">
+            <div className="flex items-center ml-4 space-x-2 ">
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger asChild className="">
                   <Button
                     variant="ghost"
                     size="lg"
@@ -197,7 +221,7 @@ const Header: React.FC = () => {
                     <ChevronDown className="ml-1 h-4 text-white" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="">
                   {/* Language Switcher Menu */}
                   {languages.map(({ code, label }) => (
                     <DropdownMenuItem
