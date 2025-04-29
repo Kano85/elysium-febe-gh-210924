@@ -72,5 +72,34 @@
   "contact.emailPlaceholder": "Ingresa tu correo electrónico",
   "contact.messageLabel": "Mensaje",
   "contact.messagePlaceholder": "Escribe tu mensaje aquí",
-  "contact.submitButton": "Enviar mensaje"
+  "contact.submitButton": "Enviar mensaje",
+  "mission": {
+    "hero": {
+      "title": "Cuando se trata de decisiones importantes, el error costoso es equivocarse.",
+      "paragraph": "Por eso nuestros clientes confían en nosotros desde el principio: porque acertar a la primera te ahorra tiempo, dinero... y libertad."
+    },
+    "image1": {
+      "alt": "Profesional con atuendo de negocios"
+    },
+    "block1": {
+      "title": "Convertimos la complejidad en estrategia.",
+      "paragraph": "Tomar decisiones fiscales o legales a nivel internacional implica riesgos, normativas cambiantes y escenarios que no siempre son evidentes. En ELYSIUM, analizamos cada caso con una visión global para transformar esa complejidad en una hoja de ruta clara, segura y efectiva."
+    },
+    "block2": {
+      "title": "Escuchamos antes de proponer. Entendemos antes de actuar.",
+      "paragraph": "No aplicamos plantillas. Diseñamos soluciones a medida considerando tu realidad personal, fiscal, legal y empresarial. Porque cada persona y cada negocio es único, y merece una estrategia que también lo sea."
+    },
+    "block3": {
+      "title": "Relaciones que aportan valor a largo plazo.",
+      "paragraph": "Muchos llegan a ELYSIUM por un servicio puntual. Pero se quedan por todo lo que descubren después. Aquí no vendemos trámites, sino soluciones reales, con visión legal, fiscal y estratégica. La gran mayoría de nuestros clientes repiten o amplían servicios. Es habitual que vuelvan. Es excepcional que no lo hagan."
+    },
+    "block4": {
+      "title": "Excelencia que se nota en los detalles.",
+      "paragraph": "No buscamos hacer 'lo correcto': buscamos hacerlo mejor. Venimos de firmas de primer nivel y hemos aprendido que lo que marca la diferencia no son las cosas grandes, sino las precisas. En cada recomendación, documento o decisión, está presente nuestro estándar de calidad."
+    },
+    "image2": {
+      "alt": "Profesionales de negocios en una reunión"
+    }
+  },
+  "discover_more": "Descubre más"
 }

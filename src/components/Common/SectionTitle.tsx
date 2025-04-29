@@ -1,32 +1,50 @@
 //src/components/Common/SectionTitle.tsx
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+
 const SectionTitle = ({
   title,
   paragraph,
-  width = '100%',
-  center,
-  mb = '0px',
+  mb = 'mb-0',
+  buttonText,
+  buttonHref,
 }: {
   title: string;
   paragraph: string;
-  width?: string;
-  center?: boolean;
-  mb?: string;
+  mb?: 'mb-0' | 'mb-12' | 'mb-48';
+  buttonText?: string;
+  buttonHref?: string;
 }) => {
   return (
     <div
-      className={`w-full ${center ? 'mx-auto text-center' : ''}`}
-      style={{ maxWidth: width, marginBottom: mb }}
+      className={`flex items-center justify-between w-full max-w-screen-2xl mx-auto text-left ${mb}`}
     >
-      <h2
-        className={`mb-4 text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent ${center ? 'text-center' : 'text-left'}`}
-      >
-        {title}
-      </h2>
-      <p
-        className={`font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text ${center ? 'text-center' : 'text-left'}`}
-      >
-        {paragraph}
-      </p>
+      <div>
+        <h2
+          className={`elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left`}
+        >
+          {title.split(',').map((line, index) => (
+            <span key={index}>
+              {line}
+              {index < title.split(',').length - 1 && ', '}
+              <br />
+            </span>
+          ))}
+        </h2>
+        <p
+          className={`font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text text-left`}
+        >
+          {paragraph}
+        </p>
+      </div>
+      {buttonText &&
+        (buttonHref ? (
+          <Button variant="outline" asChild>
+            <Link href={buttonHref}>{buttonText}</Link>
+          </Button>
+        ) : (
+          <Button variant="outline">{buttonText}</Button>
+        ))}
     </div>
   );
 };

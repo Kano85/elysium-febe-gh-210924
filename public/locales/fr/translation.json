@@ -66,5 +66,34 @@
   "title": "Page de Contact",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
   "title-user": "Témoignages qui nous soutiennent",
-  "description-user": "Nos clients sont notre meilleure carte de visite. Leurs expériences reflètent l'impact de nos solutions sur mesure et l'engagement que nous mettons dans chaque collaboration."
+  "description-user": "Nos clients sont notre meilleure carte de visite. Leurs expériences reflètent l'impact de nos solutions sur mesure et l'engagement que nous mettons dans chaque collaboration.",
+  "mission": {
+    "hero": {
+      "title": "Lorsqu'il s'agit de décisions importantes, l'erreur coûteuse est de se tromper.",
+      "paragraph": "C'est pourquoi nos clients nous font confiance dès le départ : parce que bien faire dès la première fois vous fait gagner du temps, de l'argent... et de la liberté."
+    },
+    "image1": {
+      "alt": "Professionnel en tenue de travail"
+    },
+    "block1": {
+      "title": "Nous transformons la complexité en stratégie.",
+      "paragraph": "Prendre des décisions fiscales ou juridiques à l'échelle internationale implique des risques, des réglementations changeantes et des scénarios qui ne sont pas toujours évidents. Chez ELYSIUM, nous analysons chaque cas avec une vision globale pour transformer cette complexité en une feuille de route claire, sûre et efficace."
+    },
+    "block2": {
+      "title": "Nous écoutons avant de proposer. Nous comprenons avant d'agir.",
+      "paragraph": "Nous n'appliquons pas de modèles standard. Nous concevons des solutions sur mesure en tenant compte de votre réalité personnelle, fiscale, juridique et commerciale. Parce que chaque personne et chaque entreprise est unique, et mérite une stratégie qui l'est aussi."
+    },
+    "block3": {
+      "title": "Des relations qui apportent de la valeur à long terme.",
+      "paragraph": "Beaucoup viennent à ELYSIUM pour un service ponctuel. Mais ils restent pour tout ce qu'ils découvrent ensuite. Ici, nous ne vendons pas de procédures, mais des solutions réelles, avec une vision juridique, fiscale et stratégique. La grande majorité de nos clients répètent ou élargissent leurs services. Il est habituel qu'ils reviennent. Il est exceptionnel qu'ils ne le fassent pas."
+    },
+    "block4": {
+      "title": "L'excellence qui se voit dans les détails.",
+      "paragraph": "Nous ne cherchons pas à faire 'ce qu'il faut' : nous cherchons à le faire mieux. Nous venons de cabinets de premier plan et avons appris que ce qui fait la différence, ce ne sont pas les grandes choses, mais les précises. Dans chaque recommandation, document ou décision, notre standard de qualité est présent."
+    },
+    "image2": {
+      "alt": "Professionnels en réunion"
+    }
+  },
+  "discover_more": "Découvrir plus"
 }

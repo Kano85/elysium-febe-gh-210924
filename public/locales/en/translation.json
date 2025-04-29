@@ -1,6 +1,5 @@
 {
   "E": "Elysium",
-
   "Discover us": "Discover us",
   "Global Tax Consultancy": "Global Tax Consultancy",
   "15+ years of experience": "15+ years of experience",
@@ -77,5 +76,34 @@
   "contact.messagePlaceholder": "Enter your message",
   "contact.submitButton": "Send Message",
   "contact.successMessage": "Your message has been sent successfully!",
-  "contact.errorGeneric": "Oops! Something went wrong. Please try again later."
+  "contact.errorGeneric": "Oops! Something went wrong. Please try again later.",
+  "mission": {
+    "hero": {
+      "title": "When it comes to important decisions, the expensive mistake is getting it wrong.",
+      "paragraph": "That's why our clients trust us from the start: because getting it right the first time saves you time, money... and freedom."
+    },
+    "image1": {
+      "alt": "Professional in business attire"
+    },
+    "block1": {
+      "title": "We turn complexity into strategy.",
+      "paragraph": "Making fiscal or legal decisions at an international level involves risks, changing regulations, and scenarios that are not always evident. At ELYSIUM, we analyze each case with a global vision to transform that complexity into a clear, safe, and effective roadmap."
+    },
+    "block2": {
+      "title": "We listen before proposing. We understand before acting.",
+      "paragraph": "We don't apply templates. We design tailored solutions considering your personal, fiscal, legal, and business reality. Because every person and every business is unique, and they deserve a strategy that is too."
+    },
+    "block3": {
+      "title": "Relationships that add long-term value.",
+      "paragraph": "Many come to ELYSIUM for a one-time service. But they stay for everything they discover afterward. Here we don't sell procedures, but real solutions, with legal, fiscal, and strategic vision. The vast majority of our clients repeat or expand services. It's usual for them to return. It's exceptional for them not to."
+    },
+    "block4": {
+      "title": "Excellence that shows in the details.",
+      "paragraph": "We don't aim to do 'the right thing': we aim to do it better. We come from top-tier firms and have learned that what makes the difference is not the big things, but the precise ones. In every recommendation, document, or decision, our quality standard is present."
+    },
+    "image2": {
+      "alt": "Business professionals in a meeting"
+    }
+  },
+  "discover_more": "Discover more"
 }

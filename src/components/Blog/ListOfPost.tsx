@@ -13,6 +13,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import SectionTitle from '@/components/Common/SectionTitle';
 
 interface ListOfPostProps {
   posts: ALL_POSTS_QUERYResult;
@@ -31,84 +32,71 @@ const ListOfPost: React.FC<ListOfPostProps> = ({ posts }) => {
   };
 
   return (
-    <section id="listofposts" className="bg-[#1e2123] lg:py-28 md:py-20 py-16">
-      <div className="container">
-        <div className="mb-12 max-w-3xl">
-          <h2 className="text-[2.5rem] lg:text-[3rem] tracking-[-0.01em] leading-[3rem] lg:leading-[3.75rem] font-fragmentSerif font-normal bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-            {t('recent_posts')}
-          </h2>
-          <p className="text-[#9d9b94]">{t('explore_recent_articles')}</p>
-        </div>
+    <section
+      id="listofposts"
+      className="flex flex-col w-full gap-[48px] px-8 pb-[30px] pt-[90px] lg:px-24 lg:pt-40 lg:pb-[80px]  sm:pt-[90px] sm:pb-[30px] "
+    >
+      <SectionTitle
+        title={t('recent_posts')}
+        paragraph={t('explore_recent_articles')}
+        mb="mb-0"
+        buttonText={t('discover_more')}
+        buttonHref="/blog"
+      />
 
-        <div className="relative">
-          <Carousel
-            className="mx-auto w-full xl:max-w-[72rem]"
-            opts={{ align: 'start' }}
-          >
-            <CarouselContent className="gap-24">
-              {posts.map((post) => {
-                return (
-                  <CarouselItem
-                    key={post._id}
-                    className="basis-full lg:basis-1/4"
+      <div className="relative w-screen left-1/2 -translate-x-1/2">
+        <Carousel className="w-screen" opts={{ align: 'start' }}>
+          <CarouselContent className="gap-24">
+            {posts.map((post) => {
+              return (
+                <CarouselItem
+                  key={post._id}
+                  className="basis-full lg:basis-[213px]"
+                >
+                  <Link
+                    href={`/blog/${post.slug?.current}`}
+                    className="block h-full w-full"
+                    aria-label="Read full article"
                   >
-                    <Link
-                      href={`/blog/${post.slug?.current}`}
-                      className="block h-full w-full"
-                      aria-label="Read full article"
-                    >
-                      <div className="relative rounded-lg overflow-hidden h-[448px] min-w-[208px] group">
-                        <div className="absolute inset-0 bg-black/40 z-10"></div>
-                        <div
-                          className="absolute inset-0 bg-cover bg-center"
-                          style={{
-                            backgroundImage: post.mainImage?.asset
-                              ? `url('${urlFor(post.mainImage).url()}')`
-                              : 'none',
-                          }}
-                        ></div>
-                        <div className="absolute top-4 left-4 z-20">
-                          <Badge
-                            variant="outline"
-                            className="text-white text-sm"
-                          >
-                            {post.category?.title || 'Finance'}
-                          </Badge>
+                    <div className="relative rounded-lg overflow-hidden h-[520px] min-w-[243px] group">
+                      <div className="absolute inset-0 bg-black/40 z-10"></div>
+                      <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                          backgroundImage: post.mainImage?.asset
+                            ? `url('${urlFor(post.mainImage).url()}')`
+                            : 'none',
+                        }}
+                      ></div>
+                      <div className="absolute top-4 left-4 z-20">
+                        <Badge variant="default" className="text-white text-sm">
+                          {post.category?.title || 'Finance'}
+                        </Badge>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                        <div className="elysium-body-s text-white font-medium mb-6">
+                          {post.title}
                         </div>
-                        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-                          <h3 className="text-white text-xl font-medium mb-6">
-                            {post.title}
-                          </h3>
-                          <div className="flex items-center gap-2">
-                            <span className="text-white text-sm">
-                              {post.author?.name || t('unknown_author')}
-                            </span>
-                            <span className="text-[#9d9b94] text-sm ml-auto">
-                              {post.publishedAt
-                                ? formatDate(post.publishedAt)
-                                : t('no_date')}
-                            </span>
-                          </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-white text-sm">
+                            {post.author?.name || t('unknown_author')}
+                          </span>
+                          <span className="text-[#9d9b94] text-sm ml-auto">
+                            {post.publishedAt
+                              ? formatDate(post.publishedAt)
+                              : t('no_date')}
+                          </span>
                         </div>
                       </div>
-                    </Link>
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 flex items-center justify-center shadow-lg bg-gradient-to-r from-amber-400 to-yellow-500 rounded-none" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 h-10 flex items-center justify-center shadow-lg bg-gradient-to-r from-amber-400 to-yellow-500 rounded-none" />
-          </Carousel>
-        </div>
-
-        <div className="mt-8 text-right">
-          <Link
-            href="/blog"
-            className="text-[#d9d9d9] hover:text-[#ffb800] transition-colors"
-          >
-            {t('discover_more')}
-          </Link>
-        </div>
+                    </div>
+                  </Link>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 flex items-center justify-center shadow-lg bg-gradient-to-r from-gold-light to-gold-dark  rounded" />
+          <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 z-30 w-10 h-10 flex items-center justify-center shadow-lg bg-gradient-to-r from-gold-light to-gold-dark  rounded" />
+        </Carousel>
       </div>
     </section>
   );

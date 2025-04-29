@@ -18,7 +18,7 @@ const config: Config = {
         sm: '100%',
         md: '100%',
         lg: '1240px',
-        xl: '1420px',
+        xl: '1440px',
       },
     },
 

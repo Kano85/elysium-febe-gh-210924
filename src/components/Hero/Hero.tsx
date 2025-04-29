@@ -27,7 +27,8 @@ export default function Hero() {
         end: 'bottom top',
         scrub: true,
         pin: true,
-        pinSpacing: false,
+        pinSpacing: true,
+        pinType: 'transform',
         invalidateOnRefresh: true,
         anticipatePin: 1,
       },
@@ -45,15 +46,15 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full h-screen overflow-hidden z-4 bg-hero-dark transform-style-preserve-3d"
+      className="relative w-full h-screen overflow-hidden bg-hero-dark"
       ref={heroSectionRef}
     >
-      <div className="w-full h-full">
+      <div className="w-full h-full overflow-hidden">
         <video
           autoPlay
           muted
           loop
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-100 will-change-opacity"
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
           ref={videoRef}
           preload="auto"
         >

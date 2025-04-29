@@ -66,5 +66,34 @@
   "title": "Pàgina de Contacte",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
   "title-user": "Testimonis que ens donen suport",
-  "description-user": "Els nostres clients són la nostra millor carta de presentació. Les seves experiències reflecteixen l'impacte de les nostres solucions a mida i el compromís que posem en cada col·laboració."
+  "description-user": "Els nostres clients són la nostra millor carta de presentació. Les seves experiències reflecteixen l'impacte de les nostres solucions a mida i el compromís que posem en cada col·laboració.",
+  "mission": {
+    "hero": {
+      "title": "Quan es tracta de decisions importants, l'error costós és equivocar-se.",
+      "paragraph": "Per això els nostres clients confien en nosaltres des del principi: perquè encertar a la primera t'estalvia temps, diners... i llibertat."
+    },
+    "image1": {
+      "alt": "Professional amb vestimenta de negocis"
+    },
+    "block1": {
+      "title": "Convertim la complexitat en estratègia.",
+      "paragraph": "Prendre decisions fiscals o legals a nivell internacional implica riscos, normatives canviants i escenaris que no sempre són evidents. A ELYSIUM, analitzem cada cas amb una visió global per transformar aquesta complexitat en una fulla de ruta clara, segura i efectiva."
+    },
+    "block2": {
+      "title": "Escoltem abans de proposar. Entenem abans d'actuar.",
+      "paragraph": "No apliquem plantilles. Dissenyem solucions a mida considerant la teva realitat personal, fiscal, legal i empresarial. Perquè cada persona i cada negoci és únic, i mereix una estratègia que també ho sigui."
+    },
+    "block3": {
+      "title": "Relacions que aporten valor a llarg termini.",
+      "paragraph": "Molts arriben a ELYSIUM per un servei puntual. Però es queden per tot el que descobreixen després. Aquí no venem tràmits, sinó solucions reals, amb visió legal, fiscal i estratègica. La gran majoria dels nostres clients repeteixen o amplien serveis. És habitual que tornin. És excepcional que no ho facin."
+    },
+    "block4": {
+      "title": "Excel·lència que es nota en els detalls.",
+      "paragraph": "No busquem fer 'el correcte': busquem fer-ho millor. Venim de firmes de primer nivell i hem après que el que marca la diferència no són les coses grans, sinó les precises. En cada recomanació, document o decisió, està present el nostre estàndard de qualitat."
+    },
+    "image2": {
+      "alt": "Professionals de negocis en una reunió"
+    }
+  },
+  "discover_more": "Descobreix més"
 }
