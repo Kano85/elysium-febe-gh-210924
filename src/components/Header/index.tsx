@@ -135,13 +135,13 @@ const Header: React.FC = () => {
 
               <nav
                 id="navbarCollapse"
-                className={`navbar absolute lg:bg-yellow-300 right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100  ${
+                className={`navbar absolute right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100  ${
                   navbarOpen
                     ? 'visible top-full opacity-100'
                     : 'invisible top-[120%] opacity-0'
                 }`}
               >
-                <ul className="block lg:flex lg:space-x-12 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-[calc(50%+130px)] lg:-translate-y-1/2">
+                <ul className="block lg:flex lg:flex-nowrap lg:space-x-12 lg:justify-center">
                   {menuData.map((menuItem: MenuItem, index: number) => (
                     <li
                       key={`${menuItem.title}-${index}`}
@@ -150,7 +150,7 @@ const Header: React.FC = () => {
                       {isMenuItemWithPath(menuItem) ? (
                         <Link
                           href={menuItem.path}
-                          className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                          className={`flex whitespace-nowrap py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                             currentPath === menuItem.path
                               ? 'text-white'
                               : 'text-white/70 hover:text-white'
@@ -164,7 +164,7 @@ const Header: React.FC = () => {
                             onClick={() => handleSubmenu(index)}
                             aria-haspopup="true"
                             aria-expanded={openIndex === index}
-                            className="flex justify-between text-base text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
+                            className="flex whitespace-nowrap justify-between text-base text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
                           >
                             {t(menuItem.title)}
                             <span className="pl-3">

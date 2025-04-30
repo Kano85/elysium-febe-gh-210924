@@ -31,6 +31,9 @@ const config: Config = {
 
     extend: {
       colors: {
+        accent: {
+          400: '#DAC48B',
+        },
         // Core brand
         'gold-light': '#A78952',
         'gold-dark': '#DFC383',
@@ -149,7 +152,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('@tailwindcss/line-clamp'), require('tailwindcss-animate')],
   safelist: [
     'transform-style-preserve-3d',
     'will-change-opacity',

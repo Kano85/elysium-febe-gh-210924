@@ -5,8 +5,9 @@ import Image from 'next/image';
 import SectionTitle from '../Common/SectionTitle';
 import { useTranslation } from 'react-i18next';
 
-export default function Mission(): JSX.Element {
-  const { t } = useTranslation();
+export default function Mission(): JSX.Element | null {
+  const { t, ready } = useTranslation();
+  if (!ready) return null; // wait until translations are loaded
 
   return (
     <section className="flex flex-col w-full gap-[48px] px-8 lg:px-24 lg:pt-40 lg:pb-[80px] sm:pt-[90px] sm:pb-[30px]">

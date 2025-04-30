@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 const Breadcrumb = ({
   pageName,
+  description,
 }: {
   pageName: string;
   description: string;
@@ -15,12 +16,12 @@ const Breadcrumb = ({
         <div className="container">
           <div className="flex flex-wrap -mx-4 items-center">
             <div className="w-full lg:w-7/12 md:w-8/12 px-4">
-              <div className="lg:mb-12 max-w-[570px] mb-8 md:mb-0">
-                <h1 className="text-2xl text-white font-bold mb-5 sm:text-3xl">
-                  {t('title')}
+              <div className="lg:mb-12 max-w-[870px] mb-8 md:mb-0">
+                <h1 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left mb-5">
+                  {pageName}
                 </h1>
-                <p className="text-base text-body-color-dark font-medium leading-relaxed">
-                  {t('description')}
+                <p className="font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text text-left mb-0">
+                  {description}
                 </p>
               </div>
             </div>

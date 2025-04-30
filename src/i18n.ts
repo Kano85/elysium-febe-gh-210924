@@ -10,12 +10,19 @@ i18n
   .init({
     fallbackLng: 'en',
     supportedLngs: ['en', 'fr', 'es', 'ca'],
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
+    detection: {
+      order: ['cookie', 'localStorage', 'navigator', 'htmlTag', 'querystring'],
+      caches: ['cookie'],
+    },
+    react: { useSuspense: false },
     debug: false,
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      backend: { loadPath: '/public/locales/{{lng}}/translation.json' },
+      loadPath: '/locales/{{lng}}/translation.json',
     },
   });
 

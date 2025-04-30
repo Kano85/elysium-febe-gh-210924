@@ -15,7 +15,7 @@
   "<48h Respuesta rápida": "Less than 48h quick response",
   "90 % clientes recurrentes": "90% returning clients",
   "Otros datos": "Other key metrics",
-  "Elysium about image": "Elysium about image",
+  "About Elysium": "About Elysium",
   "Seguridad": "Security",
   "En Elysium, la seguridad va más allá de proteger datos: es asegurar futuros. Nos enfocamos en analizar cada situación para garantizar tranquilidad y construir bases sólidas para tus proyectos.": "At Elysium, security goes beyond protecting data: it ensures futures. We focus on analyzing each situation to guarantee peace of mind and build solid foundations for your projects.",
   "Confianza": "Trust",
@@ -26,7 +26,7 @@
   "Como líderes en consultoría, nos enfocamos en entender tus necesidades y acompañarte en cada desafío. Nuestra dedicación es tan personal como nuestro compromiso con tu crecimiento y bienestar.": "As leaders in consulting, we focus on understanding your needs and supporting you through every challenge. Our dedication is as personal as our commitment to your growth and well-being.",
   "Video image": "Video image",
   "Play video": "Play video",
-  "Building lasting": "Building Lasting",
+  "Building lasting": "Building lasting",
   "partnerships": "partnerships",
   "Useful links": "Useful Links",
   "Recent posts": "Recent Posts",
@@ -43,7 +43,7 @@
   "© Elysium Consulting Firm. All rights reserved.": "© Elysium Consulting Firm. All rights reserved.",
   "Elysium description": "At Elysium Consulting Firm, we provide tailored solutions that drive your business growth and security. Your success is our priority.",
   "home": "Home",
-  "aboutUs": "About Us",
+  "aboutUs": "About us",
   "blog": "Blog",
   "contact": "Contact",
   "no_posts_available": "No posts available at the moment. Please check back later!",
@@ -80,31 +80,66 @@
   "contact.errorGeneric": "Oops! Something went wrong. Please try again later.",
   "mission": {
     "hero": {
-      "title": "When it comes to important decisions, the expensive mistake is getting it wrong.",
-      "paragraph": "That's why our clients trust us from the start: because getting it right the first time saves you time, money... and freedom."
+      "title": "When it comes to important decisions, the costliest mistake is getting it wrong.",
+      "paragraph": "That’s why our clients trust us from the start; getting it right the first time saves you time, money … and freedom."
     },
     "image1": {
       "alt": "Professional in business attire"
     },
     "block1": {
       "title": "We turn complexity into strategy.",
-      "paragraph": "Making fiscal or legal decisions at an international level involves risks, changing regulations, and scenarios that are not always evident. At ELYSIUM, we analyze each case with a global vision to transform that complexity into a clear, safe, and effective roadmap."
+      "paragraph": "Making fiscal or legal decisions at an international level involves risks, changing regulations, and scenarios that are not always evident. At ELYSIUM, we analyze each case with a global vision to transform that complexity into a clear, safe and effective roadmap."
     },
     "block2": {
       "title": "We listen before proposing. We understand before acting.",
-      "paragraph": "We don't apply templates. We design tailored solutions considering your personal, fiscal, legal, and business reality. Because every person and every business is unique, and they deserve a strategy that is too."
+      "paragraph": "We don't apply templates; we design tailored solutions considering your personal, fiscal, legal and business reality. Because every person and every business is unique and deserves a strategy that is too."
     },
     "block3": {
       "title": "Relationships that add long-term value.",
-      "paragraph": "Many come to ELYSIUM for a one-time service. But they stay for everything they discover afterward. Here we don't sell procedures, but real solutions, with legal, fiscal, and strategic vision. The vast majority of our clients repeat or expand services. It's usual for them to return. It's exceptional for them not to."
+      "paragraph": "Many come to ELYSIUM for a one-time service. But they stay for everything they discover afterward. Here we don't sell procedures but real solutions with legal, fiscal and strategic vision. The vast majority of our clients repeat or expand services. It's usual for them to return. It's exceptional for them not to."
     },
     "block4": {
       "title": "Excellence that shows in the details.",
-      "paragraph": "We don't aim to do 'the right thing': we aim to do it better. We come from top-tier firms and have learned that what makes the difference is not the big things, but the precise ones. In every recommendation, document, or decision, our quality standard is present."
+      "paragraph": "We don't aim to do 'the right thing': we aim to do it better. We come from top-tier firms and have learned that what makes the difference is not the big things but the precise ones. In every recommendation, document, or decision, our quality standard is present."
     },
     "image2": {
       "alt": "Business professionals in a meeting"
     }
   },
-  "discover_more": "Discover more"
+  "discover_more": "Discover more",
+  "National and International Tax Planning": "National and International Tax Planning",
+  "We design strategies to optimize taxes across different jurisdictions.": "We design strategies to optimize taxes across different jurisdictions.",
+  "Strategies to Minimize Taxes and Maximize Benefits": "Strategies to Minimize Taxes and Maximize Benefits",
+  "We create effective plans to reduce tax burdens and increase profits.": "We create effective plans to reduce tax burdens and increase profits.",
+  "Advisory and Support for Relocating Individuals or Companies to Other Jurisdictions": "Advisory and Support for Relocating Individuals or Companies to Other Jurisdictions",
+  "We facilitate legal and financial relocations.": "We facilitate legal and financial relocations.",
+  "Company Formation and Registration in Different Countries": "Company Formation and Registration in Different Countries",
+  "We guide you to establish companies in compliance with local laws.": "We guide you to establish companies in compliance with local laws.",
+  "Application and Obtaining Residency Permits": "Application and Obtaining Residency Permits",
+  "We accompany the migration process to ensure legal stays.": "We accompany the migration process to ensure legal stays.",
+  "Business Valuation": "Business Valuation",
+  "We carry out precise valuations for corporate transactions.": "We carry out precise valuations for corporate transactions.",
+  "Advisory on Mergers, Acquisitions, and Restructuring": "Advisory on Mergers, Acquisitions, and Restructuring",
+  "We optimize business operations and corporate structures.": "We optimize business operations and corporate structures.",
+  "Review and Drafting of Legal Contracts": "Review and Drafting of Legal Contracts",
+  "We ensure clear and compliant documents.": "We ensure clear and compliant documents.",
+  "Estate Planning and Organization": "Estate Planning and Organization",
+  "We ensure the correct distribution of assets and properties according to your wishes.": "We ensure the correct distribution of assets and properties according to your wishes.",
+  "Strategies to Reduce Tax Burden and Increase Financial Efficiency": "Strategies to Reduce Tax Burden and Increase Financial Efficiency",
+  "We design tax-saving plans and better economic management.": "We design tax-saving plans and better economic management.",
+  "Advice and Strategies for Senior Management": "Advice and Strategies for Senior Management",
+  "We offer key guidance in decision-making and business leadership.": "We offer key guidance in decision-making and business leadership.",
+  "Resolution of Commercial Disputes through Arbitration": "Resolution of Commercial Disputes through Arbitration",
+  "We resolve conflicts in different jurisdictions without going to courts.": "We resolve conflicts in different jurisdictions without going to courts.",
+  "Review and Audit of Accounts": "Review and Audit of Accounts",
+  "We verify the accuracy and compliance of financial records.": "We verify the accuracy and compliance of financial records.",
+  "Advisory for Accessing Financing": "Advisory for Accessing Financing",
+  "We connect you with loans, investors, or capital markets.": "We connect you with loans, investors, or capital markets.",
+  "Management and Resolution of Disputes with Tax Authorities": "Management and Resolution of Disputes with Tax Authorities",
+  "We defend your interests before tax authorities.": "We defend your interests before tax authorities.",
+  "Business Plan Development and Startup Support": "Business Plan Development and Startup Support",
+  "We promote the creation and growth of new businesses.": "We promote the creation and growth of new businesses.",
+  "Financial Investigation and Analysis Against Fraud": "Financial Investigation and Analysis Against Fraud",
+  "We identify economic irregularities and illicit activities.": "We identify economic irregularities and illicit activities.",
+  "Strategies to minimize taxes and maximize benefits at national and international levels": "Strategies to minimize taxes and maximize benefits at national and international levels"
 }
