@@ -3,10 +3,20 @@ import Image from 'next/image';
 import Social from './social';
 import Link from './link';
 import { MapPin } from 'lucide-react';
+import SectionTitle from '../Common/SectionTitle';
+import Marquee from '../Marquee/Marquee';
 
 const Footer: NextPage = () => {
   return (
     <div className="w-full relative bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-[0rem] px-[6.25rem] box-border text-left text-[0.875rem] text-[#9d9b94] font-Elysium-text-Body-S-Elysium">
+      <section className="self-stretch text-center my-[2rem]">
+        <SectionTitle
+          title="Building Lasting partnerships"
+          paragraph="Descúbrenos"
+          mb="mb-12"
+        />
+        <Marquee />
+      </section>
       <section className="self-stretch flex flex-row items-end justify-between flex-wrap content-end py-[3rem] px-[0rem] gap-x-[0rem] gap-y-[3rem]">
         <div className="flex flex-col items-center justify-start gap-[1.5rem]">
           <Image
@@ -109,14 +119,6 @@ const Footer: NextPage = () => {
         </div>
         <div className="overflow-hidden flex flex-row items-center justify-start gap-[3rem] text-right">
           <div className="relative leading-[1.25rem]">{`All Rights Reserved `}</div>
-          <Image
-            className="h-[3rem] w-[3rem] rounded overflow-hidden shrink-0 object-contain"
-            loading="lazy"
-            width={48}
-            height={48}
-            alt=""
-            src="/-icon-button@2x.png"
-          />
         </div>
       </div>
     </div>

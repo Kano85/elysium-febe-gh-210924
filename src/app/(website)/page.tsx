@@ -6,8 +6,9 @@ import React from 'react';
 
 import Hero from '../../components/Hero/Hero';
 import USP from '../../components/USP/USP';
-import { MetricsMarketing } from '../../components/Carousel/Carousel';
+// import { MetricsMarketing } from '../../components/Carousel/Carousel';
 import AboutUs from '../../components/AboutUs';
+// import Brands from '../../components/Brands';
 import Mission from '../../components/Mission/Mission';
 import ScrollUp from '../../components/Common/ScrollUp';
 import Footer from '../../components/Footer';
@@ -19,6 +20,8 @@ import useFetchPosts from '@/hooks/useFetchPosts';
 
 import { useTranslation } from 'react-i18next';
 import { getFullLanguageName, LanguageCodes } from '@/lib/utils';
+import CTA from '@/components/CTA/cta';
+// import Marquee from '@/components/Marquee/Marquee';
 const Home: React.FC = () => {
   const { i18n } = useTranslation();
   const selectedLanguage = (i18n.language || 'en') as LanguageCodes;
@@ -29,6 +32,7 @@ const Home: React.FC = () => {
   return (
     <>
       <ScrollUp />
+
       <main>
         <Hero />
         <USP />
@@ -41,9 +45,12 @@ const Home: React.FC = () => {
           <ListOfPost posts={posts} />
         )}
         <AboutUs />
+        {/* <Brands /> */}
         <ScaleAnimation />
+        <CTA />
+        {/* <Marquee /> */}
 
-        <MetricsMarketing />
+        {/* <MetricsMarketing /> */}
         <Footer />
       </main>
     </>

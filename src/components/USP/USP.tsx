@@ -1,12 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from 'react-i18next';
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 type USPItem = string;
 
@@ -35,48 +34,42 @@ Y, sobre todo, quieren vivir mejor, con control y tranquilidad.`,
 ];
 
 export default function USP() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLParagraphElement | null)[]>([]);
   const { t } = useTranslation();
 
-  useGSAP(() => {
-    if (!containerRef.current) return;
+  useEffect(() => {
+    itemsRef.current.forEach((el) => {
+      if (!el) return;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'center-=200 100%',
-        end: 'bottom 70%',
-        scrub: true,
-        toggleActions: 'play none none reverse',
-        markers: false, // Disable markers for production
-      },
-    });
-
-    itemsRef.current.forEach((item, index) => {
-      if (!item) return;
-
-      tl.fromTo(
-        item,
-        { y: 100 },
-        { y: 0, duration: 0.4, ease: 'power2.out' },
-        index === 0 ? '>' : '+=0.15'
+      const enterAnim = gsap.fromTo(
+        el,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: 'power4.out',
+          paused: true,
+          // overwrite: true,
+        }
       );
 
-      tl.fromTo(
-        item,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6, ease: 'power1.inOut' },
-        '<'
-      );
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top center',
+        onEnter: () => enterAnim.play(),
+        onLeaveBack: () => enterAnim.reverse(),
+        // markers:true,
+      });
     });
-  });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
 
   return (
-    <div
-      className="flex flex-col h-full justify-start gap-12 lg:px-24 md:gap-16 md:px-16 md:py-32 overflow-hidden px-8 py-24 relative z-6"
-      ref={containerRef}
-    >
+    <div className="flex flex-col h-full justify-start gap-12 lg:px-24 md:gap-16 md:px-16 md:py-32 overflow-hidden px-8 py-24 relative z-6">
       {USP_ITEMS.map((text, index) => {
         const isRightAligned = index === 2 || index === 4;
         return (
@@ -89,10 +82,9 @@ export default function USP() {
               fontSize: 'clamp(1.2rem, 1.9vw, 1.5rem)',
               fontWeight: 400,
             }}
-            className={
-              `whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ` +
-              (isRightAligned ? 'self-end text-right' : 'self-start text-left')
-            }
+            className={`whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ${
+              isRightAligned ? 'self-end text-right' : 'self-start text-left'
+            }`}
           >
             {t(text)}
           </p>

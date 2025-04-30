@@ -4,12 +4,6 @@ import { MenuItem } from '@/sanity/shared-types';
 
 const menuData: MenuItem[] = [
   {
-    id: 1,
-    title: 'Services',
-    path: '/',
-    newTab: false,
-  },
-  {
     id: 2,
     title: 'aboutUs',
     path: '/about',
@@ -25,6 +19,12 @@ const menuData: MenuItem[] = [
     id: 4,
     title: 'contact',
     path: '/contact',
+    newTab: false,
+  },
+  {
+    id: 5,
+    title: 'services',
+    path: '/services',
     newTab: false,
   },
   // {

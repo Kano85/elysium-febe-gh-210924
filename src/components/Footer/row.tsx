@@ -1,6 +1,4 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import Link from './link';
 
 export type RowType = {
   className?: string;

@@ -61,19 +61,19 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`header left-0 top-0 z-15 flex w-full items-center  ${
+      className={`header left-0 top-0 right-0 z-15 flex w-full items-center  ${
         sticky
           ? 'fixed z-20 bg-gray-dark bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
           : 'absolute bg-transparent'
       }`}
     >
-      <div className="w-full">
-        <div className="flex justify-between w-full items-center relative pl-8 lg:pl-24 pr-8 lg:pr-24">
+      <div className="container">
+        <div className="flex justify-between w-full items-center relative ">
           <div className="w-64 max-w-full xl:mr-12">
             <Link
               href="/"
               className={`header-logo block w-full ${
-                sticky ? 'py-2 lg:py-2' : 'py-2'
+                sticky ? 'py-5 lg:py-2' : 'py-8'
               }`}
             >
               <Image
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          <div className="flex justify-end w-fit lg:w-[75%] items-center self-center pl-4 lg:px-4 mx-auto flex-row-reverse lg:flex-row">
+          <div className="flex justify-end w-fit lg:w-[75%]  items-center pl-4 lg:px-4 flex-row-reverse lg:flex-row">
             <div className="relative w-full ">
               <button
                 onClick={navbarToggleHandler}
@@ -150,7 +150,7 @@ const Header: React.FC = () => {
                       {isMenuItemWithPath(menuItem) ? (
                         <Link
                           href={menuItem.path}
-                          className={`flex py-2 text-base whitespace-nowrap lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                          className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                             currentPath === menuItem.path
                               ? 'text-white'
                               : 'text-white/70 hover:text-white'
@@ -164,7 +164,7 @@ const Header: React.FC = () => {
                             onClick={() => handleSubmenu(index)}
                             aria-haspopup="true"
                             aria-expanded={openIndex === index}
-                            className="flex justify-between text-base whitespace-nowrap text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
+                            className="flex justify-between text-base text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
                           >
                             {t(menuItem.title)}
                             <span className="pl-3">

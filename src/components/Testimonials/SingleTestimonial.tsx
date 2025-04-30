@@ -20,7 +20,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <li className="h-full w-96 relative">
       <div className="rounded-lg p-8 bg-[#383b3d] shadow-lg transition-shadow duration-300 hover:shadow-xl">
         {/* Star Rating */}
         <div className="flex mb-4 space-x-1">{ratingIcons}</div>
@@ -35,7 +35,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
 
         {/* Author Info */}
         <div className="flex items-center">
-          <div className="relative mr-4 h-16 w-14 overflow-hidden rounded-full">
+          <div className="relative mr-4 size-10 overflow-hidden rounded-full">
             <Image
               src={image || '/placeholder.svg'}
               alt={name}
@@ -54,7 +54,7 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
           </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
