@@ -22,6 +22,7 @@ import {
   Lightbulb,
   Search,
 } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 export default function ServicesPage() {
   const { t } = useTranslation();
@@ -177,6 +178,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

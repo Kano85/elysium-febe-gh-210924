@@ -1,4 +1,6 @@
+'use client';
 import type { NextPage } from 'next';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Social from './social';
 import Link from './link';
@@ -7,16 +9,20 @@ import SectionTitle from '../Common/SectionTitle';
 import Marquee from '../Marquee/Marquee';
 
 const Footer: NextPage = () => {
+  const pathname = usePathname();
+  const isHome = pathname === '/';
   return (
     <div className="w-full relative bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-[0rem] px-[6.25rem] box-border text-left text-[0.875rem] text-[#9d9b94] font-Elysium-text-Body-S-Elysium">
-      <section className="self-stretch text-center my-[2rem]">
-        <SectionTitle
-          title="Building Lasting partnerships"
-          paragraph="Descúbrenos"
-          mb="mb-12"
-        />
-        <Marquee />
-      </section>
+      {isHome && (
+        <section className="self-stretch text-center my-[2rem]">
+          <SectionTitle
+            title="Building Lasting partnerships"
+            paragraph="Descúbrenos"
+            mb="mb-12"
+          />
+          <Marquee />
+        </section>
+      )}
       <section className="self-stretch flex flex-row items-end justify-between flex-wrap content-end py-[3rem] px-[0rem] gap-x-[0rem] gap-y-[3rem]">
         <div className="flex flex-col items-center justify-start gap-[1.5rem]">
           <Image

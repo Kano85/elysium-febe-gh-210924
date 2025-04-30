@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next'; // Import useTranslation
 import { CheckmarkIcon } from '@sanity/icons';
 import { ChevronDown } from 'lucide-react';
@@ -23,6 +23,7 @@ const Header: React.FC = () => {
   const [sticky, setSticky] = useState<boolean>(false);
   const [openIndex, setOpenIndex] = useState<number>(-1);
   const currentPath = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Use the useTranslation hook
   const { i18n } = useTranslation();
@@ -48,6 +49,28 @@ const Header: React.FC = () => {
   // Function to change the language
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setNavbarOpen(false);
+      setOpenIndex(-1);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleLinkClick = () => {
+    setNavbarOpen(false);
+    setOpenIndex(-1);
   };
 
   type Language = { code: string; label: string };
@@ -86,8 +109,8 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          <div className="flex justify-end w-fit lg:w-[75%]  items-center pl-4 lg:px-4 flex-row-reverse lg:flex-row">
-            <div className="relative w-full ">
+          <div className="flex justify-end w-fit lg:w-[75%] items-center pl-4 pr-6 lg:px-4 flex-row-reverse lg:flex-row">
+            <div className="relative w-full " ref={dropdownRef}>
               <button
                 onClick={navbarToggleHandler}
                 id="navbarToggler"
@@ -96,46 +119,25 @@ const Header: React.FC = () => {
               >
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'top-[7px] rotate-45' : ''
+                    navbarOpen ? ' top-[7px] rotate-45' : '' // Adjusted class for open state
                   }`}
                 />
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'opacity-0' : ''
+                    navbarOpen ? 'opacity-0 ' : '' // Adjusted class for open state
                   }`}
                 />
                 <span
                   className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'top-[-8px] -rotate-45' : ''
-                  }`}
-                />
-              </button>
-              <button
-                // onClick={navbarToggleHandler}
-                id="navbarToggler"
-                aria-label="hidden"
-                className="rounded-lg pointer-events-none !invisible !opacity-0 block focus:ring-2 lg:hidden px-3 py-[6px] right-4 ring-primary top-1/2 translate-y-[-50%]"
-              >
-                <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'top-[7px] rotate-45' : ''
-                  }`}
-                />
-                <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'opacity-0' : ''
-                  }`}
-                />
-                <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'top-[-8px] -rotate-45' : ''
+                    navbarOpen ? ' top-[-8px] -rotate-45' : '' // Adjusted class for open state
                   }`}
                 />
               </button>
 
               <nav
                 id="navbarCollapse"
-                className={`navbar absolute right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100  ${
+                className={`navbar absolute right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-hero-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 ${
+                  // Added bg-hero-dark for mobile dropdown background
                   navbarOpen
                     ? 'visible top-full opacity-100'
                     : 'invisible top-[120%] opacity-0'
@@ -150,6 +152,7 @@ const Header: React.FC = () => {
                       {isMenuItemWithPath(menuItem) ? (
                         <Link
                           href={menuItem.path}
+                          onClick={handleLinkClick}
                           className={`flex whitespace-nowrap py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                             currentPath === menuItem.path
                               ? 'text-white'
@@ -187,6 +190,7 @@ const Header: React.FC = () => {
                             {menuItem.submenu?.map((submenuItem, subIndex) => (
                               <Link
                                 href={submenuItem.path}
+                                onClick={handleLinkClick} // Close dropdown on submenu link click
                                 key={`${submenuItem.title}-${subIndex}`}
                                 className="rounded text-sm text-white/70 block hover:text-white lg:px-3 py-2.5"
                               >

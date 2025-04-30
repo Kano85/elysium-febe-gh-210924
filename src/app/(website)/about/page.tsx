@@ -1,5 +1,6 @@
 import Mission from '@/components/Mission/Mission';
 import Breadcrumb from '@/components/Common/Breadcrumb';
+import Footer from '@/components/Footer';
 
 import { Metadata } from 'next';
 
@@ -17,6 +18,7 @@ const AboutPage = () => {
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
       />
       <Mission />
+      <Footer />
     </>
   );
 };
