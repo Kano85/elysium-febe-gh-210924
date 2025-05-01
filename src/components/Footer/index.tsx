@@ -75,11 +75,11 @@ const Footer: NextPage = () => {
             <address className="not-italic flex gap-2 text-[0.875rem]">
               <MapPin size={20} className="text-[#dfc383] mt-1 shrink-0" />
               <div>
-                <span>{t('footer.address.line1')}</span>
+                <span>Avinguda Carlemany 657</span>
                 <br />
-                <span>{t('footer.address.line2')}</span>
+                <span>6e 2a</span>
                 <br />
-                <span>{t('footer.address.line3')}</span>
+                <span>AD700, Andorra</span>
               </div>
             </address>
           </div>
@@ -116,14 +116,7 @@ const Footer: NextPage = () => {
       </section>
 
       {/* Divider */}
-      <Image
-        src="/horizontal-divider@2x.png"
-        alt=""
-        width={1240}
-        height={1}
-        className="w-full object-contain"
-        loading="lazy"
-      />
+      <hr className="w-full border-t border-[#dfc383] opacity-30" />
 
       {/* Bottom bar */}
       <div className="flex justify-between py-2 text-[0.875rem] w-full">

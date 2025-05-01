@@ -1,6 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from '@/components/ui/card';
 
 interface ContactMapProps {
   address: string;
@@ -35,19 +41,28 @@ const ContactMap: React.FC<ContactMapProps> = ({ address }) => {
       style: 'mapbox://styles/mapbox/streets-v11',
       center: lngLat,
       zoom,
+      attributionControl: false,
     });
-    new mapboxgl.Marker().setLngLat(lngLat).addTo(map);
     return () => map.remove();
   }, [lngLat, zoom]);
 
   return (
     <Card className="mt-8">
+      <CardContent className="px-0">
+        <div ref={mapContainer} className="w-full h-64 rounded-sm" />
+      </CardContent>
       <CardHeader>
         <CardTitle>Our Location</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div ref={mapContainer} className="w-full h-64 rounded-lg" />
-      </CardContent>
+      <CardFooter className="flex items-start px-6">
+        <address className="not-italic text-[0.875rem]">
+          <span>Avinguda Carlemany 657</span>
+          <br />
+          <span>6e 2a</span>
+          <br />
+          <span>AD700, Andorra</span>
+        </address>
+      </CardFooter>
     </Card>
   );
 };
