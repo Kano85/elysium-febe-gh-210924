@@ -1,13 +1,9 @@
-import Breadcrumb from '@/components/Common/Breadcrumb';
-import Image from 'next/image';
+'use client';
 
-import { Metadata } from 'next';
 import React from 'react';
-
-export const metadata: Metadata = {
-  title: 'About Page | Free Next.js Template for Startup and SaaS',
-  description: 'This is About Page for Startup Nextjs Template',
-};
+import Image from 'next/image';
+import Breadcrumb from '@/components/Common/Breadcrumb';
+import Footer from '@/components/Footer';
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Grid wrapper: 7 columns (text) + 5 columns (images) from `lg` breakpoint up
@@ -22,13 +18,14 @@ const LgTwoCol: React.FC<{
   </section>
 );
 
-const AboutPage = () => {
+export default function AboutPage() {
   return (
     <>
-      <Breadcrumb pageName="Wo we are" description="" />
+      <Breadcrumb pageName="Who we are" description="" />
 
-      <main className="container py-lg space-y-xl">
-        {/* ───── WHO WE ARE ─────────────────────────────────────────────── */}
+      {/* Outer container handled by layout; this div keeps inner vertical rhythm */}
+      <div className="py-lg space-y-xl">
+        {/* ───── WHO WE ARE ─────────────────────────────────────────── */}
         <LgTwoCol
           images={
             <>
@@ -113,7 +110,7 @@ const AboutPage = () => {
           </p>
         </LgTwoCol>
 
-        {/* ───── HISTORY ────────────────────────────────────────────────── */}
+        {/* ───── HISTORY ────────────────────────────────────────────── */}
         <LgTwoCol
           images={
             <>
@@ -194,7 +191,7 @@ const AboutPage = () => {
           </div>
         </LgTwoCol>
 
-        {/* ───── WHAT IS ELYSIUM? (kept single column) ─────────────────── */}
+        {/* ───── WHAT IS ELYSIUM? ───────────────────────────────────── */}
         <section className="space-y-md">
           <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
             What is elysium?
@@ -230,7 +227,7 @@ const AboutPage = () => {
           </ul>
         </section>
 
-        {/* ───── VALUES (original grid, unchanged) ─────────────────────── */}
+        {/* ───── VALUES ─────────────────────────────────────────────── */}
         <section className="space-y-sm">
           <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
             Values
@@ -266,9 +263,8 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-      </main>
+      </div>
+      <Footer />
     </>
   );
-};
-
-export default AboutPage;
+}
