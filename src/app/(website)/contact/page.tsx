@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Breadcrumb pageName={t('title')} description={t('description')} />
 
       {/* inner section follows the same pattern you kept in ServicesPage */}
-      <section className="max-w-7xl mx-auto px-4 py-12">
+      <section className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <ContactForm />
         <ContactMap address="1600 Pennsylvania Ave NW, Washington, DC 20500" />
       </section>

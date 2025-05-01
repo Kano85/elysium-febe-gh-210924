@@ -2,7 +2,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
-interface ContactMapProps { address: string; }
+interface ContactMapProps {
+  address: string;
+}
 
 const ContactMap: React.FC<ContactMapProps> = ({ address }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
