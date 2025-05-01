@@ -1,20 +1,23 @@
 'use client';
+
 import type { NextPage } from 'next';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import NextLink from 'next/link';
 import Social from './social';
-import Link from './link';
-import { MapPin } from 'lucide-react';
 import SectionTitle from '../Common/SectionTitle';
 import Marquee from '../Marquee/Marquee';
+import { MapPin, Mail, Phone } from 'lucide-react';
 
 const Footer: NextPage = () => {
   const pathname = usePathname();
   const isHome = pathname === '/';
+
   return (
-    <div className="w-full relative bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-[0rem] px-[6.25rem] box-border text-left text-[0.875rem] text-[#9d9b94] font-Elysium-text-Body-S-Elysium">
+    <div className="w-full relative bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-0 px-[6.25rem] text-[#9d9b94]">
+      {/* Home-only hero */}
       {isHome && (
-        <section className="self-stretch text-center my-[2rem]">
+        <section className="self-stretch text-center my-8">
           <SectionTitle
             title="Building Lasting partnerships"
             paragraph="Descúbrenos"
@@ -23,109 +26,107 @@ const Footer: NextPage = () => {
           <Marquee />
         </section>
       )}
-      <section className="self-stretch flex flex-row items-end justify-between flex-wrap content-end py-[3rem] px-[0rem] gap-x-[0rem] gap-y-[3rem]">
-        <div className="flex flex-col items-center justify-start gap-[1.5rem]">
+
+      {/* Main footer grid */}
+      <section className="w-full flex flex-wrap justify-between gap-y-12 py-12">
+        {/* Logo + socials */}
+        <div className="flex flex-col items-center gap-6">
           <Image
-            className="w-[18.75rem] h-[5.25rem] relative object-cover"
-            loading="lazy"
+            src="/images/logo/elysium-logo.svg"
+            alt="Elysium logo"
             width={300}
             height={84}
-            alt=""
-            src="/images/logo/elysium-logo.svg"
+            className="object-cover"
+            loading="lazy"
           />
-          <div className="flex flex-row items-center justify-start gap-[2.5rem]">
+          <div className="flex gap-10">
             <Social socialIcon="instagram" />
             <Social socialIcon="linkedin" />
           </div>
         </div>
-        <div className="flex flex-row items-start justify-start flex-wrap content-start gap-[3rem] min-w-[33.813rem] text-left text-[1.125rem] text-[#9d9b94] font-Elysium-text-Body-L-Elysium">
-          <div className="flex flex-col items-start justify-start gap-[0.5rem]">
-            <h3 className="m-0 relative text-[length:inherit] leading-[1.75rem] font-normal font-[inherit] text-transparent !bg-clip-text [background:linear-gradient(180deg,_#a78952,_#dfc383)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
+
+        {/* Links / address / contact */}
+        <div className="flex flex-wrap gap-12 min-w-[33.813rem] text-[1.125rem]">
+          {/* 1 — Links */}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-[#a78952] to-[#dfc383] leading-7">
               Enlaces
             </h3>
-            <div className="flex flex-col items-start justify-start gap-[0.5rem] text-center text-[0.875rem] font-Elysium-text-Body-S-Elysium">
-              <div className="flex flex-row items-start justify-start">
-                <div className="flex flex-row items-center justify-start gap-[0.375rem]">
-                  <Image
-                    className="w-[1.25rem] relative h-[1.25rem] overflow-hidden shrink-0 hidden"
-                    src="/icons/default.svg"
-                    width={20}
-                    height={20}
-                    alt=""
-                  />
-                  <div className="relative leading-[1.25rem]">
-                    Sobre nosotros
-                  </div>
-                  <Image
-                    className="w-[1.25rem] relative h-[1.25rem] overflow-hidden shrink-0 hidden"
-                    src="/icons/default.svg"
-                    width={20}
-                    height={20}
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="flex flex-row items-start justify-start">
-                <div className="flex flex-row items-center justify-start gap-[0.375rem]">
-                  <div className="relative leading-[1.25rem]">Actualidad</div>
-                </div>
-              </div>
-              <div className="flex flex-row items-start justify-start">
-                <div className="flex flex-row items-center justify-start gap-[0.375rem]">
-                  <div className="relative leading-[1.25rem]">Contacto</div>
-                </div>
-              </div>
-            </div>
+            <nav className="flex flex-col gap-2 text-[0.875rem]">
+              <NextLink href="#about" className="hover:text-[#dfc383]">
+                Sobre nosotros
+              </NextLink>
+              <NextLink href="#news" className="hover:text-[#dfc383]">
+                Actualidad
+              </NextLink>
+              <NextLink href="#contact" className="hover:text-[#dfc383]">
+                Contacto
+              </NextLink>
+            </nav>
           </div>
-          <div className="flex flex-col items-start justify-start gap-[0.5rem]">
-            <h3 className="m-0 relative text-[length:inherit] leading-[1.75rem] font-normal font-[inherit] text-transparent !bg-clip-text [background:linear-gradient(180deg,_#a78952,_#dfc383)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
+
+          {/* 2 — Address */}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-[#a78952] to-[#dfc383] leading-7">
               Dirección
             </h3>
-            <div className="flex flex-col items-start justify-start text-[0.875rem] font-Elysium-text-Body-S-Elysium">
-              <div className="flex flex-row items-start gap-2">
-                <MapPin
-                  size={20}
-                  className="text-[#dfc383] flex-shrink-0 mt-1"
-                />
-                <div className="relative leading-[20px]">
-                  <p className="m-0">{`Avinguda Carlemany `}</p>
-                  <p className="m-0">{`67 6e 2a, AD700, `}</p>
-                  <p className="m-0">Andorra</p>
-                </div>
-              </div>
-            </div>
+            <address className="not-italic flex gap-2 text-[0.875rem]">
+              <MapPin size={20} className="text-[#dfc383] mt-1 shrink-0" />
+              <span>
+                Avinguda Carlemany&nbsp;657&nbsp;6e&nbsp;2a
+                <br />
+                AD700&nbsp;Escaldes-Engordany
+                <br />
+                Andorra
+              </span>
+            </address>
           </div>
-          <div className="flex flex-col items-start justify-start gap-[0.5rem]">
-            <div className="flex flex-col items-start justify-start">
-              <h3 className="m-0 relative text-[length:inherit] leading-[1.75rem] font-normal font-[inherit] text-transparent !bg-clip-text [background:linear-gradient(180deg,_#a78952,_#dfc383)] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-                Comunicación
-              </h3>
+
+          {/* 3 — Contact */}
+          <div className="flex flex-col gap-2">
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-[#a78952] to-[#dfc383] leading-7">
+              Comunicación
+            </h3>
+
+            {/* e-mail */}
+            <div className="flex items-center gap-2 text-[0.875rem]">
+              <Mail size={16} className="text-[#dfc383]" />
+              <NextLink
+                href="mailto:info@elysiumconsultingfirm.com"
+                className="hover:text-[#dfc383] transition-colors"
+              >
+                info@elysiumconsultingfirm.com
+              </NextLink>
             </div>
-            <Link icon="mail" iconLeft iconRight={false} />
-            <Link
-              icon="phone"
-              iconLeft
-              iconRight={false}
-              linkAlignSelf="unset"
-            />
+
+            {/* phone */}
+            <div className="flex items-center gap-2 text-[0.875rem]">
+              <Phone size={16} className="text-[#dfc383]" />
+              <NextLink
+                href="tel:+376659479"
+                className="hover:text-[#dfc383] transition-colors"
+              >
+                +376&nbsp;659&nbsp;479
+              </NextLink>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Divider */}
       <Image
-        className="self-stretch h-[0.063rem] max-w-full overflow-hidden shrink-0 object-contain"
-        loading="lazy"
+        src="/horizontal-divider@2x.png"
+        alt=""
         width={1240}
         height={1}
-        alt=""
-        src="/horizontal-divider@2x.png"
+        className="w-full object-contain"
+        loading="lazy"
       />
-      <div className="self-stretch flex flex-row items-center justify-between py-[0.5rem] px-[0rem] gap-[0rem]">
-        <div className="relative leading-[1.25rem]">
-          Copyright © 2025 Elysium Cnsulting
-        </div>
-        <div className="overflow-hidden flex flex-row items-center justify-start gap-[3rem] text-right">
-          <div className="relative leading-[1.25rem]">{`All Rights Reserved `}</div>
-        </div>
+
+      {/* Bottom bar */}
+      <div className="flex justify-between py-2 text-[0.875rem] w-full">
+        <span>Copyright © 2025&nbsp;Elysium Consulting</span>
+        <span>All Rights Reserved</span>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import AboutUs from '../../components/AboutUs';
 import Mission from '../../components/Mission/Mission';
 import ScrollUp from '../../components/Common/ScrollUp';
 import Footer from '../../components/Footer';
-import ScaleAnimation from '../../components/ScaleAnimation/ScaleAnimation';
+// import ScaleAnimation from '../../components/ScaleAnimation/ScaleAnimation';
 
 // Import the presentational ListOfPost
 import ListOfPost from '@/components/Blog/ListOfPost';
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
         )}
         <AboutUs />
         {/* <Brands /> */}
-        <ScaleAnimation />
+        {/* <ScaleAnimation /> */}
         <CTA />
         {/* <Marquee /> */}
 
