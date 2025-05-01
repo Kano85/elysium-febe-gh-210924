@@ -107,6 +107,10 @@
     }
   },
   "discover_more": "Discover more",
+  "navigation": {
+    "aboutUs": "About Us",
+    "blog": "Blog"
+  },
   "National and International Tax Planning": "National and International Tax Planning",
   "We design strategies to optimize taxes across different jurisdictions.": "We design strategies to optimize taxes across different jurisdictions.",
   "Strategies to Minimize Taxes and Maximize Benefits": "Strategies to Minimize Taxes and Maximize Benefits",
@@ -156,7 +160,7 @@
   },
   "footer": {
     "hero": {
-      "title": "Building Lasting Partnerships",
+      "title": "Building Lasting, Partnerships",
       "paragraph": "Discover us"
     },
     "logoAlt": "Elysium logo",
@@ -180,5 +184,17 @@
     },
     "copyright": "Copyright © 2025 Elysium Consulting",
     "rights": "All Rights Reserved"
+  },
+  "aboutUskey": {
+    "hero": {
+      "title": "The experience is not just technical, it is personal",
+      "paragraph": "From Andorra to the world, a team united by excellence and passion."
+    }
+  },
+  "blogkey": {
+    "hero": {
+      "title": "Knowledge for Decision-Making",
+      "paragraph": "Ideas, analysis, and strategies for entrepreneurs who want to grow, optimise, and make clear-sighted decisions."
+    }
   }
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import SectionTitle from '../Common/SectionTitle';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutUs() {
+  const { t } = useTranslation();
   return (
     <section className="flex flex-col gap-[48px] pt-[90px] pb-[30px] sm:pt-[90px] sm:pb-[30px] lg:pt-40 lg:pb-[80px] lg:px-24 lg:gap-[80px] px-8">
       <SectionTitle
-        title={'La experiencia no es solo técnica, es personal'}
-        paragraph={
-          'Desde Andorra al mundo, un equipo unido por la excelencia y la pasión.'
-        }
+        title={t('aboutUskey.hero.title')}
+        paragraph={t('aboutUskey.hero.paragraph')}
       />
 
       {/* Mobile layout (sm) - Single column */}

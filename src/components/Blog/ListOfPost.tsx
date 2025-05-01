@@ -37,8 +37,8 @@ const ListOfPost: React.FC<ListOfPostProps> = ({ posts }) => {
       className="flex flex-col w-full gap-[48px] px-8 pb-[30px] pt-[90px] lg:px-24 lg:pt-40 lg:pb-[80px]  sm:pt-[90px] sm:pb-[30px] "
     >
       <SectionTitle
-        title={t('recent_posts')}
-        paragraph={t('explore_recent_articles')}
+        title={t('blogkey.hero.title')}
+        paragraph={t('blogkey.hero.paragraph')}
         mb="mb-0"
         buttonText={t('discover_more')}
         buttonHref="/blog"

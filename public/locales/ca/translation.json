@@ -41,6 +41,8 @@
   "© Elysium Consulting Firm. All rights reserved.": "© Elysium Consulting Firm. Tots els drets reservats.",
   "Elysium description": "A Elysium Consulting Firm, proporcionem solucions personalitzades que impulsen el teu creixement i seguretat empresarial. El teu èxit és la nostra prioritat.",
   "home": "Inici",
+  "aboutUsKey": "Sobre nosaltres",
+  "blogKey": "Blog",
   "aboutUs": "Sobre nosaltres",
   "blog": "Blog",
   "contact": "Contacte",
@@ -145,7 +147,7 @@
   },
   "footer": {
     "hero": {
-      "title": "Construint associacions duradores",
+      "title": "Building Lasting, Partnerships",
       "paragraph": "Descobreix-nos"
     },
     "logoAlt": "Logotip d'Elysium",
@@ -169,5 +171,17 @@
     },
     "copyright": "Copyright © 2025 Elysium Consulting",
     "rights": "Tots els drets reservats"
+  },
+  "aboutUskey": {
+    "hero": {
+      "title": "L'experiència no és només tècnica, és personal",
+      "paragraph": "Des d'Andorra al món, un equip unit per l'excel·lència i la passió."
+    }
+  },
+  "blogkey": {
+    "hero": {
+      "title": "Saber per decidir",
+      "paragraph": "Idees, anàlisi i estratègies per a empresaris que volen créixer, optimitzar i prendre decisions amb visió."
+    }
   }
 }

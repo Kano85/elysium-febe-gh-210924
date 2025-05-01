@@ -105,13 +105,11 @@ const ContactForm: React.FC = () => {
       </div>
 
       {/* Google reCAPTCHA widget */}
-      <div>
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-          ref={recaptchaRef}
-          onChange={setRecaptchaToken}
-        />
-      </div>
+      <ReCAPTCHA
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+        ref={recaptchaRef}
+        onChange={setRecaptchaToken}
+      />
 
       <Button type="submit">{t('contact.submitButton')}</Button>
 

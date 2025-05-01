@@ -26,8 +26,7 @@ const SectionTitle = ({
           {title.split(',').map((line, index) => (
             <span key={index}>
               {line}
-              {index < title.split(',').length - 1 && ', '}
-              <br />
+              {index < title.split(',').length - 1 && <br />}
             </span>
           ))}
         </h2>

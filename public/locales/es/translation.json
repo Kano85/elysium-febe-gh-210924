@@ -152,7 +152,7 @@
   },
   "footer": {
     "hero": {
-      "title": "Construyendo asociaciones duraderas",
+      "title": "Building Lasting, Partnerships",
       "paragraph": "Descúbrenos"
     },
     "logoAlt": "Logo de Elysium",
@@ -176,5 +176,17 @@
     },
     "copyright": "Copyright © 2025 Elysium Consulting",
     "rights": "Todos los derechos reservados"
+  },
+  "aboutUskey": {
+    "hero": {
+      "title": "La experiencia no es solo técnica, es personal",
+      "paragraph": "Desde Andorra al mundo, un equipo unido por la excelencia y la pasión."
+    }
+  },
+  "blogkey": {
+    "hero": {
+      "title": "Saber para decidir",
+      "paragraph": "Ideas, análisis y estrategias para empresarios que buscan crecer, optimizar y tomar decisiones con visión."
+    }
   }
 }

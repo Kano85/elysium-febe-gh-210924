@@ -145,7 +145,7 @@
   },
   "footer": {
     "hero": {
-      "title": "Construire des partenariats durables",
+      "title": "Building Lasting, Partnerships",
       "paragraph": "Découvrez-nous"
     },
     "logoAlt": "Logo Elysium",
@@ -169,5 +169,11 @@
     },
     "copyright": "Copyright © 2025 Elysium Consulting",
     "rights": "Tous droits réservés"
+  },
+  "aboutUskey": {
+    "hero": {
+      "title": "L'expérience n'est pas seulement technique, elle est personnelle",
+      "paragraph": "D'Andorre au monde, une équipe unie par l'excellence et la passion."
+    }
   }
 }
