@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { useTranslation } from 'react-i18next';
 import { CheckmarkIcon } from '@sanity/icons';
 import { ChevronDown } from 'lucide-react';
 import menuData from './menuData';
@@ -25,16 +25,15 @@ const Header: React.FC = () => {
   const currentPath = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Use the useTranslation hook
-  const { i18n } = useTranslation();
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
-  const navbarToggleHandler = () => {
-    setNavbarOpen(!navbarOpen);
-  };
+  /* ------------------------------------------------------------------ */
+  /*  Handlers
+  /* ------------------------------------------------------------------ */
+  const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
 
   const handleStickyNavbar = useCallback(() => {
-    window.scrollY >= 80 ? setSticky(true) : setSticky(false);
+    setSticky(window.scrollY >= 80);
   }, []);
 
   useEffect(() => {
@@ -42,14 +41,10 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleStickyNavbar);
   }, [handleStickyNavbar]);
 
-  const handleSubmenu = (index: number) => {
-    openIndex === index ? setOpenIndex(-1) : setOpenIndex(index);
-  };
+  const handleSubmenu = (index: number) =>
+    setOpenIndex(openIndex === index ? -1 : index);
 
-  // Function to change the language
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+  const changeLanguage = (lng: string) => i18n.changeLanguage(lng);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -63,9 +58,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleLinkClick = () => {
@@ -73,6 +66,9 @@ const Header: React.FC = () => {
     setOpenIndex(-1);
   };
 
+  /* ------------------------------------------------------------------ */
+  /*  Languages
+  /* ------------------------------------------------------------------ */
   type Language = { code: string; label: string };
 
   const languages: Language[] = [
@@ -82,22 +78,24 @@ const Header: React.FC = () => {
     { code: 'ca', label: 'Català' },
   ];
 
+  /* ------------------------------------------------------------------ */
+  /*  JSX
+  /* ------------------------------------------------------------------ */
   return (
     <header
-      className={`header left-0 top-0 right-0 z-15 flex w-full items-center  ${
+      className={`header left-0 right-0 top-0 z-15 flex w-full items-center ${
         sticky
           ? 'fixed z-20 bg-gray-dark bg-opacity-80 shadow-sticky backdrop-blur-sm transition'
           : 'absolute bg-transparent'
       }`}
     >
       <div className="container">
-        <div className="flex justify-between w-full items-center relative ">
+        <div className="relative flex w-full items-center justify-between">
+          {/* Logo ------------------------------------------------------- */}
           <div className="w-64 max-w-full xl:mr-12">
             <Link
               href="/"
-              className={`header-logo block w-full ${
-                sticky ? 'py-5 lg:py-2' : 'py-8'
-              }`}
+              className={`header-logo block w-full ${sticky ? 'py-5 lg:py-2' : 'py-8'}`}
             >
               <Image
                 src="/images/logo/elysium-logo.svg"
@@ -109,51 +107,49 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          <div className="flex justify-end w-fit lg:w-[75%] items-center pl-4 pr-6 lg:px-4 flex-row-reverse lg:flex-row">
-            <div className="relative w-full " ref={dropdownRef}>
+          {/* Right side ------------------------------------------------- */}
+          <div className="flex w-fit flex-row-reverse items-center justify-end pl-4 pr-6 lg:w-[75%] lg:flex-row lg:px-4">
+            {/* Mobile hamburger + nav ----------------------------------- */}
+            <div className="relative w-full" ref={dropdownRef}>
               <button
                 onClick={navbarToggleHandler}
                 id="navbarToggler"
                 aria-label="Mobile Menu"
-                className="rounded-lg absolute block focus:ring-2 lg:hidden pl-3 py-[6px] right-0 ring-primary top-1/2 translate-y-[-50%]"
+                className="absolute right-0 top-1/2 -translate-y-1/2 rounded p-2 lg:hidden focus:outline-none focus:ring-0"
               >
                 <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? ' top-[7px] rotate-45' : '' // Adjusted class for open state
-                  }`}
+                  className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${navbarOpen ? 'rotate-45 translate-y-1.5' : ''}`}
                 />
                 <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? 'opacity-0 ' : '' // Adjusted class for open state
-                  }`}
+                  className={`block h-0.5 w-6 bg-white my-1 transition-opacity duration-300 ${navbarOpen ? 'opacity-0' : ''}`}
                 />
                 <span
-                  className={`relative my-1.5 block h-0.5 w-[30px] bg-white transition-all duration-300 ${
-                    navbarOpen ? ' top-[-8px] -rotate-45' : '' // Adjusted class for open state
-                  }`}
+                  className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${navbarOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
                 />
               </button>
 
               <nav
                 id="navbarCollapse"
                 className={`navbar absolute right-0 z-10 w-[250px] rounded border-[0.5px] border-white/20 bg-hero-dark px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 ${
-                  // Added bg-hero-dark for mobile dropdown background
                   navbarOpen
                     ? 'visible top-full opacity-100'
                     : 'invisible top-[120%] opacity-0'
                 }`}
               >
-                <ul className="block lg:flex lg:flex-nowrap lg:space-x-12 lg:justify-center">
+                <ul className="block justify-center lg:flex lg:flex-nowrap lg:space-x-12">
                   {menuData.map((menuItem: MenuItem, index: number) => (
                     <li
                       key={`${menuItem.title}-${index}`}
                       className="group relative"
                     >
                       {isMenuItemWithPath(menuItem) ? (
+                        /* --------------------------------------------------------
+                         *  Link with NO submenu
+                         * ------------------------------------------------------ */
                         <Link
                           href={menuItem.path}
                           onClick={handleLinkClick}
-                          className={`flex whitespace-nowrap py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                          className={`flex whitespace-nowrap py-2 text-base lg:inline-flex lg:px-0 lg:py-6 ${
                             currentPath === menuItem.path
                               ? 'text-white'
                               : 'text-white/70 hover:text-white'
@@ -162,12 +158,15 @@ const Header: React.FC = () => {
                           {t(menuItem.title)}
                         </Link>
                       ) : (
+                        /* --------------------------------------------------------
+                         *  Item WITH submenu
+                         * ------------------------------------------------------ */
                         <>
                           <button
                             onClick={() => handleSubmenu(index)}
                             aria-haspopup="true"
                             aria-expanded={openIndex === index}
-                            className="flex whitespace-nowrap justify-between text-base text-white/70 hover:text-white items-center lg:inline-flex lg:mr-0 lg:px-0 lg:py-6 py-2"
+                            className="flex items-center justify-between whitespace-nowrap py-2 text-base text-white/70 hover:text-white lg:inline-flex lg:px-0 lg:py-6"
                           >
                             {t(menuItem.title)}
                             <span className="pl-3">
@@ -182,17 +181,30 @@ const Header: React.FC = () => {
                             </span>
                           </button>
 
+                          {/* ----------------------------------------------------
+                           *  Sub-menu container
+                           *  - relative (accordion) on mobile
+                           *  - absolute dropdown on ≥ lg
+                           * -------------------------------------------------- */}
                           <div
-                            className={`submenu absolute left-0 top-full rounded-sm bg-dark transition-[top] duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
-                              openIndex === index ? 'block' : 'hidden'
-                            }`}
+                            className={`submenu
+                              relative                               /* mobile: in flow  */
+                              rounded-sm bg-dark
+                              transition-all duration-300
+                              ${openIndex === index ? 'block' : 'hidden'} /* mobile toggle */
+
+                              lg:absolute lg:left-0 lg:top-full      /* desktop: dropdown */
+                              lg:w-[250px] lg:p-4 lg:shadow-lg
+                              lg:invisible lg:opacity-0              /* hidden until hover */
+                              lg:group-hover:visible lg:group-hover:opacity-100
+                            `}
                           >
                             {menuItem.submenu?.map((submenuItem, subIndex) => (
                               <Link
                                 href={submenuItem.path}
-                                onClick={handleLinkClick} // Close dropdown on submenu link click
+                                onClick={handleLinkClick}
                                 key={`${submenuItem.title}-${subIndex}`}
-                                className="rounded text-sm text-white/70 block hover:text-white lg:px-3 py-2.5"
+                                className="block rounded py-2.5 text-sm text-white/70 hover:text-white lg:px-3"
                               >
                                 {submenuItem.title}
                               </Link>
@@ -206,14 +218,14 @@ const Header: React.FC = () => {
               </nav>
             </div>
 
-            {/* Language Switcher */}
-            <div className="flex items-center ml-4 space-x-2 ">
+            {/* Language selector ---------------------------------------- */}
+            <div className="ml-4 flex items-center space-x-2 pr-12 sm:pr-12 lg:pr-0">
               <DropdownMenu>
-                <DropdownMenuTrigger asChild className="">
+                <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
                     size="lg"
-                    className="text-white flex items-center w-auto px-2"
+                    className="flex w-auto items-center px-2 text-white"
                   >
                     <Image
                       src="/icons/Globe.svg"
@@ -225,13 +237,13 @@ const Header: React.FC = () => {
                     <ChevronDown className="ml-1 h-4 text-white" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="">
-                  {/* Language Switcher Menu */}
+
+                <DropdownMenuContent>
                   {languages.map(({ code, label }) => (
                     <DropdownMenuItem
                       key={code}
                       onClick={() => changeLanguage(code)}
-                      className="flex justify-between items-center"
+                      className="flex items-center justify-between"
                     >
                       <span>{label}</span>
                       {i18n.language === code && (

@@ -152,7 +152,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/line-clamp'), require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate')],
   safelist: [
     'transform-style-preserve-3d',
     'will-change-opacity',

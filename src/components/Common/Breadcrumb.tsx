@@ -1,7 +1,6 @@
 //src/components/Common/Breadcrumb.tsx
 'use client';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 const Breadcrumb = ({
   pageName,
   description,
@@ -9,7 +8,6 @@ const Breadcrumb = ({
   pageName: string;
   description: string;
 }) => {
-  const { t } = useTranslation();
   return (
     <>
       <section className="lg:pt-[150px] overflow-hidden pt-28 relative z-10">
