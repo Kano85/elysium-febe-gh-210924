@@ -69,8 +69,8 @@ export default function Hero() {
             {t('partnerships')}
           </h1>
 
-          <p className="text-mainbody-veig font-fragment text-[0.75rem] lg:text-h4 leading-[1.4rem] lg:leading-[1.25rem] text-left opacity-90 max-w-[500px]">
-            {t('Discover us')}
+          <p className="font-elysium-text-body-l-elysium text-mainbody-veig text-left whitespace-pre-line">
+            {t('Discover us').replace(/,\s*/, ',\n')}
           </p>
         </div>
       </div>

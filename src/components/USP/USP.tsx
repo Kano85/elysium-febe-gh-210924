@@ -7,30 +7,12 @@ import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
-type USPItem = string;
-
-const USP_ITEMS: USPItem[] = [
-  `¿Quieres optimizar tu fiscalidad, 
-  proteger tu patrimonio y tomar decisiones con tranquilidad?`,
-  `En ELYSIUM te ayudamos a hacerlo bien, 
-  con garantías legales y visión estratégica.
-Sabemos que dar el paso hacia Andorra o 
-replantear tu situación fiscal genera dudas:`,
-  `¿Me va a perseguir Hacienda?
-¿Tendré que desvincularme por completo de mi país?
-¿Realmente podré mejorar mi situación?`,
-  `La buena noticia es que sí: 
-  es posible estructurar tu caso con eficacia, dentro de la ley y sin errores.
-Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o 
-inversores que han empezado a generar ingresos relevantes y buscan claridad, 
-eficiencia y tranquilidad en Andorra.
-Con experiencia en firmas líderes y un enfoque global, 
-te ayudamos a establecer tu residencia fiscal, 
-constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo.`,
-  `Nuestros clientes no solo quieren pagar menos.
-Quieren hacerlo legalmente y con seguridad.
-Quieren seguir gestionando su vida y su negocio con libertad.
-Y, sobre todo, quieren vivir mejor, con control y tranquilidad.`,
+const USP_KEYS = [
+  'usp.optimize_tax',
+  'usp.help_do_it_right',
+  'usp.tax_doubts',
+  'usp.structuring_news',
+  'usp.client_goals',
 ];
 
 export default function USP() {
@@ -70,11 +52,11 @@ export default function USP() {
 
   return (
     <div className="flex flex-col h-full justify-start gap-12 lg:px-24 md:gap-16 md:px-16 md:py-32 overflow-hidden px-8 py-24 relative z-6">
-      {USP_ITEMS.map((text, index) => {
+      {USP_KEYS.map((key, index) => {
         const isRightAligned = index === 2 || index === 4;
         return (
           <p
-            key={index}
+            key={key}
             ref={(el) => {
               itemsRef.current[index] = el;
             }}
@@ -86,7 +68,7 @@ export default function USP() {
               isRightAligned ? 'self-end text-right' : 'self-start text-left'
             }`}
           >
-            {t(text)}
+            {t(key)}
           </p>
         );
       })}

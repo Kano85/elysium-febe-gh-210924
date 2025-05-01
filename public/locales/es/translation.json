@@ -137,5 +137,44 @@
   "We promote the creation and growth of new businesses.": "Impulsamos la creación y el crecimiento de nuevas empresas.",
   "Financial Investigation and Analysis Against Fraud": "Investigación y análisis financiero contra fraudes",
   "We identify economic irregularities and illicit activities.": "Identificamos irregularidades económicas y actividades ilícitas.",
-  "Strategies to minimize taxes and maximize benefits at national and international levels": "Estrategias para minimizar impuestos y maximizar beneficios a nivel nacional e internacional"
+  "Strategies to minimize taxes and maximize benefits at national and international levels": "Estrategias para minimizar impuestos y maximizar beneficios a nivel nacional e internacional",
+  "usp": {
+    "optimize_tax": "¿Quieres optimizar tu fiscalidad, proteger tu patrimonio y tomar decisiones con tranquilidad?",
+    "help_do_it_right": "En ELYSIUM te ayudamos a hacerlo bien, con garantías legales y visión estratégica. Sabemos que dar el paso hacia Andorra o replantear tu situación fiscal genera dudas:",
+    "tax_doubts": "¿Me va a perseguir Hacienda?\n¿Tendré que desvincularme por completo de mi país?\n¿Realmente podré mejorar mi situación?",
+    "structuring_news": "La buena noticia es que sí: es posible estructurar tu caso con eficacia, dentro de la ley y sin errores. Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o inversores que han empezado a generar ingresos relevantes y buscan claridad, eficiencia y tranquilidad en Andorra. Con experiencia en firmas líderes y un enfoque global, te ayudamos a establecer tu residencia fiscal, constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo.",
+    "client_goals": "Nuestros clientes no solo quieren pagar menos.\nQuieren hacerlo legalmente y con seguridad.\nQuieren seguir gestionando su vida y su negocio con libertad.\nY, sobre todo, quieren vivir mejor, con control y tranquilidad."
+  },
+  "cta": {
+    "conversation_title": "La conversación que lo cambia todo",
+    "conversation_description": "Una reunión confidencial para escucharte hoy. Un equipo de confianza para acompañarte mañana.",
+    "book_appointment": "Reservar cita"
+  },
+  "footer": {
+    "hero": {
+      "title": "Construyendo asociaciones duraderas",
+      "paragraph": "Descúbrenos"
+    },
+    "logoAlt": "Logo de Elysium",
+    "links": {
+      "title": "Enlaces",
+      "about": "Sobre nosotros",
+      "news": "Noticias",
+      "contact": "Contacto"
+    },
+    "address": {
+      "title": "Dirección",
+      "details": "Avinguda Carlemany 657 6e 2a\nAD700 Escaldes-Engordany\nAndorra",
+      "line2": "6e 2a, AD700, ",
+      "line1": "Avinguda Carlemany 657",
+      "line3": "Andorra"
+    },
+    "contact": {
+      "title": "Comunicación",
+      "email": "info@elysiumconsultingfirm.com",
+      "phone": "+376 659 479"
+    },
+    "copyright": "Copyright © 2025 Elysium Consulting",
+    "rights": "Todos los derechos reservados"
+  }
 }

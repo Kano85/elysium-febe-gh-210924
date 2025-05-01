@@ -1,6 +1,6 @@
 {
   "E": "Elysium",
-  "Discover us": "We don’t just offer consulting — we forge alliances that stand the test of time.",
+  "Discover us": "We don’t just provide consultancy, we forge alliances that stand the test of time.",
   "Global Tax Consultancy": "Global Tax Consultancy",
   "15+ years of experience": "15+ years of experience",
   "Comprehensive Solutions": "Comprehensive Solutions",
@@ -141,5 +141,44 @@
   "We promote the creation and growth of new businesses.": "We promote the creation and growth of new businesses.",
   "Financial Investigation and Analysis Against Fraud": "Financial Investigation and Analysis Against Fraud",
   "We identify economic irregularities and illicit activities.": "We identify economic irregularities and illicit activities.",
-  "Strategies to minimize taxes and maximize benefits at national and international levels": "Strategies to minimize taxes and maximize benefits at national and international levels"
+  "Strategies to minimize taxes and maximize benefits at national and international levels": "Strategies to minimize taxes and maximize benefits at national and international levels",
+  "usp": {
+    "optimize_tax": "Do you want to optimize your taxation, protect your assets, and make decisions with peace of mind?",
+    "help_do_it_right": "At ELYSIUM we help you do it right, with legal guarantees and strategic vision. We know that taking the step to Andorra or rethinking your fiscal situation raises doubts:",
+    "tax_doubts": "Will the Tax Agency come after me?\nWill I have to completely sever ties with my country?\nWill I really be able to improve my situation?",
+    "structuring_news": "The good news is that yes: it is possible to structure your case effectively, within the law and without mistakes. We advise business owners, athletes, entrepreneurs, content creators, and investors who have started generating significant income and are seeking clarity, efficiency, and peace of mind in Andorra. With experience in leading firms and a global approach, we help you establish your tax residency, set up companies, or plan your assets with legal, long-term solutions.",
+    "client_goals": "Our clients not only want to pay less.\nThey want to do so legally and securely.\nThey want to continue managing their life and business with freedom.\nAnd, above all, they want to live better, with control and peace of mind."
+  },
+  "cta": {
+    "conversation_title": "The conversation that changes everything",
+    "conversation_description": "A confidential meeting to listen to you today. A trusted team to accompany you tomorrow.",
+    "book_appointment": "Book appointment"
+  },
+  "footer": {
+    "hero": {
+      "title": "Building Lasting Partnerships",
+      "paragraph": "Discover us"
+    },
+    "logoAlt": "Elysium logo",
+    "links": {
+      "title": "Links",
+      "about": "About Us",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "address": {
+      "title": "Address",
+      "details": "Avinguda Carlemany 657 6e 2a\nAD700 Escaldes-Engordany\nAndorra",
+      "line1": "Avinguda Carlemany 657",
+      "line2": "6e 2a, AD700, ",
+      "line3": "Andorra"
+    },
+    "contact": {
+      "title": "Communication",
+      "email": "info@elysiumconsultingfirm.com",
+      "phone": "+376 659 479"
+    },
+    "copyright": "Copyright © 2025 Elysium Consulting",
+    "rights": "All Rights Reserved"
+  }
 }

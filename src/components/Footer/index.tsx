@@ -8,19 +8,21 @@ import Social from './social';
 import SectionTitle from '../Common/SectionTitle';
 import Marquee from '../Marquee/Marquee';
 import { MapPin, Mail, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer: NextPage = () => {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const isHome = pathname === '/';
 
   return (
-    <div className="w-full relative bg-[#1e2123] overflow-hidden flex flex-col items-center justify-start py-0 px-[6.25rem] text-[#9d9b94]">
+    <div className="flex flex-col w-full gap-[12px] px-8 lg:px-24 lg:pt-40 lg:pb-[40px] sm:pt-[90px] sm:pb-[15px] relative bg-[#1e2123] overflow-hidden items-center justify-start text-[#9d9b94]">
       {/* Home-only hero */}
       {isHome && (
         <section className="self-stretch text-center my-8">
           <SectionTitle
-            title="Building Lasting partnerships"
-            paragraph="Descúbrenos"
+            title={t('footer.hero.title')}
+            paragraph={t('footer.hero.paragraph')}
             mb="mb-12"
           />
           <Marquee />
@@ -33,7 +35,7 @@ const Footer: NextPage = () => {
         <div className="flex flex-col items-center gap-6">
           <Image
             src="/images/logo/elysium-logo.svg"
-            alt="Elysium logo"
+            alt={t('footer.logoAlt')}
             width={300}
             height={84}
             className="object-cover"
@@ -50,17 +52,17 @@ const Footer: NextPage = () => {
           {/* 1 — Links */}
           <div className="flex flex-col gap-2">
             <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-[#a78952] to-[#dfc383] leading-7">
-              Enlaces
+              {t('footer.links.title')}
             </h3>
             <nav className="flex flex-col gap-2 text-[0.875rem]">
               <NextLink href="#about" className="hover:text-[#dfc383]">
-                Sobre nosotros
+                {t('footer.links.about')}
               </NextLink>
               <NextLink href="#news" className="hover:text-[#dfc383]">
-                Actualidad
+                {t('footer.links.news')}
               </NextLink>
               <NextLink href="#contact" className="hover:text-[#dfc383]">
-                Contacto
+                {t('footer.links.contact')}
               </NextLink>
             </nav>
           </div>
@@ -68,24 +70,24 @@ const Footer: NextPage = () => {
           {/* 2 — Address */}
           <div className="flex flex-col gap-2">
             <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-[#a78952] to-[#dfc383] leading-7">
-              Dirección
+              {t('footer.address.title')}
             </h3>
             <address className="not-italic flex gap-2 text-[0.875rem]">
               <MapPin size={20} className="text-[#dfc383] mt-1 shrink-0" />
-              <span>
-                Avinguda Carlemany&nbsp;657&nbsp;6e&nbsp;2a
+              <div>
+                <span>{t('footer.address.line1')}</span>
                 <br />
-                AD700&nbsp;Escaldes-Engordany
+                <span>{t('footer.address.line2')}</span>
                 <br />
-                Andorra
-              </span>
+                <span>{t('footer.address.line3')}</span>
+              </div>
             </address>
           </div>
 
           {/* 3 — Contact */}
           <div className="flex flex-col gap-2">
             <h3 className="text-transparent bg-clip-text bg-gradient-to-b from-[#a78952] to-[#dfc383] leading-7">
-              Comunicación
+              {t('footer.contact.title')}
             </h3>
 
             {/* e-mail */}
@@ -95,7 +97,7 @@ const Footer: NextPage = () => {
                 href="mailto:info@elysiumconsultingfirm.com"
                 className="hover:text-[#dfc383] transition-colors"
               >
-                info@elysiumconsultingfirm.com
+                {t('footer.contact.email')}
               </NextLink>
             </div>
 
@@ -106,7 +108,7 @@ const Footer: NextPage = () => {
                 href="tel:+376659479"
                 className="hover:text-[#dfc383] transition-colors"
               >
-                +376&nbsp;659&nbsp;479
+                {t('footer.contact.phone')}
               </NextLink>
             </div>
           </div>
@@ -125,8 +127,8 @@ const Footer: NextPage = () => {
 
       {/* Bottom bar */}
       <div className="flex justify-between py-2 text-[0.875rem] w-full">
-        <span>Copyright © 2025&nbsp;Elysium Consulting</span>
-        <span>All Rights Reserved</span>
+        <span>{t('footer.copyright')}</span>
+        <span>{t('footer.rights')}</span>
       </div>
     </div>
   );
