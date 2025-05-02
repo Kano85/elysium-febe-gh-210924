@@ -8,8 +8,8 @@ export default function AboutUs() {
   return (
     <section className="flex flex-col gap-[48px] pt-[90px] pb-[30px] sm:pt-[90px] sm:pb-[30px] lg:pt-40 lg:pb-[80px] lg:px-24 lg:gap-[80px] px-8">
       <SectionTitle
-        title={t('aboutUskey.hero.title')}
-        paragraph={t('aboutUskey.hero.paragraph')}
+        title={t('aboutUs.hero.title')}
+        paragraph={t('aboutUs.hero.paragraph')}
       />
 
       {/* Mobile layout (sm) - Single column */}

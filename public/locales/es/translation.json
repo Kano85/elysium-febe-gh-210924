@@ -63,8 +63,8 @@
   "stay_informed": "Mantente informado con las últimas noticias y novedades de nuestros servicios de consultoría y asesoramiento empresarial.",
   "subscribe": "Suscribirse",
   "privacy_assurance": "Garantizamos la privacidad de tus datos. No enviamos correos no deseados.",
-  "title": "Página de Contacto",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+  "title": "Optimiza tu fiscalidad",
+  "description": "No dudes en contactarnos. Estaremos encantados de saber de ti.",
   "title-user": "Testimonios que nos respaldan",
   "description-user": "Nuestros clientes son nuestra mejor carta de presentación. Sus experiencias reflejan el impacto de nuestras soluciones a medida y el compromiso que ponemos en cada colaboración.",
   "contact.nameLabel": "Nombre",
@@ -187,6 +187,61 @@
     "hero": {
       "title": "Saber para decidir",
       "paragraph": "Ideas, análisis y estrategias para empresarios que buscan crecer, optimizar y tomar decisiones con visión."
+    }
+  },
+  "aboutPage": {
+    "breadcrumb": { "pageName": "Quiénes somos", "description": "" },
+    "whoWeAre": {
+      "p1": "En ELYSIUM, nuestra filosofía se basa en una premisa inquebrantable: el cliente está en el centro de todo lo que hacemos. Fundada en el dinámico epicentro empresarial de Escaldes (Principado de Andorra) y con capacidad para atender personalmente a clientes en Andorra, Barcelona y Toulouse, nuestra firma internacional de consultoría estratégica no solo busca la excelencia: redefine lo que significa 'asesoría'.",
+      "p2": "'Construir alianzas duraderas' es más que un lema; refleja nuestro compromiso de forjar relaciones sólidas y profundamente confiables. Nos especializamos en consultoría y planificación fiscal internacional, optimización empresarial, reubicación internacional y estrategia ejecutiva, entre otros servicios. Nuestro enfoque garantiza atención meticulosa y personalizada, tratando cada desafío como propio y ofreciendo soluciones rápidas y eficaces.",
+      "p3": "Albert Contel, nuestro Socio Director y fundador, encarna los valores de ELYSIUM: honestidad, transparencia, rigor técnico y atención al detalle. Con amplia experiencia —desde cambios regulatorios en Andorra y países vecinos hasta estándares globales— no solo ha sido testigo sino también artífice de la evolución del panorama fiscal y legal junto a múltiples clientes internacionales. Asimismo, la firma no sería nada sin cada miembro de su equipo: nuestra diversidad asegura una riqueza de perspectivas y una capacidad única para gestionar casos complejos con un entendimiento profundo de las necesidades globales de los clientes.",
+      "p4": "El verdadero valor reside no solo en lo que entregamos, sino en cómo lo entregamos. Nos centramos en minimizar riesgos y maximizar oportunidades, empoderando y apoyando a los clientes. Cada miembro de nuestro equipo de expertos —economistas y abogados especializados en derecho mercantil y fiscal— asegura que solo las mentes más brillantes manejen cada caso.",
+      "p5": "Nuestra red internacional de colaboradores, dinámica y en constante crecimiento, nos permite diseñar estrategias efectivas en múltiples jurisdicciones y ofrecer a los clientes una visión global. Desde reestructuraciones corporativas hasta planificación estratégica y valoración de negocios, cada servicio se acompaña de una mentalidad proactiva y a medida.",
+      "p6": "En resumen, ELYSIUM es más que una firma de consultoría; somos un socio estratégico dedicado al crecimiento y la evolución de nuestros clientes. Nacidos de una visión única de servicio excepcional, vivimos para resolver los desafíos más complejos y para que cada decisión empresarial se tome con claridad, conocimiento y confianza. Con ELYSIUM no solo obtienes un consultor: obtienes un aliado que entiende profundamente tus necesidades y las convierte en oportunidades sostenibles y exitosas."
+    },
+    "history": {
+      "title": "Historia",
+      "originsTitle": "Orígenes",
+      "origins": "El viaje de ELYSIUM comienza con la historia extraordinaria de su fundador, Albert Contel, cuya herencia es tan rica y variada como el tapiz cultural de su Barcelona natal. Criado en un hogar donde la economía y las artes convivían en perfecta armonía —un padre economista y una madre políglota— Albert creció entre números y música, datos y drama, forjando un apetito insaciable de conocimiento y una visión única para su aplicación práctica.",
+      "developmentTitle": "Desarrollo",
+      "development": "Siendo estudiante, Albert trabajó las tardes en pequeñas firmas de contabilidad, afianzando sus conocimientos en contabilidad, fiscalidad y atención directa al cliente. Esta etapa inicial allanó el camino hacia las 'grandes ligas', donde colaboró con las firmas de auditoría más emblemáticas y despachos de abogados internacionales de primer nivel. Allí perfeccionó su capacidad para navegar las finanzas globales, lo corporativo y —especialmente— la legislación fiscal, complementado por una etapa en la banca privada que profundizó su conocimiento de las finanzas corporativas y personales.",
+      "birthTitle": "Nacimiento de la Marca",
+      "birth": "La verdadera vocación de Albert no era simplemente trabajar en el ámbito internacional, sino transformarlo. ELYSIUM nació de un sueño, tejido a lo largo de años de experiencia y reflexión, para crear una firma que liderara con innovación y un enfoque holístico.",
+      "valuesTitle": "Valores y Perspectivas",
+      "values": "El nombre ELYSIUM evoca los legendarios Campos Elíseos —un refugio idílico para las almas virtuosas— que captura nuestra misión. Con la banda de Möbius como emblema, nos comprometemos a la continuidad, la integridad y la transparencia absoluta. Cada desafío del cliente se convierte en nuestro propio reto; cada victoria, prueba de nuestro compromiso compartido. Nuestro objetivo no es solo resolver problemas, sino anticiparlos y superarlos, detectando oportunidades antes de que surjan. Nos esforzamos por ser aliados inquebrantables en la búsqueda del éxito de nuestros clientes, asegurando que cada uno encuentre en ELYSIUM un santuario de confianza y excelencia. ELYSIUM no es solo una firma; es un movimiento, una revolución en consultoría y un legado para futuras generaciones. Nuestra historia es una invitación abierta a todos los que valoran la excelencia, la pasión y la lealtad, y desean unirse en este viaje hacia un futuro donde lo extraordinario sea la norma. Con ELYSIUM no solo encuentras soluciones, sino un nuevo horizonte de posibilidades."
+    },
+    "whatIsElysium": {
+      "title": "¿Qué es elysium?",
+      "description": "El nombre ELYSIUM evoca los legendarios Campos Elíseos —un refugio idílico para las almas virtuosas— que captura nuestra misión. Con la banda de Möbius como emblema, nos comprometemos a la continuidad, la integridad y la transparencia absoluta.",
+      "list": {
+        "nameTitle": "El Nombre:",
+        "name": "Con raíces en el latín y el griego antiguo, 'Elysium' hace referencia a los Campos Elíseos, simbolizando nuestro ideal en los negocios: un santuario de confianza y excelencia donde cada cliente recibe el más alto profesionalismo y ética.",
+        "sloganTitle": "El Lema:",
+        "slogan": "'Construir alianzas duraderas' encapsula nuestra filosofía de servicio al cliente: forjamos vínculos profundos y duraderos basados en la confianza y el entendimiento mutuos.",
+        "symbolTitle": "El Símbolo:",
+        "symbol": "La banda de Möbius, con una sola superficie y borde, simboliza la continuidad y el infinito —nuestra visión de las relaciones con los clientes.",
+        "coloursTitle": "Colores Corporativos:",
+        "colours": "El dorado simboliza excelencia y éxito; el negro denota sofisticación, elegancia, fuerza y autoridad; el blanco evoca claridad, pureza y precisión."
+      }
+    },
+    "valuesSection": {
+      "title": "Valores",
+      "items": {
+        "excellenceTitle": "Excelencia",
+        "excellence": "Compromiso sin reservas para superar expectativas mediante soluciones innovadoras y profesionales dedicados.",
+        "honestyTitle": "Honestidad",
+        "honesty": "Comunicación abierta y constante y total transparencia como base de alianzas duraderas.",
+        "securityTitle": "Seguridad",
+        "security": "Protegiendo hoy y asegurando mañana mediante estrategias sólidas y alineadas con el futuro.",
+        "trustTitle": "Confianza",
+        "trust": "La piedra angular de cada relación, evidenciada por una tasa de retención de clientes del 99 % y frecuentes recomendaciones."
+      }
+    }
+  },
+  "contactPage": {
+    "breadcrumb": {
+      "title": "Optimiza tu fiscalidad",
+      "description": "No dudes en contactarnos. Estaremos encantados de saber de ti."
     }
   }
 }

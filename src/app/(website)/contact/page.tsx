@@ -12,7 +12,10 @@ export default function ContactPage() {
 
   return (
     <>
-      <Breadcrumb pageName={t('title')} description={t('description')} />
+      <Breadcrumb
+        pageName={t('contactPage.breadcrumb.title')}
+        description={t('contactPage.breadcrumb.description')}
+      />
 
       {/* inner section follows the same pattern you kept in ServicesPage */}
       <section className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-2 gap-8">

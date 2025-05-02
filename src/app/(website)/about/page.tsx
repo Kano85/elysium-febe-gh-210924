@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Breadcrumb from '@/components/Common/Breadcrumb';
 import Footer from '@/components/Footer';
+import { useTranslation } from 'react-i18next';
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Grid wrapper: 7 columns (text) + 5 columns (images) from `lg` breakpoint up
@@ -19,9 +20,13 @@ const LgTwoCol: React.FC<{
 );
 
 export default function AboutPage() {
+  const { t } = useTranslation();
   return (
     <>
-      <Breadcrumb pageName="Who we are" description="" />
+      <Breadcrumb
+        pageName={t('aboutPage.breadcrumb.pageName')}
+        description={t('aboutPage.breadcrumb.description')}
+      />
 
       {/* Outer container handled by layout; this div keeps inner vertical rhythm */}
       <div className="py-lg space-y-xl">
@@ -57,56 +62,22 @@ export default function AboutPage() {
           }
         >
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            At ELYSIUM, our philosophy rests on an unshakable premise: the
-            client is at the heart of everything we do. Founded in the dynamic
-            business hub of Escaldes (Principality of Andorra) and able to serve
-            clients personally in Andorra, Barcelona and Toulouse, our
-            international strategic-consulting firm not only pursues
-            excellence—it redefines what “advisory” means.
+            {t('aboutPage.whoWeAre.p1')}
           </p>
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            “Building lasting partnerships” is more than a slogan; it reflects
-            our commitment to forging durable, deeply trustworthy relationships.
-            We specialise in international tax consulting and planning, business
-            optimisation, international relocation and executive strategy, among
-            other services. Our approach guarantees meticulous, personalised
-            attention, treating each challenge as our own and delivering rapid,
-            effective solutions.
+            {t('aboutPage.whoWeAre.p2')}
           </p>
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            Albert Contel, our Managing Partner and founder, embodies ELYSIUM’s
-            values: honesty, transparency, technical rigour and unwavering
-            attention to detail. With wide-ranging experience—from regulatory
-            changes in Andorra and neighbouring countries to global standards—he
-            has not only witnessed but helped shape the fiscal and legal
-            landscape alongside numerous international clients. Likewise, the
-            firm would be nothing without every member of its team: our
-            diversity ensures a wealth of perspectives and a unique capacity to
-            handle complex cases with a deep, nuanced grasp of global client
-            needs.
+            {t('aboutPage.whoWeAre.p3')}
           </p>
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            True value lies not only in what we deliver but in how we deliver
-            it. We focus on minimising risk and maximising opportunity,
-            empowering clients as well as supporting them. Every member of our
-            expert team—economists and lawyers specialised in commercial and tax
-            law—ensures that only the best minds handle each case.
+            {t('aboutPage.whoWeAre.p4')}
           </p>
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            Our dynamic, ever-growing international network of collaborators
-            lets us craft effective strategies across multiple jurisdictions and
-            give clients a global view. From corporate restructuring to
-            strategic planning and business valuation, every service comes with
-            a proactive, tailored mindset.
+            {t('aboutPage.whoWeAre.p5')}
           </p>
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            In short, ELYSIUM is more than a consulting firm; we are a strategic
-            partner dedicated to our clients’ growth and evolution. Born of a
-            unique vision of exceptional service, we live to solve the most
-            complex challenges and to see every business decision made with
-            clarity, knowledge and confidence. With ELYSIUM you gain not just a
-            consultant but an ally who deeply understands your needs and turns
-            them into sustainable, successful opportunities.
+            {t('aboutPage.whoWeAre.p6')}
           </p>
         </LgTwoCol>
 
@@ -134,59 +105,36 @@ export default function AboutPage() {
           }
         >
           <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-            History
+            {t('aboutPage.history.title')}
           </h3>
 
           <div className="space-y-sm">
-            <h4 className="elysium-heading-5">Origins</h4>
+            <h4 className="elysium-heading-5">
+              {t('aboutPage.history.originsTitle')}
+            </h4>
             <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              ELYSIUM’s journey begins with the remarkable story of its founder,
-              Albert Contel, whose heritage is as rich and varied as the
-              cultural tapestry of his native Barcelona. Raised in a home where
-              economics and the arts danced in perfect harmony—an economist
-              father and a polyglot mother—Albert grew up amid numbers and
-              music, data and drama, forging an insatiable appetite for
-              knowledge and a unique vision for its real-world application.
+              {t('aboutPage.history.origins')}
             </p>
 
-            <h4 className="elysium-heading-5">Development</h4>
+            <h4 className="elysium-heading-5">
+              {t('aboutPage.history.developmentTitle')}
+            </h4>
             <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              As a student, Albert worked afternoons in small accounting firms,
-              grounding himself in bookkeeping, taxation and hands-on client
-              service. This early stage paved the way to the “big leagues,”
-              where he served with the world’s most emblematic audit firms and
-              top-tier international law offices. Here he honed the ability to
-              navigate global finance, corporate and—especially—tax law,
-              complemented by a stint in private banking that deepened his
-              knowledge of corporate and personal finance.
+              {t('aboutPage.history.development')}
             </p>
 
-            <h4 className="elysium-heading-5">Birth of the Brand</h4>
+            <h4 className="elysium-heading-5">
+              {t('aboutPage.history.birthTitle')}
+            </h4>
             <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              Albert’s true calling was not merely to work on the global stage,
-              but to transform it. ELYSIUM was born from a dream, woven through
-              years of experience and reflection, to create a firm that would
-              lead with innovation and a holistic mindset.
+              {t('aboutPage.history.birth')}
             </p>
 
-            <h4 className="elysium-heading-5">Values and Perspectives</h4>
+            <h4 className="elysium-heading-5">
+              {t('aboutPage.history.valuesTitle')}
+            </h4>
             <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              The name ELYSIUM evokes the legendary Elysian Fields—an idyllic
-              refuge for virtuous souls—which captures our mission. With the
-              Möbius strip as our emblem, we pledge continuity, integrity and
-              absolute transparency. Every client challenge becomes our own
-              challenge; every victory, proof of our shared commitment. We aim
-              not merely to solve problems but to anticipate and surpass
-              expectations, spotting opportunities before they emerge. We strive
-              to be unshakeable allies in our clients’ pursuit of success,
-              ensuring that each one finds a sanctuary of trust and excellence
-              within ELYSIUM. ELYSIUM is not just a firm; it is a movement, a
-              revolution in consulting, and a legacy we intend for future
-              generations. Our story is an open invitation to all who value
-              excellence, passion and loyalty, and who wish to join us on this
-              journey toward a future where the extraordinary is standard. With
-              ELYSIUM you find not only solutions but an entirely new horizon of
-              possibilities.
+              {t('aboutPage.history.values')}
             </p>
           </div>
         </LgTwoCol>
@@ -194,35 +142,27 @@ export default function AboutPage() {
         {/* ───── WHAT IS ELYSIUM? ───────────────────────────────────── */}
         <section className="space-y-md">
           <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-            What is elysium?
+            {t('aboutPage.whatIsElysium.title')}
           </h3>
           <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-            The name ELYSIUM evokes the legendary Elysian Fields—an idyllic
-            refuge for virtuous souls—which captures our mission. With the
-            Möbius strip as our emblem, we pledge continuity, integrity and
-            absolute transparency.
+            {t('aboutPage.whatIsElysium.description')}
           </p>
           <ul className="list-disc list-inside font-elysium-text-body-XS-elysium space-y-xs text-projects-colorstylesdisable-text">
             <li>
-              <strong>The Name:</strong> Rooted in Latin and Ancient Greek,
-              “Elysium” references the Elysian Fields, symbolising our ideal in
-              business: a sanctuary of trust and excellence where every client
-              is treated with the highest professionalism and ethics.
+              <strong>{t('aboutPage.whatIsElysium.list.nameTitle')}:</strong>{' '}
+              {t('aboutPage.whatIsElysium.list.name')}
             </li>
             <li>
-              <strong>The Slogan:</strong> “Building Lasting Partnerships”
-              encapsulates our customer-service philosophy: we build deep,
-              enduring bonds founded on mutual trust and understanding.
+              <strong>{t('aboutPage.whatIsElysium.list.sloganTitle')}:</strong>{' '}
+              {t('aboutPage.whatIsElysium.list.slogan')}
             </li>
             <li>
-              <strong>The Symbol:</strong> The Möbius strip, with a single
-              surface and edge, symbolises continuity and infinity—our vision
-              for client relationships.
+              <strong>{t('aboutPage.whatIsElysium.list.symbolTitle')}:</strong>{' '}
+              {t('aboutPage.whatIsElysium.list.symbol')}
             </li>
             <li>
-              <strong>Corporate Colours:</strong> Gold signifies excellence and
-              success; Black denotes sophistication, elegance, strength and
-              authority; White evokes clarity, purity and precision.
+              <strong>{t('aboutPage.whatIsElysium.list.coloursTitle')}:</strong>{' '}
+              {t('aboutPage.whatIsElysium.list.colours')}
             </li>
           </ul>
         </section>
@@ -230,35 +170,39 @@ export default function AboutPage() {
         {/* ───── VALUES ─────────────────────────────────────────────── */}
         <section className="space-y-sm">
           <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-            Values
+            {t('aboutPage.valuesSection.title')}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <div>
-              <h5 className="elysium-body-l">Excellence</h5>
+              <h5 className="elysium-body-l">
+                {t('aboutPage.valuesSection.items.excellenceTitle')}
+              </h5>
               <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-                An unreserved commitment to surpassing expectations through
-                innovative solutions and dedicated professionals.
+                {t('aboutPage.valuesSection.items.excellence')}
               </p>
             </div>
             <div>
-              <h5 className="elysium-body-l">Honesty</h5>
+              <h5 className="elysium-body-l">
+                {t('aboutPage.valuesSection.items.honestyTitle')}
+              </h5>
               <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-                Open, constant communication and full transparency as the
-                foundation of lasting partnerships.
+                {t('aboutPage.valuesSection.items.honesty')}
               </p>
             </div>
             <div>
-              <h5 className="elysium-body-l">Security</h5>
+              <h5 className="elysium-body-l">
+                {t('aboutPage.valuesSection.items.securityTitle')}
+              </h5>
               <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-                Safeguarding today and securing tomorrow by crafting robust,
-                future-aligned strategies.
+                {t('aboutPage.valuesSection.items.security')}
               </p>
             </div>
             <div>
-              <h5 className="elysium-body-l">Trust</h5>
+              <h5 className="elysium-body-l">
+                {t('aboutPage.valuesSection.items.trustTitle')}
+              </h5>
               <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-                The cornerstone of every relationship, evidenced by a 99 %
-                client-retention rate and frequent referrals.
+                {t('aboutPage.valuesSection.items.trust')}
               </p>
             </div>
           </div>

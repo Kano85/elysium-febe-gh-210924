@@ -43,7 +43,12 @@
   "home": "Accueil",
   "aboutUs": "À propos",
   "blog": "Blog",
-  "contact": "Contact",
+  "contactPage": {
+    "breadcrumb": {
+      "title": "Optimisez votre fiscalité",
+      "description": "N'hésitez pas à nous contacter. Nous serons ravis d'avoir de vos nouvelles."
+    }
+  },
   "no_posts_available": "Aucun article disponible pour le moment. Veuillez revenir plus tard !",
   "recent_posts": "Nos dernières publications",
   "explore_recent_articles": "Explorez les articles les plus récents de notre blog...",
@@ -63,8 +68,8 @@
   "stay_informed": "Restez informé des dernières actualités et mises à jour de nos services de conseil et d’accompagnement.",
   "subscribe": "S'abonner",
   "privacy_assurance": "Nous garantissons la confidentialité de vos données. Nous n'envoyons pas de spam.",
-  "title": "Page de Contact",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+  "title": "Optimisez votre fiscalité",
+  "description": "N'hésitez pas à nous contacter. Nous serons ravis d'avoir de vos nouvelles.",
   "title-user": "Témoignages qui nous soutiennent",
   "description-user": "Nos clients sont notre meilleure carte de visite. Leurs expériences reflètent l'impact de nos solutions sur mesure et l'engagement que nous mettons dans chaque collaboration.",
   "mission": {
@@ -174,6 +179,58 @@
     "hero": {
       "title": "L'expérience n'est pas seulement technique, elle est personnelle",
       "paragraph": "D'Andorre au monde, une équipe unie par l'excellence et la passion."
+    }
+  },
+  "aboutPage": {
+    "breadcrumb": {
+      "pageName": "Qui nous sommes",
+      "description": ""
+    },
+    "whoWeAre": {
+      "p1": "Chez ELYSIUM, notre philosophie repose sur une prémisse inébranlable : le client est au cœur de tout ce que nous faisons. Fondée dans le dynamique centre d’affaires d’Escaldes (Principauté d’Andorre) et pouvant servir personnellement des clients en Andorre, à Barcelone et à Toulouse, notre cabinet international de conseil stratégique ne se contente pas de poursuivre l’excellence : il redéfinit ce que signifie « conseil ».",
+      "p2": "« Construire des partenariats durables » est plus qu’un slogan ; cela reflète notre engagement à forger des relations solides et profondément fiables. Nous sommes spécialisés dans le conseil et la planification fiscale internationale, l’optimisation des entreprises, la relocalisation internationale et la stratégie exécutive, entre autres services. Notre approche garantit une attention méticuleuse et personnalisée, traitant chaque défi comme le nôtre et offrant des solutions rapides et efficaces.",
+      "p3": "Albert Contel, notre associé directeur et fondateur, incarne les valeurs d’ELYSIUM : honnêteté, transparence, rigueur technique et attention sans faille aux détails. Fort d’une vaste expérience —des évolutions réglementaires en Andorre et dans les pays voisins aux normes mondiales— il n’a pas seulement été témoin mais a aussi contribué à façonner le paysage fiscal et juridique aux côtés de nombreux clients internationaux. De même, l’entreprise ne serait rien sans chaque membre de son équipe : notre diversité assure une richesse de perspectives et une capacité unique à gérer des dossiers complexes avec une compréhension approfondie des besoins mondiaux des clients.",
+      "p4": "La véritable valeur ne réside pas seulement dans ce que nous livrons, mais dans la manière dont nous le livrons. Nous nous concentrons sur la minimisation des risques et la maximisation des opportunités, en responsabilisant et en soutenant les clients. Chaque membre de notre équipe d’experts — économistes et avocats spécialisés en droit commercial et fiscal — veille à ce que seules les meilleures compétences traitent chaque dossier.",
+      "p5": "Notre réseau international de collaborateurs, dynamique et en pleine expansion, nous permet d’élaborer des stratégies efficaces dans plusieurs juridictions et d’offrir aux clients une vision globale. Des restructurations d’entreprise à la planification stratégique et à l’évaluation des entreprises, chaque service s’accompagne d’une approche proactive et sur-mesure.",
+      "p6": "En bref, ELYSIUM est plus qu’un cabinet de conseil ; nous sommes un partenaire stratégique dédié à la croissance et à l’évolution de nos clients. Née d’une vision unique d’un service exceptionnel, notre mission est de résoudre les défis les plus complexes et de faire en sorte que chaque décision commerciale soit prise avec clarté, connaissance et confiance. Avec ELYSIUM, vous ne gagnez pas seulement un consultant, mais un allié qui comprend profondément vos besoins et les transforme en opportunités durables et fructueuses."
+    },
+    "history": {
+      "title": "Histoire",
+      "originsTitle": "Origines",
+      "origins": "Le parcours d’ELYSIUM commence par l’histoire remarquable de son fondateur, Albert Contel, dont l’héritage est aussi riche et varié que le tissu culturel de sa ville natale, Barcelone. Élevé dans un foyer où l’économie et les arts coexistaient en parfaite harmonie — un père économiste et une mère polyglotte — Albert a grandi entre les chiffres et la musique, les données et le théâtre, développant un appétit insatiable pour le savoir et une vision unique de son application concrète.",
+      "developmentTitle": "Développement",
+      "development": "Étudiant, Albert travaillait les après-midis dans de petits cabinets comptables, se formant à la comptabilité, à la fiscalité et au service direct aux clients. Cette première étape a préparé le terrain pour les “grandes ligues”, où il a collaboré avec les cabinets d’audit les plus emblématiques et des cabinets d’avocats internationaux de premier plan. Là, il a perfectionné sa capacité à naviguer dans la finance mondiale, les aspects corporatifs et — surtout — le droit fiscal, enrichie par une expérience en banque privée qui a approfondi sa connaissance des finances personnelles et d’entreprise.",
+      "birthTitle": "Naissance de la marque",
+      "birth": "La véritable vocation d’Albert n’était pas simplement de travailler à l’échelle mondiale, mais de la transformer. ELYSIUM est né d’un rêve, tissé à travers des années d’expérience et de réflexion, pour créer un cabinet qui dirige avec innovation et une approche holistique.",
+      "valuesTitle": "Valeurs et perspectives",
+      "values": "Le nom ELYSIUM évoque les légendaires Champs-Élysées — un refuge idyllique pour les âmes vertueuses — qui capte notre mission. Avec le ruban de Möbius comme emblème, nous engageons la continuité, l’intégrité et une transparence absolue. Chaque défi client devient le nôtre ; chaque victoire est la preuve de notre engagement partagé. Notre objectif n’est pas seulement de résoudre les problèmes, mais de les anticiper et de les surpasser, en détectant les opportunités avant qu’elles n’apparaissent. Nous nous efforçons d’être des alliés indéfectibles dans la quête de succès de nos clients, en veillant à ce que chacun trouve en ELYSIUM un sanctuaire de confiance et d’excellence. ELYSIUM n’est pas seulement un cabinet : c’est un mouvement, une révolution du conseil et un héritage pour les générations futures. Notre histoire est une invitation ouverte à tous ceux qui valorisent l’excellence, la passion et la loyauté, et souhaitent nous rejoindre dans ce voyage vers un avenir où l’extraordinaire devient la norme. Avec ELYSIUM, vous découvrez non seulement des solutions, mais un tout nouvel horizon de possibilités."
+    },
+    "whatIsElysium": {
+      "title": "Qu’est-ce qu’elysium ?",
+      "description": "Le nom ELYSIUM évoque les légendaires Champs-Élysées — un refuge idyllique pour les âmes vertueuses — qui capte notre mission. Avec le ruban de Möbius comme emblème, nous engageons la continuité, l’intégrité et une transparence absolue.",
+      "list": {
+        "nameTitle": "Le nom :",
+        "name": "Issu du latin et du grec ancien, 'Elysium' fait référence aux Champs-Élysées, symbolisant notre idéal dans les affaires : un sanctuaire de confiance et d’excellence où chaque client est traité avec le plus haut professionnalisme et éthique.",
+        "sloganTitle": "Le slogan :",
+        "slogan": "« Construire des partenariats durables » encapsule notre philosophie de service client : nous bâtissons des liens profonds et durables fondés sur la confiance et la compréhension mutuelle.",
+        "symbolTitle": "Le symbole :",
+        "symbol": "Le ruban de Möbius, à une seule face et un seul bord, symbolise la continuité et l’infini — notre vision des relations avec les clients.",
+        "coloursTitle": "Couleurs d’entreprise :",
+        "colours": "Le doré symbolise l’excellence et le succès ; le noir dénote la sophistication, l’élégance, la force et l’autorité ; le blanc évoque la clarté, la pureté et la précision."
+      }
+    },
+    "valuesSection": {
+      "title": "Valeurs",
+      "items": {
+        "excellenceTitle": "Excellence",
+        "excellence": "Un engagement sans réserve à dépasser les attentes grâce à des solutions innovantes et des professionnels dévoués.",
+        "honestyTitle": "Honnêteté",
+        "honesty": "Communication ouverte et constante et transparence totale comme fondement de partenariats durables.",
+        "securityTitle": "Sécurité",
+        "security": "Protéger aujourd’hui et assurer demain en élaborant des stratégies robustes et tournées vers l’avenir.",
+        "trustTitle": "Confiance",
+        "trust": "La pierre angulaire de chaque relation, attestée par un taux de rétention client de 99 % et de nombreuses recommandations."
+      }
     }
   }
 }

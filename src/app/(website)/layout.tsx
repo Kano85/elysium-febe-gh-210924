@@ -5,7 +5,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Header from '../../components/Header';
 import ScrollToTop from '../../components/ScrollToTop';
-import SmoothScrollLayout from '../../components/SmoothScrollLayout/SmoothScrollLayout';
+// import SmoothScrollLayout from '../../components/SmoothScrollLayout/SmoothScrollLayout';
 import { ToastContainer } from 'react-toastify';
 
 import I18nWrapper from '../../components/I18nWrapper';
@@ -42,7 +42,9 @@ export default function RootLayout({
       <body className="bg-hero-dark">
         <I18nWrapper>
           <Header />
-          <SmoothScrollLayout>{children}</SmoothScrollLayout>
+          {/* <SmoothScrollLayout> */}
+          {children}
+          {/* </SmoothScrollLayout> */}
           <ScrollToTop />
           <ToastContainer
             position="top-right"

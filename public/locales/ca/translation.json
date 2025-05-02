@@ -65,8 +65,8 @@
   "stay_informed": "Mantén-te informat amb les últimes notícies i novetats dels nostres serveis de consultoria i assessorament empresarial.",
   "subscribe": "Subscriure's",
   "privacy_assurance": "Garantim la privacitat de les teves dades. No enviem correus no desitjats.",
-  "title": "Pàgina de Contacte",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+  "title": "Optimitza la teva fiscalitat",
+  "description": "No dubtis a contactar-nos. Estarem encantats de saber de tu.",
   "title-user": "Testimonis que ens donen suport",
   "description-user": "Els nostres clients són la nostra millor carta de presentació. Les seves experiències reflecteixen l'impacte de les nostres solucions a mida i el compromís que posem en cada col·laboració.",
   "mission": {
@@ -182,6 +182,55 @@
     "hero": {
       "title": "Saber per decidir",
       "paragraph": "Idees, anàlisi i estratègies per a empresaris que volen créixer, optimitzar i prendre decisions amb visió."
+    }
+  },
+  "aboutPage": {
+    "breadcrumb": { "pageName": "Qui som", "description": "" },
+    "whoWeAre": {
+      "p1": "A ELYSIUM, la nostra filosofia es basa en una premissa inamovible: el client és al centre de tot el que fem. Fundada en el dinàmic nucli empresarial d'Escaldes (Principat d'Andorra) i amb capacitat per atendre personalment clients a Andorra, Barcelona i Tolosa, la nostra firma internacional de consultoria estratègica no només persegueix l'excel·lència, sinó que redefineix què significa 'assessorament'.",
+      "p2": "«Construir aliances duradores» és més que un eslògan; reflecteix el nostre compromís de forjar relacions sòlides i profundament fiables. Estem especialitzats en consultoria i planificació fiscal internacional, optimització empresarial, reubicació internacional i estratègia executiva, entre altres serveis. El nostre enfocament garanteix una atenció meticulosa i personalitzada, tractant cada repte com a propi i oferint solucions ràpides i efectives.",
+      "p3": "Albert Contel, el nostre soci director i fundador, encarna els valors d'ELYSIUM: honestedat, transparència, rigor tècnic i una atenció incessant al detall. Amb una àmplia experiència —des de canvis regulatoris a Andorra i països veïns fins a estàndards globals— no només ha estat testimoni sinó que també ha ajudat a modelar l'escenari fiscal i jurídic al costat de nombrosos clients internacionals. De la mateixa manera, la firma no seria res sense cada membre del seu equip: la nostra diversitat assegura una riquesa de perspectives i una capacitat única per gestionar casos complexos amb un profund i matisat coneixement de les necessitats globals dels clients.",
+      "p4": "El veritable valor resideix no només en què oferim, sinó en com ho oferim. Ens centrem en minimitzar el risc i maximitzar l'oportunitat, apoderant els clients alhora que els donem suport. Cada membre del nostre equip d'experts —economistes i advocats especialitzats en dret mercantil i fiscal— garanteix que només les millors ments gestionin cada cas.",
+      "p5": "La nostra xarxa internacional de col·laboradors, dinàmica i en contínua expansió, ens permet dissenyar estratègies efectives en múltiples jurisdiccions i oferir als clients una visió global. Des de reestructuracions corporatives fins a planificació estratègica i valoració d'empreses, cada servei va acompanyat d'una mentalitat proactiva i a mida.",
+      "p6": "En resum, ELYSIUM és més que una firma de consultoria; som un soci estratègic dedicat al creixement i evolució dels nostres clients. Nascuts d'una visió única d'un servei excepcional, vivim per resoldre els reptes més complexos i assegurar que cada decisió empresarial es prengui amb claredat, coneixement i confiança. Amb ELYSIUM no només guanyes un consultor, sinó un aliat que entén profundament les teves necessitats i les converteix en oportunitats sostenibles i exitoses."
+    },
+    "history": {
+      "title": "Història",
+      "originsTitle": "Orígens",
+      "origins": "El viatge d’ELYSIUM comença amb la història extraordinària del seu fundador, Albert Contel, la trajectòria del qual és tan rica i diversa com el tapís cultural de la seva Barcelona natal. Conformat en una llar on l’economia i les arts compartien una harmonia perfecta —un pare economista i una mare políglota— l’Albert va créixer entre nombres i música, dades i drama, forjant un apetít insaciable de coneixement i una visió única per a la seva aplicació pràctica.",
+      "developmentTitle": "Desenvolupament",
+      "development": "Com a estudiant, l’Albert treballava les tardes en petits despatxos de comptabilitat, consolidant els seus coneixements en la comptabilitat, la fiscalitat i l’atenció directa al client. Aquesta etapa inicial va obrir-li el camí cap a les 'grans lligues', on va col·laborar amb els despatxos d’auditoria més emblemàtics i despatxos d’advocats internacionals de primer nivell. Aquí va perfeccionar la seva capacitat de navegar per les finances globals, l’àmbit corporatiu i —especialment— el dret fiscal, complementat per una estada en banca privada que va aprofundir el seu coneixement de les finances corporatives i personals.",
+      "birthTitle": "Naixement de la Marca",
+      "birth": "La veritable vocació de l’Albert no era només treballar a escala internacional, sinó transformar-la. ELYSIUM va néixer d’un somni, teixit al llarg d’anys d’experiència i reflexió, per crear una firma que liderés amb innovació i un enfocament holístic.",
+      "valuesTitle": "Valors i perspectives",
+      "values": "El nom ELYSIUM evoca els llegendaris Camps Elisis —un refugi idíl·lic per a ànimes virtuoses— que captura la nostra missió. Amb la franja de Möbius com a emblema, ens comprometem a la continuïtat, la integritat i la transparència absoluta. Cada repte del client es converteix en el nostre propi repte; cada victòria, la prova del nostre compromís compartit. El nostre objectiu no és només resoldre problemes, sinó anticipar-los i superar-los, identificant oportunitats abans que apareguin. Ens esforcem per ser aliats incondicionals en la recerca de l’èxit dels nostres clients, assegurant que cadascun trobi a ELYSIUM un santuari de confiança i excel·lència. ELYSIUM no és només una firma; és un moviment, una revolució en la consultoria i un llegat per a les futures generacions. La nostra història és una invitació oberta a tots els que valoren l’excel·lència, la passió i la lleialtat, i que desitgen unir-se a nosaltres en aquest viatge cap a un futur on l’extraordinari sigui la norma. Amb ELYSIUM no només trobes solucions, sinó un nou horitzó de possibilitats."
+    },
+    "whatIsElysium": {
+      "title": "Què és elysium?",
+      "description": "El nom ELYSIUM evoca els llegendaris Camps Elisis —un refugi idíl·lic per a ànimes virtuoses— que captura la nostra missió. Amb la franja de Möbius com a emblema, ens comprometem a la continuïtat, la integritat i la transparència absoluta.",
+      "list": {
+        "nameTitle": "El nom:",
+        "name": "Arrelat en el llatí i el grec antic, 'Elysium' fa referència als Camps Elisis, simbolitzant el nostre ideal en els negocis: un santuari de confiança i excel·lència on cada client és tractat amb el més alt professionalisme i ètica.",
+        "sloganTitle": "El lema:",
+        "slogan": "'Construir aliances duradores' encapsula la nostra filosofia de servei al client: construïm vincles profunds i duradors basats en la confiança i la comprensió mútua.",
+        "symbolTitle": "El símbol:",
+        "symbol": "La franja de Möbius, amb una sola superfície i vora, simbolitza la continuïtat i l'infinit—la nostra visió de les relacions amb els clients.",
+        "coloursTitle": "Colors corporatius:",
+        "colours": "El daurat simbolitza l'excel·lència i l'èxit; el negre denota sofisticació, elegància, força i autoritat; el blanc evoca claredat, puresa i precisió."
+      }
+    },
+    "valuesSection": {
+      "title": "Valors",
+      "items": {
+        "excellenceTitle": "Excel·lència",
+        "excellence": "Un compromís sense reserves per superar expectatives amb solucions innovadores i professionals dedicats.",
+        "honestyTitle": "Honestedat",
+        "honesty": "Comunicació oberta i constant i transparència total com a fonament d’aliances duradores.",
+        "securityTitle": "Seguretat",
+        "security": "Protegir avui i assegurar el demà amb estratègies sòlides i orientades al futur.",
+        "trustTitle": "Confiança",
+        "trust": "La pedra angular de cada relació, testimoniada per una taxa de retenció del 99% de clients i freqüents recomanacions."
+      }
     }
   }
 }
