@@ -232,5 +232,11 @@
         "trust": "La pierre angulaire de chaque relation, attestée par un taux de rétention client de 99 % et de nombreuses recommandations."
       }
     }
+  },
+  "blogkey": {
+    "hero": {
+      "title": "Savoir pour décider",
+      "paragraph": "Idées, analyses et stratégies pour les entrepreneurs qui souhaitent croître, optimiser et prendre des décisions avec vision."
+    }
   }
 }

@@ -1,17 +1,17 @@
-"use client";
+'use client';
 import {
   motion,
   useTransform,
   useScroll,
   useMotionValueEvent,
-} from "motion/react";
-import { useEffect, useRef, useState } from "react";
+} from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 
 const ScaleAnimation = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"],
+    offset: ['start start', 'end end'],
   });
   // const smoothProgress = useSpring(scrollYProgress, {
   //   duration:0.6,
@@ -25,18 +25,21 @@ const ScaleAnimation = () => {
     isLgUp ? [0, 0.7, 1] : [0, 0.5, 1],
     isLgUp ? [1, 20, 35] : [1, 15, 20]
   );
-  const y = useTransform(scrollYProgress, [0, 0.1], ["0%", "-400%"]);
+  const y = useTransform(scrollYProgress, [0, 0.1], ['0%', '-400%']);
   const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     console.log(latest);
   });
   return (
     <section ref={containerRef} className="w-full overflow-clip ">
-      <motion.h6 style={{y,opacity}} className="relative top-[50vh] text-white z-50 left-[calc(50%+75px)] lg:left-[calc(50%+150px)] text-[clamp(0.4875rem,_-0.0011rem_+_2.0845vw,_1.875rem)]">
+      <motion.h6
+        style={{ y, opacity }}
+        className="relative top-[50vh] text-white z-50 left-[calc(50%+75px)] lg:left-[calc(50%+150px)] text-[clamp(0.4875rem,_-0.0011rem_+_2.0845vw,_1.875rem)]"
+      >
         of returning <br /> custommers
       </motion.h6>
-      
+
       <motion.div
         style={{ scale }}
         className="sticky origin-[70%_center] top-0 h-screen pointer-events-none"
@@ -94,9 +97,6 @@ const Cards = () => {
   );
 };
 
-
-
-
 function useIsLgUp() {
   const [isLgUp, setIsLgUp] = useState(false);
 
@@ -145,7 +145,7 @@ function useIsLgUp() {
 //       <motion.h6 style={{y,opacity}} className="relative top-[50vh] text-white z-50 left-[calc(50%+150px)]">
 //         of returning <br /> custommers
 //       </motion.h6>
-      
+
 //       <motion.div
 //         style={{ scale }}
 //         className="sticky origin-[70%_center] top-0 h-screen pointer-events-none"
