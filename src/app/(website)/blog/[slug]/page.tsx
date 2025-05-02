@@ -1,23 +1,20 @@
 // src/app/blog/[slug]/page.tsx
 
 // import SharePost from '@/components/Blog/SharePost';
-
-import TagButton from '../../../../components/Blog/TagButton';
 import Image from 'next/image';
 import { urlFor } from '../../../../sanity/lib/image';
 import { notFound } from 'next/navigation';
 
-import { client } from '../../../../sanity/lib/client';
+import { client, sanityFetch } from '../../../../sanity/lib/client';
 import { POST_QUERY } from '../../../../sanity/lib/queries';
 import { POST_QUERYResult, Slug } from '../../../../sanity/types';
-
-import { sanityFetch } from '@/sanity/lib/client';
+import RelatedPostsSection from '../../../../components/Blog/RelatedPostsSection';
+import Footer from '../../../../components/Footer';
 
 // Define the Props type exactly like in the Sanity documentation example
 type Props = {
   params: Promise<{ slug: string }>;
 };
-
 export async function generateStaticParams() {
   const query = `*[_type == "post" && defined(slug.current)]{ slug }`;
   const posts = await client.fetch<{ slug: Slug | null }[]>(query);
@@ -135,27 +132,24 @@ const ListOfPostDetailsPage = async (props: Props) => {
                       );
                     })}
                   </div>
-                  <div className="items-center justify-between sm:flex">
-                    <div className="mb-5">
-                      <h4 className="mb-3 text-sm font-medium text-body-color">
-                        Popular Tags:
-                      </h4>
-                      <div className="flex items-center">
-                        {post.categories?.map((category) => (
-                          <TagButton
-                            key={category.title}
-                            text={category.title || 'Untitled'}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <div className="container mt-10">
+        <h3 className="text-xl font-semibold mb-6">Related Posts</h3>
+        <RelatedPostsSection
+          currentSlug={slug}
+          categories={
+            post.categories
+              ?.map((c) => c.title || '')
+              .filter((t): t is string => t !== '') || []
+          }
+        />
+      </div>
+      <Footer />
     </>
   );
 };

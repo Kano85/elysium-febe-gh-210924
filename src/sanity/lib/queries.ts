@@ -21,6 +21,7 @@ export const ALL_POSTS_QUERY = groq`
   publishedAt,
   excerpt,
   body,
+  categories[]->{title},
   "author": author->{
     name,
     image
