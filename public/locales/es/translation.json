@@ -189,6 +189,8 @@
       "paragraph": "Ideas, análisis y estrategias para empresarios que buscan crecer, optimizar y tomar decisiones con visión."
     }
   },
+  "Insights from Our Specialists": "Perspectivas de nuestros especialistas",
+  "Discover personalized investment strategies to achieve your financial goals": "Descubre estrategias de inversión personalizadas para alcanzar tus objetivos financieros",
   "aboutPage": {
     "breadcrumb": { "pageName": "Quiénes somos", "description": "" },
     "whoWeAre": {
@@ -243,5 +245,19 @@
       "title": "Optimiza tu fiscalidad",
       "description": "No dudes en contactarnos. Estaremos encantados de saber de ti."
     }
+  },
+  "contactForm": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Introduce tu nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "Introduce tu dirección de correo electrónico",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Introduce tu mensaje",
+    "phoneLabel": "Teléfono (Honeypot)",
+    "phonePlaceholder": "Deja este campo vacío",
+    "submitButton": "Enviar mensaje",
+    "successMessage": "¡Gracias! Tu mensaje ha sido enviado correctamente.",
+    "errorGeneric": "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo más tarde.",
+    "recaptchaRequired": "Por favor, completa la verificación reCAPTCHA."
   }
 }

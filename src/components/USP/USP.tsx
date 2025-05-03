@@ -38,10 +38,10 @@ export default function USP() {
 
       ScrollTrigger.create({
         trigger: el,
-        start: 'top center',
+        start: 'top bottom',
         onEnter: () => enterAnim.play(),
         onLeaveBack: () => enterAnim.reverse(),
-        // markers:true,
+        // markers: true,
       });
     });
 

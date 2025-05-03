@@ -238,5 +238,21 @@
       "title": "Savoir pour décider",
       "paragraph": "Idées, analyses et stratégies pour les entrepreneurs qui souhaitent croître, optimiser et prendre des décisions avec vision."
     }
-  }
+  },
+  "contactForm": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Entrez votre message",
+    "phoneLabel": "Téléphone (Honeypot)",
+    "phonePlaceholder": "Laissez ce champ vide",
+    "submitButton": "Envoyer le message",
+    "successMessage": "Merci ! Votre message a été envoyé avec succès.",
+    "errorGeneric": "Oups ! Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
+    "recaptchaRequired": "Veuillez compléter la vérification reCAPTCHA."
+  },
+  "Insights from Our Specialists": "Perspectives de nos spécialistes",
+  "Discover personalized investment strategies to achieve your financial goals": "Découvrez des stratégies d'investissement personnalisées pour atteindre vos objectifs financiers"
 }

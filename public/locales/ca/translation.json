@@ -232,5 +232,27 @@
         "trust": "La pedra angular de cada relació, testimoniada per una taxa de retenció del 99% de clients i freqüents recomanacions."
       }
     }
+  },
+  "contactForm": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Introdueix el teu nom",
+    "emailLabel": "Correu electrònic",
+    "emailPlaceholder": "Introdueix la teva adreça de correu electrònic",
+    "messageLabel": "Missatge",
+    "messagePlaceholder": "Introdueix el teu missatge",
+    "phoneLabel": "Telèfon (Honeypot)",
+    "phonePlaceholder": "Deixa aquest camp buit",
+    "submitButton": "Enviar missatge",
+    "successMessage": "Gràcies! El teu missatge s'ha enviat correctament.",
+    "errorGeneric": "Ups! Alguna cosa ha anat malament. Si us plau, torna-ho a provar més tard.",
+    "recaptchaRequired": "Si us plau, completa la verificació reCAPTCHA."
+  },
+  "Insights from Our Specialists": "Coneixements dels nostres especialistes",
+  "Discover personalized investment strategies to achieve your financial goals": "Descobreix estratègies d'inversió personalitzades per assolir els teus objectius financers",
+  "contactPage": {
+    "breadcrumb": {
+      "title": "Optimitza la teva fiscalitat",
+      "description": "No dubtis a contactar-nos. Estarem encantats de saber de tu."
+    }
   }
 }

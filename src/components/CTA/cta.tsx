@@ -24,7 +24,10 @@ const CTA = () => {
           {t('cta.conversation_description')}
         </p>
         <div className="w-fit ml-auto">
-          <Button variant={'outline'} className="mt-12">
+          <Button
+            variant={'default'} // Changed from outline to default to allow background gradient
+            className="mt-12 bg-gradient-to-r from-gold-light to-gold-dark text-hero-dark hover:from-gold-light/90 hover:to-gold-dark/90" // Added gradient classes and text color
+          >
             {t('cta.book_appointment')}
           </Button>
         </div>

@@ -26,7 +26,7 @@ const ContactForm: React.FC = () => {
 
     // reCAPTCHA check
     if (!recaptchaToken) {
-      toast.error(t('contact.recaptchaRequired'));
+      toast.error(t('contactForm.recaptchaRequired'));
       return;
     }
     formData.append('g-recaptcha-response', recaptchaToken);
@@ -39,7 +39,7 @@ const ContactForm: React.FC = () => {
       });
 
       if (res.ok) {
-        toast.success(t('contact.successMessage'));
+        toast.success(t('contactForm.successMessage'));
         form.reset();
         recaptchaRef.current?.reset();
         setRecaptchaToken(null);
@@ -50,57 +50,57 @@ const ContactForm: React.FC = () => {
       }
     } catch (err) {
       console.error(err);
-      toast.error(t('contact.errorGeneric'));
+      toast.error(t('contactForm.errorGeneric'));
       recaptchaRef.current?.reset();
       setRecaptchaToken(null);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6 px-4">
+    <form onSubmit={handleSubmit} className="w-full space-y-6 px-4">
       <div>
-        <Label htmlFor="name">{t('contact.nameLabel')}</Label>
+        <Label htmlFor="name">{t('contactForm.nameLabel')}</Label>
         <Input
           id="name"
           name="name"
           type="text"
           required
-          placeholder={t('contact.namePlaceholder')}
+          placeholder={t('contactForm.namePlaceholder')}
         />
       </div>
 
       <div>
-        <Label htmlFor="email">{t('contact.emailLabel')}</Label>
+        <Label htmlFor="email">{t('contactForm.emailLabel')}</Label>
         <Input
           id="email"
           name="email"
           type="email"
           required
-          placeholder={t('contact.emailPlaceholder')}
+          placeholder={t('contactForm.emailPlaceholder')}
         />
       </div>
 
       <div>
-        <Label htmlFor="message">{t('contact.messageLabel')}</Label>
+        <Label htmlFor="message">{t('contactForm.messageLabel')}</Label>
         <Textarea
           id="message"
           name="message"
           rows={5}
           required
-          placeholder={t('contact.messagePlaceholder')}
+          placeholder={t('contactForm.messagePlaceholder')}
         />
       </div>
 
       {/* Honeypot field */}
       <div className="hidden">
-        <Label htmlFor="phone">{t('contact.phoneLabel')}</Label>
+        <Label htmlFor="phone">{t('contactForm.phoneLabel')}</Label>
         <Input
           id="phone"
           name="phone"
           type="text"
           tabIndex={-1}
           autoComplete="off"
-          placeholder={t('contact.phonePlaceholder')}
+          placeholder={t('contactForm.phonePlaceholder')}
         />
       </div>
 
@@ -111,7 +111,13 @@ const ContactForm: React.FC = () => {
         onChange={setRecaptchaToken}
       />
 
-      <Button type="submit">{t('contact.submitButton')}</Button>
+      <Button
+        type="submit"
+        variant="default"
+        className="mt-12 bg-gradient-to-r from-gold-light to-gold-dark text-hero-dark hover:from-gold-light/90 hover:to-gold-dark/90"
+      >
+        {t('contactForm.submitButton')}
+      </Button>
 
       {/* error handled via toast notifications */}
     </form>

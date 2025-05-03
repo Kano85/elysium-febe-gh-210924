@@ -198,7 +198,10 @@
     }
   },
   "aboutPage": {
-    "breadcrumb": { "pageName": "Who we are", "description": "" },
+    "breadcrumb": {
+      "pageName": "Who we are",
+      "description": ""
+    },
     "whoWeAre": {
       "p1": "At ELYSIUM, our philosophy rests on an unshakable premise: the client is at the heart of everything we do. Founded in the dynamic business hub of Escaldes (Principality of Andorra) and able to serve clients personally in Andorra, Barcelona and Toulouse, our international strategic-consulting firm not only pursues excellence—it redefines what 'advisory' means.",
       "p2": "'Building lasting partnerships' is more than a slogan; it reflects our commitment to forging durable, deeply trustworthy relationships. We specialise in international tax consulting and planning, business optimisation, international relocation and executive strategy, among other services. Our approach guarantees meticulous, personalised attention, treating each challenge as our own and delivering rapid, effective solutions.",
@@ -251,5 +254,21 @@
       "title": "Optimize your taxes",
       "description": "Don't hesitate to contact us. We’ll be happy to hear from you."
     }
-  }
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Enter your message",
+    "phoneLabel": "Phone (Honeypot)",
+    "phonePlaceholder": "Leave this field empty",
+    "submitButton": "Send Message",
+    "successMessage": "Thank you! Your message has been sent successfully.",
+    "errorGeneric": "Oops! Something went wrong. Please try again later.",
+    "recaptchaRequired": "Please complete the reCAPTCHA verification."
+  },
+  "Insights from Our Specialists": "Insights from Our Specialists",
+  "Discover personalized investment strategies to achieve your financial goals": "Discover personalized investment strategies to achieve your financial goals"
 }

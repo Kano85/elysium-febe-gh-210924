@@ -38,11 +38,20 @@ const SectionTitle = ({
       </div>
       {buttonText &&
         (buttonHref ? (
-          <Button variant="outline" asChild>
+          <Button
+            variant="default" // Changed from "outline"
+            asChild
+            className="mt-12 bg-gradient-to-r from-gold-light to-gold-dark text-hero-dark hover:from-gold-light/90 hover:to-gold-dark/90"
+          >
             <Link href={buttonHref}>{buttonText}</Link>
           </Button>
         ) : (
-          <Button variant="outline">{buttonText}</Button>
+          <Button
+            variant="default" // Changed from "outline"
+            className="mt-12 bg-gradient-to-r from-gold-light to-gold-dark text-hero-dark hover:from-gold-light/90 hover:to-gold-dark/90"
+          >
+            {buttonText}
+          </Button>
         ))}
     </div>
   );
