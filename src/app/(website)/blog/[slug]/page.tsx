@@ -2,15 +2,13 @@
 
 // import SharePost from '@/components/Blog/SharePost';
 import Image from 'next/image';
-import { urlFor } from '../../../../sanity/lib/image';
 import { notFound } from 'next/navigation';
 
 import { client, sanityFetch } from '../../../../sanity/lib/client';
 import { POST_QUERY } from '../../../../sanity/lib/queries';
 import { POST_QUERYResult, Slug } from '../../../../sanity/types';
 import RelatedPostsSection from '../../../../components/Blog/RelatedPostsSection';
-import Footer from '../../../../components/Footer';
-
+import Footer from '@/components/Footer';
 // Define the Props type exactly like in the Sanity documentation example
 type Props = {
   params: Promise<{ slug: string }>;
@@ -48,55 +46,24 @@ const ListOfPostDetailsPage = async (props: Props) => {
           <div className="-mx-4 flex flex-wrap justify-center">
             <div className="w-full px-4 lg:w-8/12">
               <div>
-                <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
+                <h2 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left mb-4">
                   {post.title}
                 </h2>
+                {/* Categories and other metadata below author/date */}
                 <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
-                  <div className="flex flex-wrap items-center">
-                    <div className="mb-5 mr-10 flex items-center">
-                      <div className="mr-4">
-                        <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                          {post.author?.image && (
-                            <Image
-                              src={urlFor(post.author.image).url()}
-                              alt={
-                                post.mainImage?.alt ||
-                                post.title ||
-                                'Blog Post Image'
-                              }
-                              fill
-                              className="object-cover"
-                            />
-                          )}
-                        </div>
-                      </div>
-                      <div className="w-full">
-                        <span className="mb-1 text-base font-medium text-body-color">
-                          By <span>{post.author?.name}</span>
-                        </span>
-                      </div>
-                    </div>
-                    <div className="mb-5 flex items-center">
-                      <p className="mr-5 flex items-center text-base font-medium text-body-color">
-                        <span className="mr-3">{/* Calendar Icon */}</span>
-                        {post.publishedAt
-                          ? new Date(post.publishedAt).toLocaleDateString()
-                          : 'No date'}
-                      </p>
-                      {/* Add more metadata if needed */}
-                    </div>
-                  </div>
+                  {/* Keep categories section */}
                   <div className="mb-5">
                     {post.categories?.map((category) => (
                       <a
                         key={category.title}
                         href="#0"
-                        className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white"
+                        className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white mr-2 mb-2" // Added margin
                       >
                         {category.title}
                       </a>
                     ))}
                   </div>
+                  {/* Add any other metadata here if needed */}
                 </div>
                 <div>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">

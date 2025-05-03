@@ -50,6 +50,13 @@ export const postType = defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      description: 'A short summary of the post, used for previews.',
+      rows: 3, // Optional: suggest a smaller input field height in the Studio
+    }),
+    defineField({
       name: 'body',
       type: 'blockContent',
     }),

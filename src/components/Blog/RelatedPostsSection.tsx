@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { getFullLanguageName } from '@/lib/utils';
 import useFetchPosts from '@/hooks/useFetchPosts';
-import RelatedPost from './RelatedPost';
+import CardBlog from '@/components/Common/CardBlog'; // Import CardBlog
 
 type Props = {
   currentSlug: string;
@@ -45,17 +45,8 @@ const RelatedPostsSection: React.FC<Props> = ({ currentSlug, categories }) => {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {related.map((rp) => (
-        <RelatedPost
-          key={rp._id}
-          image={rp.mainImage?.asset?.url || ''}
-          slug={`/blog/${rp.slug!.current}`}
-          title={rp.title || ''}
-          date={
-            rp.publishedAt
-              ? new Date(rp.publishedAt).toLocaleDateString()
-              : 'No date'
-          }
-        />
+        // Use CardBlog component instead of inline JSX
+        <CardBlog key={rp._id} post={rp} />
       ))}
     </div>
   );

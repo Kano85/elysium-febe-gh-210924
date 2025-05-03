@@ -82,62 +82,64 @@ export default function AboutPage() {
         </LgTwoCol>
 
         {/* ───── HISTORY ────────────────────────────────────────────── */}
-        <LgTwoCol
-          images={
-            <>
-              <div className="relative w-full aspect-[16/9]">
-                <Image
-                  src="/images/about/about2.png"
-                  alt="Elysium Office Environment"
-                  fill
-                  className="object-cover rounded"
-                />
-              </div>
-              <div className="relative w-full aspect-[4/3]">
-                <Image
-                  src="/images/about/about5.png"
-                  alt="Elysium Office Detail 3"
-                  fill
-                  className="object-cover rounded"
-                />
-              </div>
-            </>
-          }
-        >
-          <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
-            {t('aboutPage.history.title')}
-          </h3>
+        {/* Replaced LgTwoCol with direct grid layout to reverse order */}
+        <section className="space-y-lg lg:grid lg:grid-cols-12 lg:gap-x-lg lg:space-y-0">
+          {/* Images on the left */}
+          <aside className="lg:col-span-5 space-y-lg">
+            <div className="relative w-full aspect-[16/9]">
+              <Image
+                src="/images/about/about2.png"
+                alt="Elysium Office Environment"
+                fill
+                className="object-cover rounded"
+              />
+            </div>
+            <div className="relative w-full aspect-[4/3]">
+              <Image
+                src="/images/about/about5.png"
+                alt="Elysium Office Detail 3"
+                fill
+                className="object-cover rounded"
+              />
+            </div>
+          </aside>
+          {/* Text on the right */}
+          <div className="lg:col-span-7 space-y-lg">
+            <h3 className="elysium-heading-3 bg-gradient-to-b from-gold-light to-gold-dark bg-clip-text text-transparent text-left">
+              {t('aboutPage.history.title')}
+            </h3>
 
-          <div className="space-y-sm">
-            <h4 className="elysium-heading-5">
-              {t('aboutPage.history.originsTitle')}
-            </h4>
-            <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              {t('aboutPage.history.origins')}
-            </p>
+            <div className="space-y-sm">
+              <h4 className="elysium-heading-5">
+                {t('aboutPage.history.originsTitle')}
+              </h4>
+              <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
+                {t('aboutPage.history.origins')}
+              </p>
 
-            <h4 className="elysium-heading-5">
-              {t('aboutPage.history.developmentTitle')}
-            </h4>
-            <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              {t('aboutPage.history.development')}
-            </p>
+              <h4 className="elysium-heading-5">
+                {t('aboutPage.history.developmentTitle')}
+              </h4>
+              <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
+                {t('aboutPage.history.development')}
+              </p>
 
-            <h4 className="elysium-heading-5">
-              {t('aboutPage.history.birthTitle')}
-            </h4>
-            <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              {t('aboutPage.history.birth')}
-            </p>
+              <h4 className="elysium-heading-5">
+                {t('aboutPage.history.birthTitle')}
+              </h4>
+              <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
+                {t('aboutPage.history.birth')}
+              </p>
 
-            <h4 className="elysium-heading-5">
-              {t('aboutPage.history.valuesTitle')}
-            </h4>
-            <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
-              {t('aboutPage.history.values')}
-            </p>
+              <h4 className="elysium-heading-5">
+                {t('aboutPage.history.valuesTitle')}
+              </h4>
+              <p className="font-elysium-text-body-XS-elysium text-projects-colorstylesdisable-text">
+                {t('aboutPage.history.values')}
+              </p>
+            </div>
           </div>
-        </LgTwoCol>
+        </section>
 
         {/* ───── WHAT IS ELYSIUM? ───────────────────────────────────── */}
         <section className="space-y-md">

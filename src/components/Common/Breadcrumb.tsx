@@ -1,6 +1,6 @@
 //src/components/Common/Breadcrumb.tsx
 'use client';
-import Link from 'next/link';
+import React from 'react';
 const Breadcrumb = ({
   pageName,
   description,
@@ -21,24 +21,6 @@ const Breadcrumb = ({
                 <p className="font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text text-left mb-0">
                   {description}
                 </p>
-              </div>
-            </div>
-            <div className="w-full lg:w-5/12 md:w-4/12 px-4">
-              <div className="text-end">
-                <ul className="flex items-center md:justify-end">
-                  <li className="flex items-center">
-                    <Link
-                      href="/"
-                      className="text-base text-body-color-dark font-medium hover:text-primary pr-1"
-                    >
-                      Home
-                    </Link>
-                    <span className="border-body-color-dark border-r-2 border-t-2 h-2 w-2 block mr-3 rotate-45"></span>
-                  </li>
-                  <li className="text-base text-primary font-medium">
-                    {pageName}
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
