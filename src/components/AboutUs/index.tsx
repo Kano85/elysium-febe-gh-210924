@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import SectionTitle from '../Common/SectionTitle';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +8,9 @@ export default function AboutUs() {
     // Make section relative, remove padding/gap
     <section className="relative w-full">
       {/* Video Section - Make relative, full width, full screen height */}
-      <div className="relative w-full h-screen overflow-hidden"> {/* Changed height to h-screen */}
+      <div className="relative w-full h-screen overflow-hidden">
+        {' '}
+        {/* Changed height to h-screen */}
         <video
           src="/videos/about-us-video.mov" // Corrected video path
           autoPlay
@@ -21,7 +22,6 @@ export default function AboutUs() {
         >
           Your browser does not support the video tag.
         </video>
-
         {/* Absolute positioned container for SectionTitle, matching Hero padding */}
         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-10 pl-[50px] lg:pl-[130px] pr-[3.125rem]">
           <SectionTitle
