@@ -155,7 +155,9 @@
   "description-obj": {
     "structuring_news": {
       "title": "Structuring News",
-      "description": "The good news is yes: it is possible to structure your case effectively, within the law, and without errors. We advise entrepreneurs, athletes, innovators, content creators, or investors who have started generating significant income and are looking for clarity, efficiency, and peace of mind in Andorra. With experience in leading firms and a global approach, we help you establish your tax residence, set up companies, or plan your assets with legal and long-term solutions."
+      "paragraph1": "The good news is yes: it is possible to structure your case effectively, within the law, and without errors.",
+      "paragraph2": "We advise entrepreneurs, athletes, innovators, content creators, or investors who have started generating significant income and are looking for clarity, efficiency, and peace of mind in Andorra.",
+      "paragraph3": "With experience in leading firms and a global approach, we help you establish your tax residence, set up companies, or plan your assets with legal and long-term solutions."
     }
   },
   "cta": {

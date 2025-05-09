@@ -62,7 +62,7 @@ export default function USP() {
             style={{
               fontWeight: 400,
             }}
-            className={`text-[2.5rem] whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ${
+            className={`text-[1.9rem] whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ${
               isRightAligned ? 'self-end text-right' : 'self-start text-left'
             }`}
           >

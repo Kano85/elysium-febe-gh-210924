@@ -147,7 +147,9 @@
   "description-obj": {
     "structuring_news": {
       "title": "Noticias sobre Estructuración",
-      "description": "La buena noticia es que sí: es posible estructurar tu caso con eficacia, dentro de la ley y sin errores. Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o inversores que han empezado a generar ingresos relevantes y buscan claridad, eficiencia y tranquilidad en Andorra. Con experiencia en firmas líderes y un enfoque global, te ayudamos a establecer tu residencia fiscal, constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo."
+      "paragraph1": "La buena noticia es que sí: es posible estructurar tu caso con eficacia, dentro de la ley y sin errores.",
+      "paragraph2": "Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o inversores que han empezado a generar ingresos relevantes y buscan claridad, eficiencia y tranquilidad en Andorra.",
+      "paragraph3": "Con experiencia en firmas líderes y un enfoque global, te ayudamos a establecer tu residencia fiscal, constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo."
     }
   },
   "cta": {

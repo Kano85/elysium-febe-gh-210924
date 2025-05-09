@@ -12,7 +12,7 @@ import MainParallax from '@/components/ParallaxImage/MainParallax';
 import DescriptionMainParallax from '@/components/ParallaxImage/DescriptionMainParallax'; // Add this line
 // import { MetricsMarketing } from '../../components/Carousel/Carousel';
 import AboutUs from '../../components/AboutUs';
-import Brands from '../../components/Brands';
+// import Brands from '../../components/Brands';
 import Mission from '../../components/Mission/Mission';
 import ScrollUp from '../../components/Common/ScrollUp';
 import Footer from '../../components/Footer';
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
           <ListOfPost posts={posts} />
         )}
         <AboutUs />
-        <Brands />
+        {/* <Brands /> */}
         {/* <ScaleAnimation /> */}
         <CTA />
         {/* <MetricsMarketing /> */}
