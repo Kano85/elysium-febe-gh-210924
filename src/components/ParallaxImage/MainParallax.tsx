@@ -21,6 +21,7 @@ const MainParallax: React.FC = () => {
           {
             yPercent: 10, // Target end position
             ease: 'none',
+            force3D: true, // Added for potentially smoother animation
             scrollTrigger: {
               trigger: container.current,
               start: 'top bottom', // When the top of the container hits the bottom of the viewport
@@ -42,7 +43,7 @@ const MainParallax: React.FC = () => {
     >
       {/* Removed DescriptionMainParallax component from here */}
       <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
-        <div ref={imageWrapper} className="relative w-full h-full">
+        <div ref={imageWrapper} className="relative w-full h-full" style={{ willChange: 'transform' }}>
           <Image
             src="/images/about/aboutus4.png"
             fill
