@@ -31,7 +31,7 @@ const SectionTitle = ({
           ))}
         </h2>
         <p
-          className={`font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text text-left`}
+          className={`font-elysium-text-body-l-elysium text-projects-colorstylesdisable-text text-left sm:text-3xl`}
         >
           {paragraph}
         </p>

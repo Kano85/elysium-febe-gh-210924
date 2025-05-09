@@ -150,8 +150,13 @@
     "optimize_tax": "Do you want to optimize your taxation, protect your assets, and make decisions with peace of mind?",
     "help_do_it_right": "At ELYSIUM we help you do it right, with legal guarantees and strategic vision. We know that taking the step to Andorra or rethinking your fiscal situation raises doubts:",
     "tax_doubts": "Will the Tax Agency come after me?\nWill I have to completely sever ties with my country?\nWill I really be able to improve my situation?",
-    "structuring_news": "The good news is that yes: it is possible to structure your case effectively, within the law and without mistakes. We advise business owners, athletes, entrepreneurs, content creators, and investors who have started generating significant income and are seeking clarity, efficiency, and peace of mind in Andorra. With experience in leading firms and a global approach, we help you establish your tax residency, set up companies, or plan your assets with legal, long-term solutions.",
     "client_goals": "Our clients not only want to pay less.\nThey want to do so legally and securely.\nThey want to continue managing their life and business with freedom.\nAnd, above all, they want to live better, with control and peace of mind."
+  },
+  "description-obj": {
+    "structuring_news": {
+      "title": "Structuring News",
+      "description": "The good news is yes: it is possible to structure your case effectively, within the law, and without errors. We advise entrepreneurs, athletes, innovators, content creators, or investors who have started generating significant income and are looking for clarity, efficiency, and peace of mind in Andorra. With experience in leading firms and a global approach, we help you establish your tax residence, set up companies, or plan your assets with legal and long-term solutions."
+    }
   },
   "cta": {
     "conversation_title": "The conversation that changes everything",
@@ -270,5 +275,9 @@
     "recaptchaRequired": "Please complete the reCAPTCHA verification."
   },
   "Insights from Our Specialists": "Insights from Our Specialists",
-  "Discover personalized investment strategies to achieve your financial goals": "Discover personalized investment strategies to achieve your financial goals"
+  "Discover personalized investment strategies to achieve your financial goals": "Discover personalized investment strategies to achieve your financial goals",
+  "mainParallax": {
+    "clients": "Our clients not only want to pay less.\nThey want to do so legally and securely.\nThey want to continue managing their life and business with freedom.",
+    "aboveAll": "above all, they want to live better, with control and peace of mind."
+  }
 }

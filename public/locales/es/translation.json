@@ -142,8 +142,13 @@
     "optimize_tax": "¿Quieres optimizar tu fiscalidad, proteger tu patrimonio y tomar decisiones con tranquilidad?",
     "help_do_it_right": "En ELYSIUM te ayudamos a hacerlo bien, con garantías legales y visión estratégica. Sabemos que dar el paso hacia Andorra o replantear tu situación fiscal genera dudas:",
     "tax_doubts": "¿Me va a perseguir Hacienda?\n¿Tendré que desvincularme por completo de mi país?\n¿Realmente podré mejorar mi situación?",
-    "structuring_news": "La buena noticia es que sí: es posible estructurar tu caso con eficacia, dentro de la ley y sin errores. Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o inversores que han empezado a generar ingresos relevantes y buscan claridad, eficiencia y tranquilidad en Andorra. Con experiencia en firmas líderes y un enfoque global, te ayudamos a establecer tu residencia fiscal, constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo.",
     "client_goals": "Nuestros clientes no solo quieren pagar menos.\nQuieren hacerlo legalmente y con seguridad.\nQuieren seguir gestionando su vida y su negocio con libertad.\nY, sobre todo, quieren vivir mejor, con control y tranquilidad."
+  },
+  "description-obj": {
+    "structuring_news": {
+      "title": "Noticias sobre Estructuración",
+      "description": "La buena noticia es que sí: es posible estructurar tu caso con eficacia, dentro de la ley y sin errores. Asesoramos a empresarios, deportistas, emprendedores, creadores de contenido o inversores que han empezado a generar ingresos relevantes y buscan claridad, eficiencia y tranquilidad en Andorra. Con experiencia en firmas líderes y un enfoque global, te ayudamos a establecer tu residencia fiscal, constituir sociedades o planificar tu patrimonio con soluciones legales y a largo plazo."
+    }
   },
   "cta": {
     "conversation_title": "La conversación que lo cambia todo",
@@ -191,6 +196,10 @@
   },
   "Insights from Our Specialists": "Perspectivas de nuestros especialistas",
   "Discover personalized investment strategies to achieve your financial goals": "Descubre estrategias de inversión personalizadas para alcanzar tus objetivos financieros",
+  "mainParallax": {
+    "clients": "Nuestros clientes no solo quieren pagar menos.\nQuieren hacerlo legalmente y con seguridad.\nQuieren seguir gestionando su vida y su negocio con libertad.",
+    "aboveAll": "sobre todo, quieren vivir mejor, con control y tranquilidad."
+  },
   "aboutPage": {
     "breadcrumb": { "pageName": "Quiénes somos", "description": "" },
     "whoWeAre": {

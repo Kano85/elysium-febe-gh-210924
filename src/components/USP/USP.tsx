@@ -11,8 +11,7 @@ const USP_KEYS = [
   'usp.optimize_tax',
   'usp.help_do_it_right',
   'usp.tax_doubts',
-  'usp.structuring_news',
-  'usp.client_goals',
+  // 'usp.client_goals',
 ];
 
 export default function USP() {
@@ -61,10 +60,9 @@ export default function USP() {
               itemsRef.current[index] = el;
             }}
             style={{
-              fontSize: 'clamp(1.2rem, 1.9vw, 1.5rem)',
               fontWeight: 400,
             }}
-            className={`whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ${
+            className={`text-[2.5rem] whitespace-pre-line max-w-[85%] md:max-w-[80%] md:my-6 my-4 relative tracking-wide z-2 ${
               isRightAligned ? 'self-end text-right' : 'self-start text-left'
             }`}
           >

@@ -140,8 +140,13 @@
     "optimize_tax": "Voulez-vous optimiser votre fiscalité, protéger votre patrimoine et prendre des décisions en toute tranquillité ?",
     "help_do_it_right": "Chez ELYSIUM, nous vous aidons à le faire correctement, avec des garanties légales et une vision stratégique. Nous savons que faire le pas vers Andorre ou repenser votre situation fiscale suscite des doutes :",
     "tax_doubts": "Les services fiscaux vont-ils me poursuivre ?\nDevrai-je rompre complètement mes liens avec mon pays ?\nPourrai-je réellement améliorer ma situation ?",
-    "structuring_news": "La bonne nouvelle, c'est que oui : il est possible de structurer votre dossier efficacement, dans le respect de la loi et sans erreur. Nous conseillons des chefs d'entreprise, des athlètes, des entrepreneurs, des créateurs de contenu ou des investisseurs qui ont commencé à générer des revenus significatifs et recherchent clarté, efficacité et tranquillité d'esprit en Andorre. Avec une expérience dans des cabinets de premier plan et une approche globale, nous vous aidons à établir votre résidence fiscale, créer des sociétés ou planifier votre patrimoine avec des solutions juridiques et durables.",
     "client_goals": "Nos clients ne veulent pas seulement payer moins.\nIls veulent le faire légalement et en toute sécurité.\nIls veulent continuer à gérer leur vie et leur entreprise en toute liberté.\nEt, surtout, ils veulent vivre mieux, avec contrôle et tranquillité d'esprit."
+  },
+  "description-obj": {
+    "structuring_news": {
+      "title": "Nouvelles sur la Structuration",
+      "description": "La bonne nouvelle, c'est que oui : il est possible de structurer votre dossier efficacement, dans le respect de la loi et sans erreurs. Nous conseillons les entrepreneurs, sportifs, innovateurs, créateurs de contenu ou investisseurs qui ont commencé à générer des revenus importants et recherchent clarté, efficacité et tranquillité d'esprit en Andorre. Forts d'une expérience au sein de cabinets de premier plan et d'une approche globale, nous vous aidons à établir votre résidence fiscale, à créer des sociétés ou à planifier votre patrimoine avec des solutions légales et à long terme."
+    }
   },
   "cta": {
     "conversation_title": "La conversation qui change tout",
@@ -254,5 +259,9 @@
     "recaptchaRequired": "Veuillez compléter la vérification reCAPTCHA."
   },
   "Insights from Our Specialists": "Perspectives de nos spécialistes",
-  "Discover personalized investment strategies to achieve your financial goals": "Découvrez des stratégies d'investissement personnalisées pour atteindre vos objectifs financiers"
+  "Discover personalized investment strategies to achieve your financial goals": "Découvrez des stratégies d'investissement personnalisées pour atteindre vos objectifs financiers",
+  "mainParallax": {
+    "clients": "Nos clients ne veulent pas seulement payer moins.\\nIls veulent le faire légalement et en toute sécurité.\\nIls veulent continuer à gérer leur vie et leurs affaires en toute liberté.",
+    "aboveAll": "surtout, ils veulent vivre mieux, avec contrôle et tranquillité d\\'esprit."
+  }
 }

@@ -137,8 +137,13 @@
     "optimize_tax": "Vols optimitzar la teva fiscalitat, protegir el teu patrimoni i prendre decisions amb tranquil·litat?",
     "help_do_it_right": "A ELYSIUM t'ajudem a fer-ho bé, amb garanties legals i visió estratègica. Sabem que fer el pas cap a Andorra o replantejar la teva situació fiscal genera dubtes:",
     "tax_doubts": "Els serveis fiscals em perseguiran?\nHaure d'esquinçar completament els meus vincles amb el meu país?\nRealment podré millorar la meva situació?",
-    "structuring_news": "La bona notícia és que sí: és possible estructurar el teu cas amb eficàcia, dins la llei i sense errors. Aconsellem empresaris, esportistes, emprenedors, creadors de contingut o inversors que han començat a generar ingressos rellevants i busquen claredat, eficiència i tranquil·litat a Andorra. Amb experiència en firmes líders i un enfocament global, t'ajudem a establir la teva residència fiscal, constituir societats o planificar el teu patrimoni amb solucions legals i a llarg termini.",
     "client_goals": "Els nostres clients no només volen pagar menys.\nVolen fer-ho legalment i amb seguretat.\nVolen continuar gestionant la seva vida i el seu negoci amb llibertat.\nI, sobretot, volen viure millor, amb control i tranquil·litat."
+  },
+  "description-obj": {
+    "structuring_news": {
+      "title": "Notícies sobre Estructuració",
+      "description": "La bona notícia és que sí: és possible estructurar el teu cas amb eficàcia, dins de la llei i sense errors. Assessorem empresaris, esportistes, emprenedors, creadors de contingut o inversors que han començat a generar ingressos rellevants i busquen claredat, eficiència i tranquil·litat a Andorra. Amb experiència en firmes líders i un enfocament global, t'ajudem a establir la teva residència fiscal, constituir societats o planificar el teu patrimoni amb solucions legals i a llarg termini."
+    }
   },
   "cta": {
     "conversation_title": "La conversa que ho canvia tot",
@@ -249,6 +254,10 @@
   },
   "Insights from Our Specialists": "Coneixements dels nostres especialistes",
   "Discover personalized investment strategies to achieve your financial goals": "Descobreix estratègies d'inversió personalitzades per assolir els teus objectius financers",
+  "mainParallax": {
+    "clients": "Els nostres clients no només volen pagar menys.\nVolen fer-ho legalment i amb seguretat.\nVolen continuar gestionant la seva vida i el seu negoci amb llibertat.",
+    "aboveAll": "per sobre de tot, volen viure millor, amb control i tranquil·litat."
+  },
   "contactPage": {
     "breadcrumb": {
       "title": "Optimitza la teva fiscalitat",

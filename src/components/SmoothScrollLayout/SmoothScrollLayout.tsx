@@ -1,7 +1,7 @@
 // src/components/SmoothScrollLayout.tsx
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react'; // Import useEffect
 import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -16,32 +16,51 @@ export default function SmoothScrollLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const wrapperRef = useRef<HTMLDivElement>(null); // Ref for the wrapper
+  const contentRef = useRef<HTMLDivElement>(null); // Ref for the content
   const smoother = useRef<ScrollSmoother>();
   const pathname = usePathname();
 
   useGSAP(() => {
-    // Initialize ScrollSmoother
-    smoother.current = ScrollSmoother.create({
-      smooth: 2.5,
-      effects: true,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
-    });
+    // Ensure refs are current before creating ScrollSmoother
+    if (wrapperRef.current && contentRef.current) {
+      smoother.current = ScrollSmoother.create({
+        wrapper: wrapperRef.current, // Specify the wrapper element
+        content: contentRef.current, // Specify the content element
+        smooth: 2.5,
+        effects: true,
+        normalizeScroll: true,
+        ignoreMobileResize: true,
+      });
+    }
 
-    // Cleanup function
     return () => {
       if (smoother.current) {
         smoother.current.kill();
       }
     };
-  }, [pathname]); // Re-run on route change
+  }, [pathname]); // Dependencies: pathname.
+
+  // ScrollSmoother often requires body overflow to be hidden
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = originalOverflow; // Reset on unmount
+    };
+  }, []);
 
   return (
     <div
       id="smooth-wrapper"
-      className="relative overflow-hidden w-full h-screen"
+      ref={wrapperRef} // Assign ref
+      className="relative overflow-hidden w-full h-full"
     >
-      <div id="smooth-content" className="will-change-transform">
+      <div
+        id="smooth-content"
+        ref={contentRef} // Assign ref
+        className="will-change-transform"
+      >
         {children}
       </div>
     </div>
