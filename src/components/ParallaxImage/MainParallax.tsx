@@ -43,7 +43,11 @@ const MainParallax: React.FC = () => {
     >
       {/* Removed DescriptionMainParallax component from here */}
       <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
-        <div ref={imageWrapper} className="relative w-full h-full" style={{ willChange: 'transform' }}>
+        <div
+          ref={imageWrapper}
+          className="relative w-full h-full"
+          style={{ willChange: 'transform' }}
+        >
           <Image
             src="/images/about/aboutus4.png"
             fill
